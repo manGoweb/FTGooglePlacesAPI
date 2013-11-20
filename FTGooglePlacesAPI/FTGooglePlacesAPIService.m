@@ -45,6 +45,8 @@ NSString *const FTGooglePlacesAPIBaseURL = @"https://maps.googleapis.com/maps/ap
 
 #pragma mark -
 
+static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
+
 @interface FTGooglePlacesAPIService ()
 
 @property (nonatomic, copy) NSString *apiKey;
@@ -81,6 +83,7 @@ NSString *const FTGooglePlacesAPIBaseURL = @"https://maps.googleapis.com/maps/ap
     if (self) {
         _apiKey = nil;
         _resultsItemClass = nil;
+        FTGooglePlacesAPIDebugLoggingEnabled = NO;
     }
     return self;
 }
@@ -126,6 +129,11 @@ NSString *const FTGooglePlacesAPIBaseURL = @"https://maps.googleapis.com/maps/ap
     NSString *requestUrlString = [NSString stringWithFormat:@"%@%@/json?%@", FTGooglePlacesAPIBaseURL, [request requestTypeUrlString], paramsQueryString];
     requestUrlString = [requestUrlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 
+    #ifdef DEBUG
+    if (FTGooglePlacesAPIDebugLoggingEnabled) {
+        NSLog(@"%@ performing request: %@", [self class], requestUrlString);
+    }
+    #endif
     
     //  Perform request using AFNetworking
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -136,6 +144,12 @@ NSString *const FTGooglePlacesAPIBaseURL = @"https://maps.googleapis.com/maps/ap
      {
          Class resultsItemClass = [[[self class] sharedService] resultsItemClass];
          FTGooglePlacesAPIResponse *response = [[FTGooglePlacesAPIResponse alloc] initWithDictionary:responseObject andResultsItemClass:resultsItemClass];
+        
+         #ifdef DEBUG
+         if (FTGooglePlacesAPIDebugLoggingEnabled) {
+             NSLog(@"%@ received response. Status: %@, number of results: %d", [self class], [FTGooglePlacesAPIResponse localizedNameOfStatus:response.status], [response.results count]);
+         }
+         #endif
          
          // Check if everything went OK
          if (response && response.status == FTGooglePlacesAPIResponseStatusOK) {
@@ -160,6 +174,11 @@ NSString *const FTGooglePlacesAPIBaseURL = @"https://maps.googleapis.com/maps/ap
      {
          completion(nil, error);
      }];
+}
+
++ (void)setDebugLoggingEnabled:(BOOL)enabled
+{
+    FTGooglePlacesAPIDebugLoggingEnabled = enabled;
 }
 
 @end

@@ -89,6 +89,7 @@ typedef NS_ENUM(NSUInteger, FTGooglePlacesAPIResponseStatus) {
  */
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary andResultsItemClass:(Class)resultsItemClass;
 
++ (NSString *)localizedNameOfStatus:(FTGooglePlacesAPIResponseStatus)status;
 + (NSString *)localizedDescriptionForStatus:(FTGooglePlacesAPIResponseStatus)status;
 
 @end

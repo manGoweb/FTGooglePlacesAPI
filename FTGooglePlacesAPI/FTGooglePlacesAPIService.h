@@ -74,4 +74,14 @@ typedef void (^FTGooglePlacesAPIRequestCompletionHandler)(FTGooglePlacesAPIRespo
 + (void)executePlacesAPIRequest:(id<FTGooglePlacesAPIRequest>)request
           withCompletionHandler:(FTGooglePlacesAPIRequestCompletionHandler)completion;
 
+/**
+ *  If set to YES and running in debug mode (#ifdef DEBUG), service will print some information
+ *  info console, including:
+ *    - Complete URL of request sent to Google Places API
+ *    - Status of response and number of result items in a response
+ *
+ *  @param enabled YES if logs should be printed to the console in DEBUG mode
+ */
++ (void)setDebugLoggingEnabled:(BOOL)enabled;
+
 @end

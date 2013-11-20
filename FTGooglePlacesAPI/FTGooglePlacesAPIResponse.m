@@ -83,6 +83,35 @@
 
 #pragma mark Public interface
 
++ (NSString *)localizedNameOfStatus:(FTGooglePlacesAPIResponseStatus)status
+{
+    NSString *name;
+    
+    switch (status)
+    {
+        case FTGooglePlacesAPIResponseStatusOK:
+            name = NSLocalizedString(@"OK", @"FTGooglePlacesAPIResponse name of status FTGooglePlacesAPIResponseStatusOK");
+            break;
+        case FTGooglePlacesAPIResponseStatusNoResults:
+            name = NSLocalizedString(@"No Results", @"FTGooglePlacesAPIResponse name of status FTGooglePlacesAPIResponseStatusNoResults");
+            break;
+        case FTGooglePlacesAPIResponseStatusAPILimitExceeded:
+            name = NSLocalizedString(@"API Limit Exceeded", @"FTGooglePlacesAPIResponse name of status FTGooglePlacesAPIResponseStatusAPILimitExceeded");
+            break;
+        case FTGooglePlacesAPIResponseStatusRequestDenied:
+            name = NSLocalizedString(@"Request Denied", @"FTGooglePlacesAPIResponse name of status FTGooglePlacesAPIResponseStatusRequestDenied");
+            break;
+        case FTGooglePlacesAPIResponseStatusInvalidRequest:
+            name = NSLocalizedString(@"Invalid Request", @"FTGooglePlacesAPIResponse name of status FTGooglePlacesAPIResponseStatusInvalidRequest");
+            break;
+        case FTGooglePlacesAPIResponseStatusUnknown:
+            name = NSLocalizedString(@"Unknown", @"FTGooglePlacesAPIResponse name of status FTGooglePlacesAPIResponseStatusUnknown");
+            break;
+    }
+    
+    return name;
+}
+
 + (NSString *)localizedDescriptionForStatus:(FTGooglePlacesAPIResponseStatus)status
 {
     NSString *description;
