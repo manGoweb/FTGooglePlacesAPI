@@ -42,11 +42,11 @@ typedef NS_ENUM(NSUInteger, FTGooglePlacesAPIResponseStatus) {
      *  This should never happen unless the API specs change
      */
     FTGooglePlacesAPIResponseStatusUnknown = 0,
-    FTGooglePlacesAPIResponseStatusOK,
-    FTGooglePlacesAPIResponseStatusNoResults,
-    FTGooglePlacesAPIResponseStatusAPILimitExceeded,
-    FTGooglePlacesAPIResponseStatusRequestDenied,
-    FTGooglePlacesAPIResponseStatusInvalidRequest
+    FTGooglePlacesAPIResponseStatusOK, // OK
+    FTGooglePlacesAPIResponseStatusNoResults, // ZERO_RESULTS
+    FTGooglePlacesAPIResponseStatusAPILimitExceeded, // OVER_QUERY_LIMIT
+    FTGooglePlacesAPIResponseStatusRequestDenied, // REQUEST_DENIED
+    FTGooglePlacesAPIResponseStatusInvalidRequest // INVALID_REQUEST
 };
 
 /**

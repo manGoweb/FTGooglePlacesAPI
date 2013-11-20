@@ -57,7 +57,10 @@ typedef NS_ENUM(NSUInteger, FTGooglePlacesAPIResultItemOpenedState) {
 @property (nonatomic, strong, readonly) NSArray *types;
 
 /**
- *  You can access complete response dictionary using this property
+ *  You can access complete response dictionary using this property.
+ *  In case implementation changes in a future and there will be new values
+ *  for example, you can access them directly using this property even
+ *  if the library is not ready for those yet
  */
 @property (nonatomic, strong, readonly) NSDictionary *originalDictionaryRepresentation;
 

@@ -9,6 +9,7 @@
 #import "FTGooglePlacesAPIExampleResultsViewController.h"
 
 #import "FTGooglePlacesAPI.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface FTGooglePlacesAPIExampleResultsViewController ()
 
@@ -89,6 +90,8 @@
         cell.detailTextLabel.text = [NSString stringWithFormat:@"Distance: %.0fm", distance];
     }
     
+    [cell.imageView setImageWithURL:[NSURL URLWithString:resultItem.iconImageUrl] placeholderImage:[self placeholderImage]];
+    
     return cell;
 }
 
@@ -103,6 +106,27 @@
     
     //  And just print it to the console
     NSLog(@"Selected item: %@", resultItem);
+}
+
+/**
+ *  Little helper for generating plain white image used as a placeholder
+ *  in UITableViewCell's while loading icon images
+ */
+- (UIImage *)placeholderImage
+{
+    static UIImage *PlaceholderImage;
+    
+    if (!PlaceholderImage)
+    {
+        CGRect rect = CGRectMake(0, 0, 40.0f, 40.0f);
+        
+        UIGraphicsBeginImageContext(rect.size);
+        [[UIColor redColor] setFill];
+        PlaceholderImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+    }
+    
+    return PlaceholderImage;
 }
 
 #pragma mark - FTGooglePlacesAPI performing search request

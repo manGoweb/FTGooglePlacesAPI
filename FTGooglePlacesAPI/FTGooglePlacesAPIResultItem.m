@@ -52,6 +52,12 @@
     {
         _originalDictionaryRepresentation = dictionary;
         [self ftgpi_importDictionary:dictionary];
+        
+        //  Object cannot be valid with no id
+        if ([_itemId length] == 0) {
+            return nil;
+        }
+        
     }
     return self;
 }

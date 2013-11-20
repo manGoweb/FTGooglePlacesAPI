@@ -59,6 +59,11 @@
     //  Either there is no custom class or it has to be subclass of FTGooglePlacesAPIResponse so
     //  the code can rely there will be required properties
     NSAssert(!resultsItemClass || [resultsItemClass isSubclassOfClass:[FTGooglePlacesAPIResponse class]], @"Custom response item class in FTGooglePlacesAPIResponse has to be a subclass of FTGooglePlacesAPIResponse");
+    
+    if ([dictionary count] == 0) {
+        return nil;
+    }
+    
     self = [super init];
     if (self)
     {
