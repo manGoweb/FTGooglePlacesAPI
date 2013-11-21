@@ -47,15 +47,15 @@ static const NSUInteger kMaxRadius = 50000;
 
 - (instancetype)initWithLocationCoordinate:(CLLocationCoordinate2D)locationCoordinate
 {
+    //  Validate location
+    if (!CLLocationCoordinate2DIsValid(locationCoordinate)) {
+        NSLog(@"WARNING: %s: Location (%f, %f) is invalid, returning nil", __PRETTY_FUNCTION__, locationCoordinate.latitude, locationCoordinate.longitude);
+        return nil;
+    }
+    
     self = [super init];
     if (self)
     {
-        //  Validate location
-        if (!CLLocationCoordinate2DIsValid(locationCoordinate)) {
-            NSLog(@"WARNING: %s: Location (%f, %f) is invalid, returning nil", __PRETTY_FUNCTION__, locationCoordinate.latitude, locationCoordinate.longitude);
-            return nil;
-        }
-        
         _locationCoordinate = locationCoordinate;
         
         //  Default values

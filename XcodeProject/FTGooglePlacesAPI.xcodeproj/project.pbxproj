@@ -59,6 +59,7 @@
 		A0246CB4183E17730052416D /* FTGooglePlacesAPIDictionaryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0246CB3183E17730052416D /* FTGooglePlacesAPIDictionaryRequest.m */; };
 		A0246CB5183E17730052416D /* FTGooglePlacesAPIDictionaryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0246CB3183E17730052416D /* FTGooglePlacesAPIDictionaryRequest.m */; };
 		A0246CBB183E19200052416D /* FTGooglePlacesAPIDictionaryRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0246CBA183E19200052416D /* FTGooglePlacesAPIDictionaryRequestTest.m */; };
+		A0246CBE183E4D6B0052416D /* FTGooglePlacesAPINearbySearchRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0246CBD183E4D6B0052416D /* FTGooglePlacesAPINearbySearchRequestTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -141,6 +142,7 @@
 		A0246CB2183E17730052416D /* FTGooglePlacesAPIDictionaryRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTGooglePlacesAPIDictionaryRequest.h; sourceTree = "<group>"; };
 		A0246CB3183E17730052416D /* FTGooglePlacesAPIDictionaryRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGooglePlacesAPIDictionaryRequest.m; sourceTree = "<group>"; };
 		A0246CBA183E19200052416D /* FTGooglePlacesAPIDictionaryRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGooglePlacesAPIDictionaryRequestTest.m; sourceTree = "<group>"; };
+		A0246CBD183E4D6B0052416D /* FTGooglePlacesAPINearbySearchRequestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGooglePlacesAPINearbySearchRequestTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -417,6 +419,7 @@
 			isa = PBXGroup;
 			children = (
 				A0246CBA183E19200052416D /* FTGooglePlacesAPIDictionaryRequestTest.m */,
+				A0246CBD183E4D6B0052416D /* FTGooglePlacesAPINearbySearchRequestTests.m */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -564,6 +567,7 @@
 			files = (
 				A0246CB5183E17730052416D /* FTGooglePlacesAPIDictionaryRequest.m in Sources */,
 				A0246C6E183D10850052416D /* FTGooglePlacesAPICommon.m in Sources */,
+				A0246CBE183E4D6B0052416D /* FTGooglePlacesAPINearbySearchRequestTests.m in Sources */,
 				A0246C70183D10850052416D /* FTGooglePlacesAPIResponse.m in Sources */,
 				A0246C71183D10850052416D /* FTGooglePlacesAPIResultItem.m in Sources */,
 				A0246C72183D10850052416D /* FTGooglePlacesAPITextSearchRequest.m in Sources */,

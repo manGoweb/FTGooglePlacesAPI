@@ -126,6 +126,7 @@ typedef NS_ENUM(NSUInteger, FTGooglePlacesAPIRequestParamRankBy) {
  *  the query is sent. Places that do not specify opening hours
  *  in the Google Places database will not be returned if you
  *  include this parameter in your query.
+ *  Default: NO
  */
 @property (nonatomic, assign) BOOL openNow;
 
