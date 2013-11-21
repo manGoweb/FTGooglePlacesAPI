@@ -29,6 +29,7 @@
 #import "FTGooglePlacesAPIResponse.h"
 #import "FTGooglePlacesAPICommon.h"
 #import "FTGooglePlacesAPIResultItem.h"
+#import "FTGooglePlacesAPIDictionaryRequest.h"
 
 /**
  *  Private methods interface
@@ -50,11 +51,14 @@
 #pragma mark Lifecycle
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
+                           request:(id<FTGooglePlacesAPIRequest>)request
 {
-    return [self initWithDictionary:dictionary andResultsItemClass:nil];
+    return [self initWithDictionary:dictionary request:request resultsItemClass:nil];
 }
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary andResultsItemClass:(Class)resultsItemClass
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+                           request:(id<FTGooglePlacesAPIRequest>)request
+                  resultsItemClass:(Class)resultsItemClass
 {
     //  Either there is no custom class or it has to be subclass of FTGooglePlacesAPIResponse so
     //  the code can rely there will be required properties
@@ -67,6 +71,7 @@
     self = [super init];
     if (self)
     {
+        _request = request;
         _status = FTGooglePlacesAPIResponseStatusUnknown;
         _resultsItemClass = resultsItemClass;
         [self ftgpr_importDictionary:dictionary];
@@ -81,7 +86,27 @@
     return [NSString stringWithFormat:@"<%@: %p> %@", [self class], self, _results];
 }
 
-#pragma mark Public interface
+#pragma mark - Public interface
+
+- (id<FTGooglePlacesAPIRequest>)nextPageRequest
+{
+    if ([_nextPageToken length] == 0) {
+        return nil;
+    }
+    
+    NSDictionary *dictionary = @{@"pagetoken": _nextPageToken};
+    
+    FTGooglePlacesAPIDictionaryRequest *request = [[FTGooglePlacesAPIDictionaryRequest alloc] initWithDictionary:dictionary requestType:[_request requestTypeUrlString]];
+    
+    return request;
+}
+
+- (BOOL)hasNextPage
+{
+    return ([_nextPageToken length] > 0);
+}
+
+#pragma mark Class methods
 
 + (NSString *)localizedNameOfStatus:(FTGooglePlacesAPIResponseStatus)status
 {
@@ -150,6 +175,7 @@
 - (void)ftgpr_importDictionary:(NSDictionary *)dictionary
 {
     _htmlAttributions = [dictionary ftgp_nilledObjectForKey:@"html_attributions"];
+    _nextPageToken = [dictionary ftgp_nilledObjectForKey:@"next_page_token"];
     
     NSString *statusString = [dictionary ftgp_nilledObjectForKey:@"status"];
     _status = [self ftgpr_responseStatusFromString:statusString];

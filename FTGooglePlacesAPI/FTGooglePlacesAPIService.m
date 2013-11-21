@@ -143,7 +143,8 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
          success:^(AFHTTPRequestOperation *operation, id responseObject)
      {
          Class resultsItemClass = [[[self class] sharedService] resultsItemClass];
-         FTGooglePlacesAPIResponse *response = [[FTGooglePlacesAPIResponse alloc] initWithDictionary:responseObject andResultsItemClass:resultsItemClass];
+
+         FTGooglePlacesAPIResponse *response = [[FTGooglePlacesAPIResponse alloc] initWithDictionary:responseObject request:request resultsItemClass:resultsItemClass];
         
          #ifdef DEBUG
          if (FTGooglePlacesAPIDebugLoggingEnabled) {

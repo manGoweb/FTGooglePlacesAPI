@@ -13,10 +13,18 @@
 
 @interface FTGooglePlacesAPIExampleResultsViewController ()
 
+@property (nonatomic, readonly) id<FTGooglePlacesAPIRequest> initialRequest;
+@property (nonatomic, readonly) id<FTGooglePlacesAPIRequest> actualRequest;
 @property (nonatomic, strong) CLLocation *searchLocation;
-@property (nonatomic, strong) FTGooglePlacesAPIResponse *response;
+@property (nonatomic, strong) FTGooglePlacesAPIResponse *lastResponse;
 
 @property (nonatomic, strong) UIActivityIndicatorView *activityIndicatorView;
+
+/**
+ *  This array holds all results. Mutable array is used because we can have
+ *  multiple responses, but want to keep all result items
+ */
+@property (nonatomic, strong) NSMutableArray *results;
 
 @end
 
@@ -31,7 +39,10 @@
     {
         self.title = @"Results";
         
-        _request = request;
+        _initialRequest = request;
+        _actualRequest = request;
+        
+        _results = [NSMutableArray array];
         
         //  Create CLLocation object from search coordinate. We will use this for calculating
         //  distance of result item
@@ -67,30 +78,52 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_response.results count];
+    return [_results count] + ([_lastResponse hasNextPage]);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"ResultCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    static NSString *ResultCellIdentifier = @"ResultCell";
+    static NSString *LoadMoreCellIdentifier = @"LoadMoreCell";
+    
+    BOOL isLoadMoreResultsCell = [self isLoadMoreResultsCellAtIndexPath:indexPath];
+    
+    //  Get appropriate cell
+    NSString *cellIdentifier = (isLoadMoreResultsCell? LoadMoreCellIdentifier:ResultCellIdentifier);
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    //  Configure "Load more" cell
+    if (isLoadMoreResultsCell)
+    {
+        //  This is constant cell, so we can preconfigure it on the init
+        if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+            cell.textLabel.textAlignment = NSTextAlignmentCenter;
+            cell.textLabel.text = @"Load more results...";
+        }
     }
-    
-    //  Get response object
-    FTGooglePlacesAPIResultItem *resultItem = _response.results[indexPath.row];
-
-    
-    //  Configure cell
-    cell.textLabel.text = resultItem.name;
-    
-    if (resultItem.location) {
-        CLLocationDistance distance = [resultItem.location distanceFromLocation:_searchLocation];
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"Distance: %.0fm", distance];
+    //  Configure results cell
+    else
+    {
+        if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+        }
+        
+        //  Get response object
+        FTGooglePlacesAPIResultItem *resultItem = _results[indexPath.row];
+        
+        
+        //  Configure cell
+        cell.textLabel.text = resultItem.name;
+        
+        if (resultItem.location) {
+            CLLocationDistance distance = [resultItem.location distanceFromLocation:_searchLocation];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"Distance: %.0fm", distance];
+        }
+        
+        [cell.imageView setImageWithURL:[NSURL URLWithString:resultItem.iconImageUrl] placeholderImage:[self placeholderImage]];
     }
-    
-    [cell.imageView setImageWithURL:[NSURL URLWithString:resultItem.iconImageUrl] placeholderImage:[self placeholderImage]];
     
     return cell;
 }
@@ -101,11 +134,34 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    //  Get response object
-    FTGooglePlacesAPIResultItem *resultItem = _response.results[indexPath.row];
+    //  Selected "Load more results" cell
+    if ([self isLoadMoreResultsCellAtIndexPath:indexPath])
+    {
+        //  Get request for a new page of results and start search
+        id<FTGooglePlacesAPIRequest> nextPageRequest = [_lastResponse nextPageRequest];
+        _actualRequest = nextPageRequest;
+        [self startSearching];
+    }
+    //  Selected result item cell
+    else
+    {
+        //  Get response object
+        FTGooglePlacesAPIResultItem *resultItem = _results[indexPath.row];
+        
+        //  And just print it to the console
+        NSLog(@"Selected item: %@", resultItem);
+    }
+}
+
+#pragma mark - Helper methods
+
+- (BOOL)isLoadMoreResultsCellAtIndexPath:(NSIndexPath *)indexPath
+{
+    //  It is load more cell if there is more results to read and this is
+    //  the last cell in a table view
+    NSInteger numberOfRows = [self tableView:self.tableView numberOfRowsInSection:indexPath.section];
     
-    //  And just print it to the console
-    NSLog(@"Selected item: %@", resultItem);
+    return ((indexPath.row == numberOfRows - 1) && [_lastResponse hasNextPage]);
 }
 
 /**
@@ -138,7 +194,7 @@
     
     
     //  Execute Google Places API request using FTGooglePlacesAPIService
-    [FTGooglePlacesAPIService executePlacesAPIRequest:_request
+    [FTGooglePlacesAPIService executePlacesAPIRequest:_actualRequest
                                 withCompletionHandler:^(FTGooglePlacesAPIResponse *response, NSError *error)
     {
         //  If error is not nil, request failed and you should handle the error
@@ -159,10 +215,19 @@
         }
         
         //  Everything went fine, we have response object
-        //  You can do whatever you need here, we just reload the table
-        self.response = response;
-        [self.tableView reloadData];
+        //  You can do whatever you need here, we just add new items to the
+        //  data source array and reload the table
+        //  You could add new rows with animation etc., but it would add useless
+        //  complexity to the sample code app
         
+        //  Update last response object
+        _lastResponse = response;
+        
+        //  Add new results to the data source array
+        [_results addObjectsFromArray:response.results];
+        
+        [self.tableView reloadData];
+
         [_activityIndicatorView stopAnimating];
     }];
     

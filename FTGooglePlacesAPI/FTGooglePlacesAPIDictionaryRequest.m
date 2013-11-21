@@ -1,7 +1,8 @@
 //
-//  FTGooglePlacesAPI.h
+//  FTGooglePlacesAPIDictionaryRequest.m
+//  FTGooglePlacesAPI
 //
-//  Created by Lukas Kukacka on 10/29/13.
+//  Created by Lukas Kukacka on 21/11/13.
 //
 //
 //  The MIT License (MIT)
@@ -26,17 +27,43 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-
-#ifndef _FTGOOGLEPLACESAPI_
-#define _FTGOOGLEPLACESAPI_
-
-#import "FTGooglePlacesAPICommon.h"
-#import "FTGooglePlacesAPIService.h"
 #import "FTGooglePlacesAPIDictionaryRequest.h"
-#import "FTGooglePlacesAPINearbySearchRequest.h"
-#import "FTGooglePlacesAPITextSearchRequest.h"
-#import "FTGooglePlacesAPIResponse.h"
-#import "FTGooglePlacesAPIResultItem.h"
 
-#endif
+@implementation FTGooglePlacesAPIDictionaryRequest {
+    
+    NSDictionary *_placesAPIRequestParams;
+    NSString *_requestTypeUrlString;
+}
+
+- (instancetype)init
+{
+    return [self initWithDictionary:nil requestType:nil];
+}
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary requestType:(NSString *)requestType
+{
+    if (!dictionary || [requestType length] == 0) {
+        return nil;
+    }
+    
+    self = [super init];
+    if (self) {
+        _placesAPIRequestParams = dictionary;
+        _requestTypeUrlString = requestType;
+    }
+    return self;
+}
+
+#pragma mark FTGooglePlacesAPIRequest protocol
+
+- (NSString *)requestTypeUrlString
+{
+    return _requestTypeUrlString;
+}
+
+- (NSDictionary *)placesAPIRequestParams
+{
+    return _placesAPIRequestParams;
+}
+
+@end

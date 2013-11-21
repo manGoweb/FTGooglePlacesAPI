@@ -1,7 +1,8 @@
 //
-//  FTGooglePlacesAPI.h
+//  FTGooglePlacesAPIDictionaryRequest.h
+//  FTGooglePlacesAPI
 //
-//  Created by Lukas Kukacka on 10/29/13.
+//  Created by Lukas Kukacka on 21/11/13.
 //
 //
 //  The MIT License (MIT)
@@ -28,15 +29,26 @@
 
 #import <Foundation/Foundation.h>
 
-#ifndef _FTGOOGLEPLACESAPI_
-#define _FTGOOGLEPLACESAPI_
-
 #import "FTGooglePlacesAPICommon.h"
-#import "FTGooglePlacesAPIService.h"
-#import "FTGooglePlacesAPIDictionaryRequest.h"
-#import "FTGooglePlacesAPINearbySearchRequest.h"
-#import "FTGooglePlacesAPITextSearchRequest.h"
-#import "FTGooglePlacesAPIResponse.h"
-#import "FTGooglePlacesAPIResultItem.h"
 
-#endif
+/**
+ *  This is basic request accepting dictionary of keys and values used
+ *  directly in the request URL.
+ *  You shouldn't use this request directly. It is used just as simple
+ *  helper for a few very simple tasks like creating "nextPageToken" request
+ *  and for the purpose of unit testing
+ */
+
+@interface FTGooglePlacesAPIDictionaryRequest : NSObject <FTGooglePlacesAPIRequest>
+
+/**
+ *  Creates new instance of simple Places API request.
+ *
+ *  @param dictionary Dictionary of keys and values used directly in the request URL.
+ *  @param requestType Request type string returned as "requestTypeUrlString"
+ *
+ *  @return Request instance. Returns nil if provided dictionary is nil or requestType is empty
+ */
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary requestType:(NSString *)requestType;
+
+@end

@@ -35,6 +35,8 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
+@protocol FTGooglePlacesAPIRequest;
+
 typedef NS_ENUM(NSUInteger, FTGooglePlacesAPIResponseStatus) {
     /**
      *  Unknown state will be used only in case unknown status is present
@@ -57,6 +59,11 @@ typedef NS_ENUM(NSUInteger, FTGooglePlacesAPIResponseStatus) {
 @interface FTGooglePlacesAPIResponse : NSObject
 
 /**
+ *  Request which resulted in this response
+ */
+@property (nonatomic, strong, readonly) id<FTGooglePlacesAPIRequest> request;
+
+/**
  *  Array of results items. Items are instances of class provided in init... method
  */
 @property (nonatomic, strong, readonly) NSArray *results;
@@ -68,6 +75,14 @@ typedef NS_ENUM(NSUInteger, FTGooglePlacesAPIResponseStatus) {
 @property (nonatomic, assign, readonly) FTGooglePlacesAPIResponseStatus status;
 
 /**
+ *  Token which can be used for paging results like this one.
+ *  When this token is passed in request, response will containt next results
+ *  for the same request.
+ *  If this value is nil, no next page is available (none was returned in respone)
+ */
+@property (nonatomic, strong, readonly) NSString *nextPageToken;
+
+/**
  *  Contain a set of attributions about this listing which must be displayed to the user
  *  to conform Google Terms and Conditions
  */
@@ -75,19 +90,41 @@ typedef NS_ENUM(NSUInteger, FTGooglePlacesAPIResponseStatus) {
 
 /**
  *  Calls designated initializer with nil class
- *  @see initWithDictionary:andResultsItemClass:
+ *  @see initWithDictionary:request:resultsItemClass:
  */
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+                           request:(id<FTGooglePlacesAPIRequest>)request;
 
 /**
  *  Designated initializer for a response.
  *
- *  @param dictionary       Dictionary from which the response will be parsed.
+ *  @param dictionary Dictionary from which the response will be parsed.
+ *  @param request Request which resulted to this response
  *  @param resultsItemClass Class of the result item to be used. You can either subclass of FTGooglePlacesAPIResultItem or nil. When nil is used, default FTGooglePlacesAPIResultItem will be used
  *
  *  @return Initialized instance of the response parsed from the dictionary or nil if anything failed
  */
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary andResultsItemClass:(Class)resultsItemClass;
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+                           request:(id<FTGooglePlacesAPIRequest>)request
+                  resultsItemClass:(Class)resultsItemClass;
+
+/**
+ *  Creates request which can be used for paging this response. It uses
+ *  "nextPageToken" to create request which will ask for next results of this
+ *  response.
+ *
+ *  @return Request object which can be passed directly as a request to the service
+ *      or nil if there is no "nextPageToken"
+ */
+- (id<FTGooglePlacesAPIRequest>)nextPageRequest;
+
+/**
+ *  Convenience method for checking whether there is any "nextPageToken"
+ *  allowing us to ask for next page of results for this request
+ *
+ *  @return YES if there is any next page of results
+ */
+- (BOOL)hasNextPage;
 
 + (NSString *)localizedNameOfStatus:(FTGooglePlacesAPIResponseStatus)status;
 + (NSString *)localizedDescriptionForStatus:(FTGooglePlacesAPIResponseStatus)status;
