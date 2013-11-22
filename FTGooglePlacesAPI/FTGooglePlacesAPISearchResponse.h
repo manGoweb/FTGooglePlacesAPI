@@ -37,18 +37,18 @@
 
 @protocol FTGooglePlacesAPIRequest;
 
-typedef NS_ENUM(NSUInteger, FTGooglePlacesAPIResponseStatus) {
+typedef NS_ENUM(NSUInteger, FTGooglePlacesAPISearchResponseStatus) {
     /**
      *  Unknown state will be used only in case unknown status is present
      *  in the input dictionary.
      *  This should never happen unless the API specs change
      */
-    FTGooglePlacesAPIResponseStatusUnknown = 0,
-    FTGooglePlacesAPIResponseStatusOK, // OK
-    FTGooglePlacesAPIResponseStatusNoResults, // ZERO_RESULTS
-    FTGooglePlacesAPIResponseStatusAPILimitExceeded, // OVER_QUERY_LIMIT
-    FTGooglePlacesAPIResponseStatusRequestDenied, // REQUEST_DENIED
-    FTGooglePlacesAPIResponseStatusInvalidRequest // INVALID_REQUEST
+    FTGooglePlacesAPISearchResponseStatusUnknown = 0,
+    FTGooglePlacesAPISearchResponseStatusOK, // OK
+    FTGooglePlacesAPISearchResponseStatusNoResults, // ZERO_RESULTS
+    FTGooglePlacesAPISearchResponseStatusAPILimitExceeded, // OVER_QUERY_LIMIT
+    FTGooglePlacesAPISearchResponseStatusRequestDenied, // REQUEST_DENIED
+    FTGooglePlacesAPISearchResponseStatusInvalidRequest // INVALID_REQUEST
 };
 
 /**
@@ -56,7 +56,7 @@ typedef NS_ENUM(NSUInteger, FTGooglePlacesAPIResponseStatus) {
  *  Properties correpond to the keys in a response
  *  Details: https://developers.google.com/places/documentation/search#PlaceSearchResponses
  */
-@interface FTGooglePlacesAPIResponse : NSObject
+@interface FTGooglePlacesAPISearchResponse : NSObject
 
 /**
  *  Request which resulted in this response
@@ -72,7 +72,7 @@ typedef NS_ENUM(NSUInteger, FTGooglePlacesAPIResponseStatus) {
  *  Contains response status
  *  Details: https://developers.google.com/places/documentation/search#PlaceSearchStatusCodes
  */
-@property (nonatomic, assign, readonly) FTGooglePlacesAPIResponseStatus status;
+@property (nonatomic, assign, readonly) FTGooglePlacesAPISearchResponseStatus status;
 
 /**
  *  Token which can be used for paging results like this one.
@@ -100,7 +100,7 @@ typedef NS_ENUM(NSUInteger, FTGooglePlacesAPIResponseStatus) {
  *
  *  @param dictionary Dictionary from which the response will be parsed.
  *  @param request Request which resulted to this response
- *  @param resultsItemClass Class of the result item to be used. You can either subclass of FTGooglePlacesAPIResultItem or nil. When nil is used, default FTGooglePlacesAPIResultItem will be used
+ *  @param resultsItemClass Class of the result item to be used. You can either subclass of FTGooglePlacesAPISearchResultItem or nil. When nil is used, default FTGooglePlacesAPISearchResultItem will be used
  *
  *  @return Initialized instance of the response parsed from the dictionary or nil if anything failed
  */
@@ -126,7 +126,7 @@ typedef NS_ENUM(NSUInteger, FTGooglePlacesAPIResponseStatus) {
  */
 - (BOOL)hasNextPage;
 
-+ (NSString *)localizedNameOfStatus:(FTGooglePlacesAPIResponseStatus)status;
-+ (NSString *)localizedDescriptionForStatus:(FTGooglePlacesAPIResponseStatus)status;
++ (NSString *)localizedNameOfStatus:(FTGooglePlacesAPISearchResponseStatus)status;
++ (NSString *)localizedDescriptionForStatus:(FTGooglePlacesAPISearchResponseStatus)status;
 
 @end

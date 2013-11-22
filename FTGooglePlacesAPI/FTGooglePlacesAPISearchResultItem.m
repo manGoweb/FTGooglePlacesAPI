@@ -1,5 +1,5 @@
 //
-//  FTGooglePlacesAPIResultItem.m
+//  FTGooglePlacesAPISearchResultItem.m
 //
 //  Created by Lukas Kukacka on 10/30/13.
 //
@@ -26,13 +26,13 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#import "FTGooglePlacesAPIResultItem.h"
+#import "FTGooglePlacesAPISearchResultItem.h"
 #import "FTGooglePlacesAPICommon.h"
 
 /**
  *  Private methods interface
  */
-@interface FTGooglePlacesAPIResultItem (Private)
+@interface FTGooglePlacesAPISearchResultItem (Private)
 
 - (void)ftgpi_importDictionary:(NSDictionary *)dictionary;
 
@@ -41,7 +41,7 @@
 
 #pragma mark -
 
-@implementation FTGooglePlacesAPIResultItem
+@implementation FTGooglePlacesAPISearchResultItem
 
 #pragma mark Lifecycle
 
@@ -83,7 +83,7 @@
 - (BOOL)isEqual:(id)object
 {
     if ([object class] == [self class]) {
-        return [self isEqualToResultItem:(FTGooglePlacesAPIResultItem *)object];
+        return [self isEqualToSearchResultItem:(FTGooglePlacesAPISearchResultItem *)object];
     } else {
         return [super isEqual:object];
     }
@@ -91,7 +91,7 @@
 
 #pragma mark Public interface
 
-- (BOOL)isEqualToResultItem:(FTGooglePlacesAPIResultItem *)item
+- (BOOL)isEqualToSearchResultItem:(FTGooglePlacesAPISearchResultItem *)item
 {
     return [_itemId isEqualToString:item.itemId];
 }
@@ -100,7 +100,7 @@
 
 #pragma mark - Private category
 
-@implementation FTGooglePlacesAPIResultItem (Private)
+@implementation FTGooglePlacesAPISearchResultItem (Private)
 
 //  Private methods are prefixed to avoid methods names collisions on subclassing
 
@@ -139,9 +139,9 @@
     //  Openeed state may or may not be present
     NSNumber *openedState = [dictionary ftgp_nilledValueForKeyPath:@"opening_hours.open_now"];
     if (openedState) {
-        _openedState = ([openedState boolValue] ? FTGooglePlacesAPIResultItemOpenedStateOpened : FTGooglePlacesAPIResultItemOpenedStateClosed);
+        _openedState = ([openedState boolValue] ? FTGooglePlacesAPISearchResultItemOpenedStateOpened : FTGooglePlacesAPISearchResultItemOpenedStateClosed);
     } else {
-        _openedState = FTGooglePlacesAPIResultItemOpenedStateUnknown;
+        _openedState = FTGooglePlacesAPISearchResultItemOpenedStateUnknown;
     }
     
     _iconImageUrl = [dictionary ftgp_nilledObjectForKey:@"icon"];

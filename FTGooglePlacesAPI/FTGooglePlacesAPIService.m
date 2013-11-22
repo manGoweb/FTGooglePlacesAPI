@@ -29,7 +29,7 @@
 #import "FTGooglePlacesAPIService.h"
 
 #import "AFNetworking.h"
-#import "FTGooglePlacesAPIResponse.h"
+#import "FTGooglePlacesAPISearchResponse.h"
 
 
 NSString *const FTGooglePlacesAPIBaseURL = @"https://maps.googleapis.com/maps/api/place/";
@@ -108,8 +108,8 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
     [[[self class] sharedService] setResultsItemClass:itemClass];
 }
 
-+ (void)executePlacesAPIRequest:(id<FTGooglePlacesAPIRequest>)request
-          withCompletionHandler:(FTGooglePlacesAPIRequestCompletionHandler)completion;
++ (void)executeSearchRequest:(id<FTGooglePlacesAPIRequest>)request
+       withCompletionHandler:(FTGooglePlacesAPISearchRequestCompletionHandler)completion
 {
     NSAssert(completion, @"You must provide completion block for the Google Places API request execution. Performing request without handling does not make any sense.");
     
@@ -144,16 +144,16 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
      {
          Class resultsItemClass = [[[self class] sharedService] resultsItemClass];
 
-         FTGooglePlacesAPIResponse *response = [[FTGooglePlacesAPIResponse alloc] initWithDictionary:responseObject request:request resultsItemClass:resultsItemClass];
+         FTGooglePlacesAPISearchResponse *response = [[FTGooglePlacesAPISearchResponse alloc] initWithDictionary:responseObject request:request resultsItemClass:resultsItemClass];
         
          #ifdef DEBUG
          if (FTGooglePlacesAPIDebugLoggingEnabled) {
-             NSLog(@"%@ received response. Status: %@, number of results: %d", [self class], [FTGooglePlacesAPIResponse localizedNameOfStatus:response.status], [response.results count]);
+             NSLog(@"%@ received response. Status: %@, number of results: %d", [self class], [FTGooglePlacesAPISearchResponse localizedNameOfStatus:response.status], [response.results count]);
          }
          #endif
          
          // Check if everything went OK
-         if (response && response.status == FTGooglePlacesAPIResponseStatusOK) {
+         if (response && response.status == FTGooglePlacesAPISearchResponseStatusOK) {
              completion(response, nil);
          }
          // If network request was successfull, but Google Places API
@@ -162,7 +162,7 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
          {
              NSDictionary *userInfo = @{
                 NSLocalizedFailureReasonErrorKey: NSLocalizedString(@"Google Places API request failed", nil),
-                NSLocalizedDescriptionKey: [FTGooglePlacesAPIResponse localizedDescriptionForStatus:response.status]
+                NSLocalizedDescriptionKey: [FTGooglePlacesAPISearchResponse localizedDescriptionForStatus:response.status]
                 };
              
              NSError *error = [NSError errorWithDomain:FTGooglePlacesAPIErrorDomain code:response.status userInfo:userInfo];

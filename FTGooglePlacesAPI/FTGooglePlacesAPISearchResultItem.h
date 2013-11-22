@@ -1,5 +1,5 @@
 //
-//  FTGooglePlacesAPIResultItem.h
+//  FTGooglePlacesAPISearchResultItem.h
 //
 //  Created by Lukas Kukacka on 10/30/13.
 //
@@ -32,13 +32,13 @@
 /**
  *  Class encapsulating concrete record of Google Places API Response (item in the "results" array)
  */
-typedef NS_ENUM(NSUInteger, FTGooglePlacesAPIResultItemOpenedState) {
-    FTGooglePlacesAPIResultItemOpenedStateUnknown,  //  Values was not in the response
-    FTGooglePlacesAPIResultItemOpenedStateOpened,   //  Item is opened
-    FTGooglePlacesAPIResultItemOpenedStateClosed    //  Item is closed
+typedef NS_ENUM(NSUInteger, FTGooglePlacesAPISearchResultItemOpenedState) {
+    FTGooglePlacesAPISearchResultItemOpenedStateUnknown,  //  Values was not in the response
+    FTGooglePlacesAPISearchResultItemOpenedStateOpened,   //  Item is opened
+    FTGooglePlacesAPISearchResultItemOpenedStateClosed    //  Item is closed
 };
 
-@interface FTGooglePlacesAPIResultItem : NSObject
+@interface FTGooglePlacesAPISearchResultItem : NSObject
 
 @property (nonatomic, strong, readonly) NSString *itemId;   // Google's id for the item
 @property (nonatomic, strong, readonly) NSString *name;
@@ -50,7 +50,7 @@ typedef NS_ENUM(NSUInteger, FTGooglePlacesAPIResultItemOpenedState) {
 @property (nonatomic, strong, readonly) CLLocation *location;
 
 @property (nonatomic, strong, readonly) NSString *addressString;    // "vicinity" from the response
-@property (nonatomic, assign, readonly) FTGooglePlacesAPIResultItemOpenedState openedState;
+@property (nonatomic, assign, readonly) FTGooglePlacesAPISearchResultItemOpenedState openedState;
 @property (nonatomic, strong, readonly) NSString *iconImageUrl;
 @property (nonatomic, assign, readonly) CGFloat rating;
 @property (nonatomic, strong, readonly) NSString *reference;
@@ -82,6 +82,6 @@ typedef NS_ENUM(NSUInteger, FTGooglePlacesAPIResultItemOpenedState) {
  *
  *  @return YES if both objects are considered to be equal
  */
-- (BOOL)isEqualToResultItem:(FTGooglePlacesAPIResultItem *)item;
+- (BOOL)isEqualToSearchResultItem:(FTGooglePlacesAPISearchResultItem *)item;
 
 @end

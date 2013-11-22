@@ -16,7 +16,7 @@
 @property (nonatomic, readonly) id<FTGooglePlacesAPIRequest> initialRequest;
 @property (nonatomic, readonly) id<FTGooglePlacesAPIRequest> actualRequest;
 @property (nonatomic, strong) CLLocation *searchLocation;
-@property (nonatomic, strong) FTGooglePlacesAPIResponse *lastResponse;
+@property (nonatomic, strong) FTGooglePlacesAPISearchResponse *lastResponse;
 
 @property (nonatomic, strong) UIActivityIndicatorView *activityIndicatorView;
 
@@ -111,7 +111,7 @@
         }
         
         //  Get response object
-        FTGooglePlacesAPIResultItem *resultItem = _results[indexPath.row];
+        FTGooglePlacesAPISearchResultItem *resultItem = _results[indexPath.row];
         
         
         //  Configure cell
@@ -146,7 +146,7 @@
     else
     {
         //  Get response object
-        FTGooglePlacesAPIResultItem *resultItem = _results[indexPath.row];
+        FTGooglePlacesAPISearchResultItem *resultItem = _results[indexPath.row];
         
         //  And just print it to the console
         NSLog(@"Selected item: %@", resultItem);
@@ -194,8 +194,8 @@
     
     
     //  Execute Google Places API request using FTGooglePlacesAPIService
-    [FTGooglePlacesAPIService executePlacesAPIRequest:_actualRequest
-                                withCompletionHandler:^(FTGooglePlacesAPIResponse *response, NSError *error)
+    [FTGooglePlacesAPIService executeSearchRequest:_actualRequest
+                                withCompletionHandler:^(FTGooglePlacesAPISearchResponse *response, NSError *error)
     {
         //  If error is not nil, request failed and you should handle the error
         //  We just show alert
@@ -205,7 +205,7 @@
             //  If the network communication with Google Places API was successfull,
             //  but the API returned some status code, NSError will have
             //  FTGooglePlacesAPIErrorDomain domain and status code from
-            //  FTGooglePlacesAPIResponseStatus enum
+            //  FTGooglePlacesAPISearchResponseStatus enum
             //  You can inspect error's domain and status code for more detailed info
             
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[error localizedDescription] message:[error localizedFailureReason] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];

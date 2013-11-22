@@ -30,11 +30,11 @@
 
 #import "FTGooglePlacesAPICommon.h"
 
-@class FTGooglePlacesAPIResponse;
+@class FTGooglePlacesAPISearchResponse;
 
 extern NSString *const FTGooglePlacesAPIBaseURL;
 
-typedef void (^FTGooglePlacesAPIRequestCompletionHandler)(FTGooglePlacesAPIResponse *response, NSError *error);
+typedef void (^FTGooglePlacesAPISearchRequestCompletionHandler)(FTGooglePlacesAPISearchResponse *response, NSError *error);
 
 /**
  *  This class provides encapsulated functionality for communication with Google Places API
@@ -66,13 +66,13 @@ typedef void (^FTGooglePlacesAPIRequestCompletionHandler)(FTGooglePlacesAPIRespo
 + (void)registerResultItemClass:(Class)itemClass;
 
 /**
- *  Asks the service to execute the given request.
+ *  Asks the service to execute the given Google Places API Places Search request.
  *
  *  @param request Request object implementing FTGooglePlacesAPIRequest protocol. This will probably be either FTGooglePlacesAPINearbySearchRequest or FTGooglePlacesAPITextSearchRequest, but are free to provide own request implementing requred FTGooglePlacesAPIRequest protocol
  *  @param completionBlock Completion block to be called after the request was finished. If everything went without problems, response will be non-nill and error will be nil. In case of failure, response will be nil and error will be either AFNetworking error caused by networking problem or error with FTGooglePlacesAPIErrorDomain domain indicating that the networking request was successfull, but Google Places API responded with non-OK status code
  */
-+ (void)executePlacesAPIRequest:(id<FTGooglePlacesAPIRequest>)request
-          withCompletionHandler:(FTGooglePlacesAPIRequestCompletionHandler)completion;
++ (void)executeSearchRequest:(id<FTGooglePlacesAPIRequest>)request
+       withCompletionHandler:(FTGooglePlacesAPISearchRequestCompletionHandler)completion;
 
 /**
  *  If set to YES and running in debug mode (#ifdef DEBUG), service will print some information

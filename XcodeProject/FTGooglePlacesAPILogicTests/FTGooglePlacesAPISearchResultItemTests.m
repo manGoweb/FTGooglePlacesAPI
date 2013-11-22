@@ -8,15 +8,15 @@
 
 #import <XCTest/XCTest.h>
 
-#import "FTGooglePlacesAPIResultItem.h"
+#import "FTGooglePlacesAPISearchResultItem.h"
 
 
-@interface FTGooglePlacesAPIResultItemTests : XCTestCase
+@interface FTGooglePlacesAPISearchResultItemTests : XCTestCase
 
 @end
 
 
-@implementation FTGooglePlacesAPIResultItemTests
+@implementation FTGooglePlacesAPISearchResultItemTests
 
 - (void)testParsingFromManualDictionary
 {
@@ -49,7 +49,7 @@
     };
     
 
-    FTGooglePlacesAPIResultItem *item = [[FTGooglePlacesAPIResultItem alloc] initWithDictionary:dictionary];
+    FTGooglePlacesAPISearchResultItem *item = [[FTGooglePlacesAPISearchResultItem alloc] initWithDictionary:dictionary];
     XCTAssertNotNil(item, @"Initialiazation should succeed");
     
     XCTAssertEqualObjects(item.itemId, @"5139d09fbccf4c974fce66f7d88269c149bac0a5", @"itemId is wrong");
@@ -61,7 +61,7 @@
     
     XCTAssertEqualObjects(item.addressString, @"1st Floor, Riverside Building, County Hall, London");
     
-    XCTAssertEqual(item.openedState, FTGooglePlacesAPIResultItemOpenedStateOpened, @"openedState is wrong");
+    XCTAssertEqual(item.openedState, FTGooglePlacesAPISearchResultItemOpenedStateOpened, @"openedState is wrong");
     XCTAssertEqualObjects(item.iconImageUrl, @"http://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png", @"iconImageUrl is wrong");
     XCTAssertEqual(item.rating, 3.6f, @"rating is wrong");
     XCTAssertEqualObjects(item.reference, @"CoQBgAAAAFjx_1xLA2D3kuZ83rCChllMEaGrxSeoPh6", @"reference is wrong");
@@ -74,13 +74,13 @@
 
 - (void)testVeryBasicObjectWithJustId
 {
-    FTGooglePlacesAPIResultItem *item = [[FTGooglePlacesAPIResultItem alloc] initWithDictionary:@{@"id": @"someValue"}];
+    FTGooglePlacesAPISearchResultItem *item = [[FTGooglePlacesAPISearchResultItem alloc] initWithDictionary:@{@"id": @"someValue"}];
     XCTAssertNotNil(item, @"item should be valid once it has id");
     
-    item = [[FTGooglePlacesAPIResultItem alloc] initWithDictionary:@{}];
+    item = [[FTGooglePlacesAPISearchResultItem alloc] initWithDictionary:@{}];
     XCTAssertNil(item, @"item should be nil when no id is provided");
     
-    item = [[FTGooglePlacesAPIResultItem alloc] initWithDictionary:@{@"id": @""}];
+    item = [[FTGooglePlacesAPISearchResultItem alloc] initWithDictionary:@{@"id": @""}];
     XCTAssertNil(item, @"item should be nil when id has 0 length");
 }
 
@@ -89,8 +89,8 @@
     NSDictionary *dictionary1a = @{@"id": @"5139d09fbccf4c974fce66f7d88269c149bac0a5"};
     NSDictionary *dictionary1b = @{@"id": @"5139d09fbccf4c974fce66f7d88269c149bac0a5"};
     
-    FTGooglePlacesAPIResultItem *item1a = [[FTGooglePlacesAPIResultItem alloc] initWithDictionary:dictionary1a];
-    FTGooglePlacesAPIResultItem *item1b = [[FTGooglePlacesAPIResultItem alloc] initWithDictionary:dictionary1b];
+    FTGooglePlacesAPISearchResultItem *item1a = [[FTGooglePlacesAPISearchResultItem alloc] initWithDictionary:dictionary1a];
+    FTGooglePlacesAPISearchResultItem *item1b = [[FTGooglePlacesAPISearchResultItem alloc] initWithDictionary:dictionary1b];
     
     XCTAssertEqualObjects(item1a, item1b, @"object are not considered to be equal, but should be");
     
@@ -98,8 +98,8 @@
     NSDictionary *dictionary2a = @{@"id": @"5139d09fbccf4c974fce66f7d88269c149bac0a5"};
     NSDictionary *dictionary2b = @{@"id": @"XAXAGFKANGOKANOAOGNAOGOIANGOI AOAANGO"};
     
-    FTGooglePlacesAPIResultItem *item2a = [[FTGooglePlacesAPIResultItem alloc] initWithDictionary:dictionary2a];
-    FTGooglePlacesAPIResultItem *item2b = [[FTGooglePlacesAPIResultItem alloc] initWithDictionary:dictionary2b];
+    FTGooglePlacesAPISearchResultItem *item2a = [[FTGooglePlacesAPISearchResultItem alloc] initWithDictionary:dictionary2a];
+    FTGooglePlacesAPISearchResultItem *item2b = [[FTGooglePlacesAPISearchResultItem alloc] initWithDictionary:dictionary2b];
     
     XCTAssertNotEqualObjects(item2a, item2b, @"object with differents ids should not be considered to be equal");
 }
@@ -108,12 +108,12 @@
 {
     NSDictionary *dictionary = @{@"id": @"5139d09fbccf4c974fce66f7d88269c149bac0a5"};
     
-    FTGooglePlacesAPIResultItem *item = [[FTGooglePlacesAPIResultItem alloc] initWithDictionary:dictionary];
+    FTGooglePlacesAPISearchResultItem *item = [[FTGooglePlacesAPISearchResultItem alloc] initWithDictionary:dictionary];
     
     XCTAssertNil(item.name, @"name should be nil");
     XCTAssertNil(item.location, @"location should be nil");
     XCTAssertNil(item.addressString, @"addressString should be nil");
-    XCTAssertEqual(item.openedState, FTGooglePlacesAPIResultItemOpenedStateUnknown, @"openedState should be Unknown");
+    XCTAssertEqual(item.openedState, FTGooglePlacesAPISearchResultItemOpenedStateUnknown, @"openedState should be Unknown");
     XCTAssertNil(item.iconImageUrl, @"iconImageUrl should be nil");
     XCTAssertEqual(item.rating, 0.0f, @"rating should be 0.0f");
     XCTAssertNil(item.reference, @"reference should be nil");
