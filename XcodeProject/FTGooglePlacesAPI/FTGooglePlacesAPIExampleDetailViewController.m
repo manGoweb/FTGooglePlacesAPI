@@ -113,15 +113,15 @@
         //  You can do whatever you need here, we just construct "table representation"
         //  of response to the dictionary and reload table
         _responseTableRepresentation = @{
-            @"Name": response.name,
+             @"Name": (response.name?:@"N/A"),
             @"Location": [NSString stringWithFormat:@"(%.6f,%.6f)", response.location.coordinate.latitude, response.location.coordinate.longitude],
-            @"Address": response.addressString,
-            @"Form. address": response.formattedAddress,
-            @"Form. phone": response.formattedPhoneNumber,
-            @"Int. phone": response.internationalPhoneNumber,
+            @"Address": (response.addressString?:@"N/A"),
+            @"Form. address": (response.formattedAddress?:@"N/A"),
+            @"Form. phone": (response.formattedPhoneNumber?:@"N/A"),
+            @"Int. phone": (response.internationalPhoneNumber?:@"N/A"),
             @"Rating": [NSString stringWithFormat:@"%.1f", response.rating],
             @"Types": [response.types componentsJoinedByString:@","],
-            @"Website:": response.websiteUrl,
+            @"Website:": (response.websiteUrl?:@"N/A"),
         };
 
         [self.tableView reloadData];

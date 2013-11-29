@@ -112,6 +112,7 @@
         if (!cell) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
             cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
         
         //  Get response object
