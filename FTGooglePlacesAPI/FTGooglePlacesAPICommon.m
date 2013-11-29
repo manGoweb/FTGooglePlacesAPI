@@ -30,6 +30,31 @@
 
 NSString * const FTGooglePlacesAPIErrorDomain = @"FTGooglePlacesAPIErrorDomain";
 
+@implementation FTGooglePlacesAPIUtils
+
++ (NSString *)deviceLanguage
+{
+    //  Try to determine default language as a currently active language
+    //  from the NSUserDefaults
+    //  See https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/Articles/ChoosingLocalizations.html
+    //  Current language is cached so we have to always check agains NSUserDefaults
+    //  Language should never change while the app is running, so it should be ok
+    static NSString *CurrentAppLanguage = nil;
+    static BOOL AlreadyTriedToFindLanguage;
+    
+    if (!AlreadyTriedToFindLanguage && !CurrentAppLanguage) {
+        NSArray* languages = [[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguages"];
+        if ([languages count] > 0) {
+            CurrentAppLanguage = languages[0];
+        }
+        AlreadyTriedToFindLanguage = YES;
+    }
+    
+    return CurrentAppLanguage;
+}
+
+@end
+
 @implementation NSDictionary (FTGPAdditions)
 
 - (id)ftgp_nilledObjectForKey:(NSString *)key

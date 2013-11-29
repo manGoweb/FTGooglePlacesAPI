@@ -71,7 +71,7 @@
     XCTAssertEqualObjects(response.htmlAttributions, expectedHtmlAttributions, @"wrong htmlAttributions");
     XCTAssertNil(response.request, @"request should be nil");
     
-    XCTAssertEqual(response.status, FTGooglePlacesAPISearchResponseStatusOK, @"status is wrong");
+    XCTAssertEqual(response.status, FTGooglePlacesAPIResponseStatusOK, @"status is wrong");
     
     XCTAssertNil(response.results, @"results should be nil");
 }
@@ -92,22 +92,22 @@
     FTGooglePlacesAPISearchResponse *response;
     
     response = [[FTGooglePlacesAPISearchResponse alloc] initWithDictionary:@{@"status": @"jasngbgbubguobgO"} request:nil];
-    XCTAssertEqual(response.status, FTGooglePlacesAPISearchResponseStatusUnknown, @"status should be FTGooglePlacesAPISearchResponseStatusUnknown");
+    XCTAssertEqual(response.status, FTGooglePlacesAPIResponseStatusUnknown, @"status should be FTGooglePlacesAPIResponseStatusUnknown");
     
     response = [[FTGooglePlacesAPISearchResponse alloc] initWithDictionary:@{@"status": @"OK"} request:nil];
-    XCTAssertEqual(response.status, FTGooglePlacesAPISearchResponseStatusOK, @"status should be FTGooglePlacesAPISearchResponseStatusOK");
+    XCTAssertEqual(response.status, FTGooglePlacesAPIResponseStatusOK, @"status should be FTGooglePlacesAPIResponseStatusOK");
     
     response = [[FTGooglePlacesAPISearchResponse alloc] initWithDictionary:@{@"status": @"ZERO_RESULTS"} request:nil];
-    XCTAssertEqual(response.status, FTGooglePlacesAPISearchResponseStatusNoResults, @"status should be FTGooglePlacesAPISearchResponseStatusNoResults");
+    XCTAssertEqual(response.status, FTGooglePlacesAPIResponseStatusNoResults, @"status should be FTGooglePlacesAPIResponseStatusNoResults");
     
     response = [[FTGooglePlacesAPISearchResponse alloc] initWithDictionary:@{@"status": @"OVER_QUERY_LIMIT"} request:nil];
-    XCTAssertEqual(response.status, FTGooglePlacesAPISearchResponseStatusAPILimitExceeded, @"status should be FTGooglePlacesAPISearchResponseStatusAPILimitExceeded");
+    XCTAssertEqual(response.status, FTGooglePlacesAPIResponseStatusAPILimitExceeded, @"status should be FTGooglePlacesAPIResponseStatusAPILimitExceeded");
     
     response = [[FTGooglePlacesAPISearchResponse alloc] initWithDictionary:@{@"status": @"REQUEST_DENIED"} request:nil];
-    XCTAssertEqual(response.status, FTGooglePlacesAPISearchResponseStatusRequestDenied, @"status should be FTGooglePlacesAPISearchResponseStatusRequestDenied");
+    XCTAssertEqual(response.status, FTGooglePlacesAPIResponseStatusRequestDenied, @"status should be FTGooglePlacesAPIResponseStatusRequestDenied");
     
     response = [[FTGooglePlacesAPISearchResponse alloc] initWithDictionary:@{@"status": @"INVALID_REQUEST"} request:nil];
-    XCTAssertEqual(response.status, FTGooglePlacesAPISearchResponseStatusInvalidRequest, @"status should be FTGooglePlacesAPISearchResponseStatusInvalidRequest");
+    XCTAssertEqual(response.status, FTGooglePlacesAPIResponseStatusInvalidRequest, @"status should be FTGooglePlacesAPIResponseStatusInvalidRequest");
 }
 
 - (void)testRequestAndNextPageRequestMethod
@@ -140,7 +140,7 @@
     FTGooglePlacesAPISearchResponse *response = [[FTGooglePlacesAPISearchResponse alloc] initWithDictionary:dictionary request:request];
     
     XCTAssertNotNil(response, @"response should not be nil");
-    XCTAssertEqual(response.status, FTGooglePlacesAPISearchResponseStatusOK, @"status should be FTGooglePlacesAPISearchResponseStatusOK");
+    XCTAssertEqual(response.status, FTGooglePlacesAPIResponseStatusOK, @"status should be FTGooglePlacesAPIResponseStatusOK");
     XCTAssertEqualObjects(response.nextPageToken, @"CmRbAAAAPRe43WuMoqKDiLcauzH5NR5Agm6U5pqiP5gPALHlvKSe89bdGpjNj7VCnHXn0-7gr1b2CeuZyJW0PvUultBCu8IAFOWINBvhQ2u_b1URH6Fs_MI_P6jN551VrBxSYjEKEhBf08hzwZ3fXu4zMRhhIpMfGhR75rfrvBBpTtlS9AwJ2JpIeCrMBA", @"nextPageToken is wrong");
     XCTAssertNotNil([response nextPageRequest], @"nextPageRequest should not be nil");
     
@@ -158,7 +158,7 @@
     XCTAssertNil(response.results, @"results should be nil");
     XCTAssertNil(response.nextPageToken, @"nextPageToken should be nil");
     XCTAssertNil([response nextPageRequest], @"nextPageRequest should be nil");
-    XCTAssertEqual(response.status, FTGooglePlacesAPISearchResponseStatusNoResults, @"status should be FTGooglePlacesAPISearchResponseStatusNoResults");
+    XCTAssertEqual(response.status, FTGooglePlacesAPIResponseStatusNoResults, @"status should be FTGooglePlacesAPIResponseStatusNoResults");
 }
 
 - (void)testParsingRealResponseInvalidRequest
@@ -171,7 +171,7 @@
     XCTAssertNil(response.results, @"results should be nil");
     XCTAssertNil(response.nextPageToken, @"nextPageToken should be nil");
     XCTAssertNil([response nextPageRequest], @"nextPageRequest should be nil");
-    XCTAssertEqual(response.status, FTGooglePlacesAPISearchResponseStatusInvalidRequest, @"status should be FTGooglePlacesAPISearchResponseStatusInvalidRequest");
+    XCTAssertEqual(response.status, FTGooglePlacesAPIResponseStatusInvalidRequest, @"status should be FTGooglePlacesAPIResponseStatusInvalidRequest");
 }
 
 - (void)testParsingRealResponseRequestDenied
@@ -184,7 +184,7 @@
     XCTAssertNil(response.results, @"results should be nil");
     XCTAssertNil(response.nextPageToken, @"nextPageToken should be nil");
     XCTAssertNil([response nextPageRequest], @"nextPageRequest should be nil");
-    XCTAssertEqual(response.status, FTGooglePlacesAPISearchResponseStatusRequestDenied, @"status should be FTGooglePlacesAPISearchResponseStatusRequestDenied");
+    XCTAssertEqual(response.status, FTGooglePlacesAPIResponseStatusRequestDenied, @"status should be FTGooglePlacesAPIResponseStatusRequestDenied");
 }
 
 @end

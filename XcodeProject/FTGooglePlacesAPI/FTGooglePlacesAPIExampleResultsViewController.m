@@ -11,10 +11,13 @@
 #import "FTGooglePlacesAPI.h"
 #import "UIImageView+AFNetworking.h"
 
+#import "FTGooglePlacesAPIExampleDetailViewController.h"
+
+
 @interface FTGooglePlacesAPIExampleResultsViewController ()
 
-@property (nonatomic, readonly) id<FTGooglePlacesAPIRequest> initialRequest;
-@property (nonatomic, readonly) id<FTGooglePlacesAPIRequest> actualRequest;
+@property (nonatomic, strong) id<FTGooglePlacesAPIRequest> initialRequest;
+@property (nonatomic, strong) id<FTGooglePlacesAPIRequest> actualRequest;
 @property (nonatomic, strong) CLLocation *searchLocation;
 @property (nonatomic, strong) FTGooglePlacesAPISearchResponse *lastResponse;
 
@@ -108,6 +111,7 @@
     {
         if (!cell) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+            cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
         }
         
         //  Get response object
@@ -148,7 +152,15 @@
         //  Get response object
         FTGooglePlacesAPISearchResultItem *resultItem = _results[indexPath.row];
         
-        //  And just print it to the console
+        //  Create detail request
+        FTGooglePlacesAPIDetailRequest *request = [[FTGooglePlacesAPIDetailRequest alloc] initWithReference:resultItem.reference];
+        
+        //  Create detail controller
+        FTGooglePlacesAPIExampleDetailViewController *detailController = [[FTGooglePlacesAPIExampleDetailViewController alloc] initWithRequest:request];
+        
+        [self.navigationController pushViewController:detailController animated:YES];
+        
+        //  And print it to the console
         NSLog(@"Selected item: %@", resultItem);
     }
 }
@@ -177,7 +189,8 @@
         CGRect rect = CGRectMake(0, 0, 40.0f, 40.0f);
         
         UIGraphicsBeginImageContext(rect.size);
-        [[UIColor redColor] setFill];
+        [[UIColor whiteColor] setFill];
+        [[UIBezierPath bezierPathWithRect:rect] fill];
         PlaceholderImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
     }
@@ -205,7 +218,7 @@
             //  If the network communication with Google Places API was successfull,
             //  but the API returned some status code, NSError will have
             //  FTGooglePlacesAPIErrorDomain domain and status code from
-            //  FTGooglePlacesAPISearchResponseStatus enum
+            //  FTGooglePlacesAPIResponseStatus enum
             //  You can inspect error's domain and status code for more detailed info
             
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[error localizedDescription] message:[error localizedFailureReason] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];

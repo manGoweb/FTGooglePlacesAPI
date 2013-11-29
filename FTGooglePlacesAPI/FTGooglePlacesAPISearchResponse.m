@@ -38,7 +38,6 @@
 
 - (void)ftgpr_importDictionary:(NSDictionary *)dictionary;
 - (NSArray *)ftgpr_parseResultsItemFromArray:(NSArray *)array;
-- (FTGooglePlacesAPISearchResponseStatus)ftgpr_responseStatusFromString:(NSString *)string;
 
 @end
 
@@ -63,27 +62,14 @@
     //  Either there is no custom class or it has to be subclass of FTGooglePlacesAPIResponse so
     //  the code can rely there will be required properties
     NSAssert(!resultsItemClass || [resultsItemClass isSubclassOfClass:[FTGooglePlacesAPISearchResponse class]], @"Custom response item class in FTGooglePlacesAPISearchResponse has to be a subclass of FTGooglePlacesAPIResponse");
-    
-    if ([dictionary count] == 0) {
-        return nil;
-    }
-    
-    self = [super init];
+
+    self = [super initWithDictionary:dictionary request:request];
     if (self)
     {
-        _request = request;
-        _status = FTGooglePlacesAPISearchResponseStatusUnknown;
         _resultsItemClass = resultsItemClass;
         [self ftgpr_importDictionary:dictionary];
     }
     return self;
-}
-
-#pragma mark Superclass overrides
-
-- (NSString *)description
-{
-    return [NSString stringWithFormat:@"<%@: %p> %@", [self class], self, _results];
 }
 
 #pragma mark - Public interface
@@ -96,7 +82,7 @@
     
     NSDictionary *dictionary = @{@"pagetoken": _nextPageToken};
     
-    FTGooglePlacesAPIDictionaryRequest *request = [[FTGooglePlacesAPIDictionaryRequest alloc] initWithDictionary:dictionary requestType:[_request requestTypeUrlString]];
+    FTGooglePlacesAPIDictionaryRequest *request = [[FTGooglePlacesAPIDictionaryRequest alloc] initWithDictionary:dictionary requestType:[self.request requestTypeUrlString]];
     
     return request;
 }
@@ -104,66 +90,6 @@
 - (BOOL)hasNextPage
 {
     return ([_nextPageToken length] > 0);
-}
-
-#pragma mark Class methods
-
-+ (NSString *)localizedNameOfStatus:(FTGooglePlacesAPISearchResponseStatus)status
-{
-    NSString *name;
-    
-    switch (status)
-    {
-        case FTGooglePlacesAPISearchResponseStatusOK:
-            name = NSLocalizedString(@"OK", @"FTGooglePlacesAPISearchResponse name of status FTGooglePlacesAPISearchResponseStatusOK");
-            break;
-        case FTGooglePlacesAPISearchResponseStatusNoResults:
-            name = NSLocalizedString(@"No Results", @"FTGooglePlacesAPISearchResponse name of status FTGooglePlacesAPISearchResponseStatusNoResults");
-            break;
-        case FTGooglePlacesAPISearchResponseStatusAPILimitExceeded:
-            name = NSLocalizedString(@"API Limit Exceeded", @"FTGooglePlacesAPISearchResponse name of status FTGooglePlacesAPISearchResponseStatusAPILimitExceeded");
-            break;
-        case FTGooglePlacesAPISearchResponseStatusRequestDenied:
-            name = NSLocalizedString(@"Request Denied", @"FTGooglePlacesAPISearchResponse name of status FTGooglePlacesAPISearchResponseStatusRequestDenied");
-            break;
-        case FTGooglePlacesAPISearchResponseStatusInvalidRequest:
-            name = NSLocalizedString(@"Invalid Request", @"FTGooglePlacesAPISearchResponse name of status FTGooglePlacesAPISearchResponseStatusInvalidRequest");
-            break;
-        case FTGooglePlacesAPISearchResponseStatusUnknown:
-            name = NSLocalizedString(@"Unknown", @"FTGooglePlacesAPISearchResponse name of status FTGooglePlacesAPISearchResponseStatusUnknown");
-            break;
-    }
-    
-    return name;
-}
-
-+ (NSString *)localizedDescriptionForStatus:(FTGooglePlacesAPISearchResponseStatus)status
-{
-    NSString *description;
-    
-    switch (status)
-    {
-        case FTGooglePlacesAPISearchResponseStatusOK:
-            description = NSLocalizedString(@"Everything went fine. At least one result was found.", nil);
-            break;
-        case FTGooglePlacesAPISearchResponseStatusNoResults:
-            description = NSLocalizedString(@"No results were found.", nil);
-            break;
-        case FTGooglePlacesAPISearchResponseStatusAPILimitExceeded:
-            description = NSLocalizedString(@"Google Places API requests quota was exceeded.", nil);
-            break;
-        case FTGooglePlacesAPISearchResponseStatusRequestDenied:
-            description = NSLocalizedString(@"Request was denied by Google Places API.", nil);
-            break;
-        case FTGooglePlacesAPISearchResponseStatusInvalidRequest:
-            description = NSLocalizedString(@"Request was invalid. Either \"location\" or \"radius\" parameter is probably missing.", nil);
-            break;
-        case FTGooglePlacesAPISearchResponseStatusUnknown:
-            description = NSLocalizedString(@"Google Places API returned unknown status code.", nil);
-            break;
-    }
-    
-    return description;
 }
 
 @end
@@ -176,9 +102,6 @@
 {
     _htmlAttributions = [dictionary ftgp_nilledObjectForKey:@"html_attributions"];
     _nextPageToken = [dictionary ftgp_nilledObjectForKey:@"next_page_token"];
-    
-    NSString *statusString = [dictionary ftgp_nilledObjectForKey:@"status"];
-    _status = [self ftgpr_responseStatusFromString:statusString];
     
     NSArray *results = [dictionary ftgp_nilledObjectForKey:@"results"];
     _results = [self ftgpr_parseResultsItemFromArray:results];
@@ -203,30 +126,6 @@
     }
     
     return [results copy];
-}
-
-- (FTGooglePlacesAPISearchResponseStatus)ftgpr_responseStatusFromString:(NSString *)string
-{
-    if ([string length] == 0) {
-        return FTGooglePlacesAPISearchResponseStatusUnknown;
-    }
-    
-    if ([string isEqualToString:@"OK"]) {
-        return FTGooglePlacesAPISearchResponseStatusOK;
-    } else if ([string isEqualToString:@"ZERO_RESULTS"]) {
-        return FTGooglePlacesAPISearchResponseStatusNoResults;
-    }
-    else if ([string isEqualToString:@"OVER_QUERY_LIMIT"]) {
-        return FTGooglePlacesAPISearchResponseStatusAPILimitExceeded;
-    }
-    else if ([string isEqualToString:@"REQUEST_DENIED"]) {
-        return FTGooglePlacesAPISearchResponseStatusRequestDenied;
-    }
-    else if ([string isEqualToString:@"INVALID_REQUEST"]) {
-        return FTGooglePlacesAPISearchResponseStatusInvalidRequest;
-    } else {
-        return FTGooglePlacesAPISearchResponseStatusUnknown;
-    }
 }
 
 @end

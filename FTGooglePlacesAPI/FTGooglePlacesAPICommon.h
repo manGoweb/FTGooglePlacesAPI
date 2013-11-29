@@ -55,6 +55,19 @@ extern NSString * const FTGooglePlacesAPIErrorDomain;
 
 @end
 
+//  Utilities
+
+@interface FTGooglePlacesAPIUtils : NSObject
+
+/**
+ *  Returns device language (localization) read from NSUserDefaults
+ *
+ *  @return Device language or nil if cannot be determined
+ */
++ (NSString *)deviceLanguage;
+
+@end
+
 
 //  Helper categories
 

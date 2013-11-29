@@ -32,36 +32,23 @@
 //  Since this library aims to provide almost complete access to the places,
 //  Google's docs descriptions are most relevant.
 
-#import <Foundation/Foundation.h>
+//#import <Foundation/Foundation.h>
+#import "FTGooglePlacesAPIResponse.h"
 #import <CoreLocation/CoreLocation.h>
 
 @protocol FTGooglePlacesAPIRequest;
-
-typedef NS_ENUM(NSUInteger, FTGooglePlacesAPISearchResponseStatus) {
-    /**
-     *  Unknown state will be used only in case unknown status is present
-     *  in the input dictionary.
-     *  This should never happen unless the API specs change
-     */
-    FTGooglePlacesAPISearchResponseStatusUnknown = 0,
-    FTGooglePlacesAPISearchResponseStatusOK, // OK
-    FTGooglePlacesAPISearchResponseStatusNoResults, // ZERO_RESULTS
-    FTGooglePlacesAPISearchResponseStatusAPILimitExceeded, // OVER_QUERY_LIMIT
-    FTGooglePlacesAPISearchResponseStatusRequestDenied, // REQUEST_DENIED
-    FTGooglePlacesAPISearchResponseStatusInvalidRequest // INVALID_REQUEST
-};
 
 /**
  *  Object encapsulationg response from the Google Places API request
  *  Properties correpond to the keys in a response
  *  Details: https://developers.google.com/places/documentation/search#PlaceSearchResponses
  */
-@interface FTGooglePlacesAPISearchResponse : NSObject
+@interface FTGooglePlacesAPISearchResponse : FTGooglePlacesAPIResponse
 
 /**
  *  Request which resulted in this response
  */
-@property (nonatomic, strong, readonly) id<FTGooglePlacesAPIRequest> request;
+//@property (nonatomic, strong, readonly) id<FTGooglePlacesAPIRequest> request;
 
 /**
  *  Array of results items. Items are instances of class provided in init... method
@@ -72,7 +59,7 @@ typedef NS_ENUM(NSUInteger, FTGooglePlacesAPISearchResponseStatus) {
  *  Contains response status
  *  Details: https://developers.google.com/places/documentation/search#PlaceSearchStatusCodes
  */
-@property (nonatomic, assign, readonly) FTGooglePlacesAPISearchResponseStatus status;
+//@property (nonatomic, assign, readonly) FTGooglePlacesAPIResponseStatus status;
 
 /**
  *  Token which can be used for paging results like this one.
@@ -92,8 +79,8 @@ typedef NS_ENUM(NSUInteger, FTGooglePlacesAPISearchResponseStatus) {
  *  Calls designated initializer with nil class
  *  @see initWithDictionary:request:resultsItemClass:
  */
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary
-                           request:(id<FTGooglePlacesAPIRequest>)request;
+//- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+//                           request:(id<FTGooglePlacesAPIRequest>)request;
 
 /**
  *  Designated initializer for a response.
@@ -125,8 +112,5 @@ typedef NS_ENUM(NSUInteger, FTGooglePlacesAPISearchResponseStatus) {
  *  @return YES if there is any next page of results
  */
 - (BOOL)hasNextPage;
-
-+ (NSString *)localizedNameOfStatus:(FTGooglePlacesAPISearchResponseStatus)status;
-+ (NSString *)localizedDescriptionForStatus:(FTGooglePlacesAPISearchResponseStatus)status;
 
 @end

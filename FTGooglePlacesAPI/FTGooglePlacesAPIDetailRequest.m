@@ -1,7 +1,8 @@
 //
-//  FTGooglePlacesAPI.h
+//  FTGooglePlacesAPIDetailRequest.m
+//  FTGooglePlacesAPI
 //
-//  Created by Lukas Kukacka on 10/29/13.
+//  Created by Lukas Kukacka on 29/11/13.
 //
 //
 //  The MIT License (MIT)
@@ -26,19 +27,44 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
 
-#ifndef _FTGOOGLEPLACESAPI_
-#define _FTGOOGLEPLACESAPI_
-
-#import "FTGooglePlacesAPICommon.h"
-#import "FTGooglePlacesAPIService.h"
-#import "FTGooglePlacesAPIDictionaryRequest.h"
-#import "FTGooglePlacesAPINearbySearchRequest.h"
-#import "FTGooglePlacesAPITextSearchRequest.h"
-#import "FTGooglePlacesAPISearchResponse.h"
-#import "FTGooglePlacesAPISearchResultItem.h"
 #import "FTGooglePlacesAPIDetailRequest.h"
-#import "FTGooglePlacesAPIDetailResponse.h"
 
-#endif
+@implementation FTGooglePlacesAPIDetailRequest
+
+#pragma mark Lifecycle
+
+- (instancetype)initWithReference:(NSString *)reference
+{
+    if ([reference length] == 0) {
+        NSLog(@"WARNING: Trying to create FTGooglePlacesAPIDetailRequest with empty reference. Returning nil");
+        return nil;
+    }
+    
+    self = [super init];
+    if (self) {
+        _reference = reference;
+    }
+    return self;
+}
+
+#pragma mark - Superclass overrides
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"<%@: %p> Reference: %@", [self class], self, _reference];
+}
+
+#pragma mark - FTGooglePlacesAPIRequest protocol
+
+- (NSString *)requestTypeUrlString
+{
+    return @"details";
+}
+
+- (NSDictionary *)placesAPIRequestParams
+{
+    return @{@"reference": _reference};
+}
+
+@end

@@ -1,7 +1,8 @@
 //
-//  FTGooglePlacesAPI.h
+//  FTGooglePlacesAPIDetailRequest.h
+//  FTGooglePlacesAPI
 //
-//  Created by Lukas Kukacka on 10/29/13.
+//  Created by Lukas Kukacka on 29/11/13.
 //
 //
 //  The MIT License (MIT)
@@ -26,19 +27,19 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+
 #import <Foundation/Foundation.h>
 
-#ifndef _FTGOOGLEPLACESAPI_
-#define _FTGOOGLEPLACESAPI_
-
 #import "FTGooglePlacesAPICommon.h"
-#import "FTGooglePlacesAPIService.h"
-#import "FTGooglePlacesAPIDictionaryRequest.h"
-#import "FTGooglePlacesAPINearbySearchRequest.h"
-#import "FTGooglePlacesAPITextSearchRequest.h"
-#import "FTGooglePlacesAPISearchResponse.h"
-#import "FTGooglePlacesAPISearchResultItem.h"
-#import "FTGooglePlacesAPIDetailRequest.h"
-#import "FTGooglePlacesAPIDetailResponse.h"
 
-#endif
+@interface FTGooglePlacesAPIDetailRequest : NSObject <FTGooglePlacesAPIRequest>
+
+/**
+ *  Reference with which the request was initialized.
+ *  This is a unique identifier for a place (itemId from the ResultItem)
+ */
+@property (nonatomic, strong, readonly) NSString *reference;
+
+- (instancetype)initWithReference:(NSString *)reference;
+
+@end

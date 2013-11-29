@@ -60,6 +60,13 @@
 		A0246CB5183E17730052416D /* FTGooglePlacesAPIDictionaryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0246CB3183E17730052416D /* FTGooglePlacesAPIDictionaryRequest.m */; };
 		A0246CBB183E19200052416D /* FTGooglePlacesAPIDictionaryRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0246CBA183E19200052416D /* FTGooglePlacesAPIDictionaryRequestTest.m */; };
 		A0246CBE183E4D6B0052416D /* FTGooglePlacesAPINearbySearchRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0246CBD183E4D6B0052416D /* FTGooglePlacesAPINearbySearchRequestTests.m */; };
+		A07E9D5C1848E23600A9A4D2 /* FTGooglePlacesAPIDetailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A07E9D5B1848E23600A9A4D2 /* FTGooglePlacesAPIDetailRequest.m */; };
+		A07E9D5D1848E23600A9A4D2 /* FTGooglePlacesAPIDetailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A07E9D5B1848E23600A9A4D2 /* FTGooglePlacesAPIDetailRequest.m */; };
+		A07E9D601848E75300A9A4D2 /* FTGooglePlacesAPIDetailResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A07E9D5F1848E75300A9A4D2 /* FTGooglePlacesAPIDetailResponse.m */; };
+		A07E9D611848E75300A9A4D2 /* FTGooglePlacesAPIDetailResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A07E9D5F1848E75300A9A4D2 /* FTGooglePlacesAPIDetailResponse.m */; };
+		A07E9D651848E7EF00A9A4D2 /* FTGooglePlacesAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A07E9D641848E7EF00A9A4D2 /* FTGooglePlacesAPIResponse.m */; };
+		A07E9D661848E7EF00A9A4D2 /* FTGooglePlacesAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A07E9D641848E7EF00A9A4D2 /* FTGooglePlacesAPIResponse.m */; };
+		A07E9D6A1848F1A000A9A4D2 /* FTGooglePlacesAPIExampleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A07E9D691848F1A000A9A4D2 /* FTGooglePlacesAPIExampleDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -143,6 +150,14 @@
 		A0246CB3183E17730052416D /* FTGooglePlacesAPIDictionaryRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGooglePlacesAPIDictionaryRequest.m; sourceTree = "<group>"; };
 		A0246CBA183E19200052416D /* FTGooglePlacesAPIDictionaryRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGooglePlacesAPIDictionaryRequestTest.m; sourceTree = "<group>"; };
 		A0246CBD183E4D6B0052416D /* FTGooglePlacesAPINearbySearchRequestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGooglePlacesAPINearbySearchRequestTests.m; sourceTree = "<group>"; };
+		A07E9D5A1848E23600A9A4D2 /* FTGooglePlacesAPIDetailRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTGooglePlacesAPIDetailRequest.h; sourceTree = "<group>"; };
+		A07E9D5B1848E23600A9A4D2 /* FTGooglePlacesAPIDetailRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGooglePlacesAPIDetailRequest.m; sourceTree = "<group>"; };
+		A07E9D5E1848E75300A9A4D2 /* FTGooglePlacesAPIDetailResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTGooglePlacesAPIDetailResponse.h; sourceTree = "<group>"; };
+		A07E9D5F1848E75300A9A4D2 /* FTGooglePlacesAPIDetailResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGooglePlacesAPIDetailResponse.m; sourceTree = "<group>"; };
+		A07E9D631848E7EF00A9A4D2 /* FTGooglePlacesAPIResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTGooglePlacesAPIResponse.h; sourceTree = "<group>"; };
+		A07E9D641848E7EF00A9A4D2 /* FTGooglePlacesAPIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGooglePlacesAPIResponse.m; sourceTree = "<group>"; };
+		A07E9D681848F1A000A9A4D2 /* FTGooglePlacesAPIExampleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTGooglePlacesAPIExampleDetailViewController.h; sourceTree = "<group>"; };
+		A07E9D691848F1A000A9A4D2 /* FTGooglePlacesAPIExampleDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGooglePlacesAPIExampleDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,7 +256,9 @@
 				A01BDF78183BD82D00A24F40 /* FTGooglePlacesAPICommon.m */,
 				A01BDF7F183BD82D00A24F40 /* FTGooglePlacesAPIService.h */,
 				A01BDF80183BD82D00A24F40 /* FTGooglePlacesAPIService.m */,
+				A07E9D621848E7C400A9A4D2 /* Basic */,
 				A0246CC0183F8E970052416D /* Place Search */,
+				A07E9D571848E1CB00A9A4D2 /* Place Detail */,
 			);
 			name = FTGooglePlacesAPI;
 			path = ../FTGooglePlacesAPI;
@@ -280,6 +297,7 @@
 			children = (
 				A0246C44183CD0360052416D /* Examples list */,
 				A0246C48183CD05D0052416D /* Results list */,
+				A07E9D671848F17800A9A4D2 /* Detail */,
 			);
 			name = "View controllers";
 			sourceTree = "<group>";
@@ -443,6 +461,51 @@
 			name = "Place Search";
 			sourceTree = "<group>";
 		};
+		A07E9D571848E1CB00A9A4D2 /* Place Detail */ = {
+			isa = PBXGroup;
+			children = (
+				A07E9D581848E1D700A9A4D2 /* Request */,
+				A07E9D591848E1DD00A9A4D2 /* Response */,
+			);
+			name = "Place Detail";
+			sourceTree = "<group>";
+		};
+		A07E9D581848E1D700A9A4D2 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				A07E9D5A1848E23600A9A4D2 /* FTGooglePlacesAPIDetailRequest.h */,
+				A07E9D5B1848E23600A9A4D2 /* FTGooglePlacesAPIDetailRequest.m */,
+			);
+			name = Request;
+			sourceTree = "<group>";
+		};
+		A07E9D591848E1DD00A9A4D2 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				A07E9D5E1848E75300A9A4D2 /* FTGooglePlacesAPIDetailResponse.h */,
+				A07E9D5F1848E75300A9A4D2 /* FTGooglePlacesAPIDetailResponse.m */,
+			);
+			name = Response;
+			sourceTree = "<group>";
+		};
+		A07E9D621848E7C400A9A4D2 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				A07E9D631848E7EF00A9A4D2 /* FTGooglePlacesAPIResponse.h */,
+				A07E9D641848E7EF00A9A4D2 /* FTGooglePlacesAPIResponse.m */,
+			);
+			name = Basic;
+			sourceTree = "<group>";
+		};
+		A07E9D671848F17800A9A4D2 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				A07E9D681848F1A000A9A4D2 /* FTGooglePlacesAPIExampleDetailViewController.h */,
+				A07E9D691848F1A000A9A4D2 /* FTGooglePlacesAPIExampleDetailViewController.m */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -539,16 +602,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A07E9D5C1848E23600A9A4D2 /* FTGooglePlacesAPIDetailRequest.m in Sources */,
 				A01BDFB3183BD83B00A24F40 /* AFURLSessionManager.m in Sources */,
 				A01BDFAD183BD83B00A24F40 /* AFURLConnectionOperation.m in Sources */,
+				A07E9D601848E75300A9A4D2 /* FTGooglePlacesAPIDetailResponse.m in Sources */,
 				A01BDFA3183BD83B00A24F40 /* AFHTTPRequestOperation.m in Sources */,
 				A01BDF83183BD82D00A24F40 /* FTGooglePlacesAPICommon.m in Sources */,
 				A0246C66183D0B5D0052416D /* UIProgressView+AFNetworking.m in Sources */,
 				A0246C63183D0B5D0052416D /* UIAlertView+AFNetworking.m in Sources */,
+				A07E9D651848E7EF00A9A4D2 /* FTGooglePlacesAPIResponse.m in Sources */,
 				A0246C61183D0B5D0052416D /* AFNetworkActivityIndicatorManager.m in Sources */,
 				A01BDFA5183BD83B00A24F40 /* AFHTTPRequestOperationManager.m in Sources */,
 				A0246C67183D0B5D0052416D /* UIWebView+AFNetworking.m in Sources */,
 				A0246CB4183E17730052416D /* FTGooglePlacesAPIDictionaryRequest.m in Sources */,
+				A07E9D6A1848F1A000A9A4D2 /* FTGooglePlacesAPIExampleDetailViewController.m in Sources */,
 				A0246C64183D0B5D0052416D /* UIButton+AFNetworking.m in Sources */,
 				A0246C62183D0B5D0052416D /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				A01BDF56183BD70100A24F40 /* FTAppDelegate.m in Sources */,
@@ -577,10 +644,13 @@
 				A0246C6E183D10850052416D /* FTGooglePlacesAPICommon.m in Sources */,
 				A0246CBE183E4D6B0052416D /* FTGooglePlacesAPINearbySearchRequestTests.m in Sources */,
 				A0246C70183D10850052416D /* FTGooglePlacesAPISearchResponse.m in Sources */,
+				A07E9D661848E7EF00A9A4D2 /* FTGooglePlacesAPIResponse.m in Sources */,
 				A0246C71183D10850052416D /* FTGooglePlacesAPISearchResultItem.m in Sources */,
 				A0246C72183D10850052416D /* FTGooglePlacesAPITextSearchRequest.m in Sources */,
 				A0246C73183D10850052416D /* FTGooglePlacesAPINearbySearchRequest.m in Sources */,
+				A07E9D611848E75300A9A4D2 /* FTGooglePlacesAPIDetailResponse.m in Sources */,
 				A0246C8D183D10F50052416D /* FTGooglePlacesAPITestCase.m in Sources */,
+				A07E9D5D1848E23600A9A4D2 /* FTGooglePlacesAPIDetailRequest.m in Sources */,
 				A0246C98183D1A290052416D /* FTGooglePlacesAPISearchResponseTests.m in Sources */,
 				A0246C8C183D10F50052416D /* FTGooglePlacesAPISearchResultItemTests.m in Sources */,
 				A0246CBB183E19200052416D /* FTGooglePlacesAPIDictionaryRequestTest.m in Sources */,

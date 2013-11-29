@@ -31,10 +31,13 @@
 #import "FTGooglePlacesAPICommon.h"
 
 @class FTGooglePlacesAPISearchResponse;
+@class FTGooglePlacesAPIDetailResponse;
 
 extern NSString *const FTGooglePlacesAPIBaseURL;
 
 typedef void (^FTGooglePlacesAPISearchRequestCompletionHandler)(FTGooglePlacesAPISearchResponse *response, NSError *error);
+
+typedef void (^FTGooglePlacesAPIDetailRequestCompletionhandler)(FTGooglePlacesAPIDetailResponse *response, NSError *error);
 
 /**
  *  This class provides encapsulated functionality for communication with Google Places API
@@ -50,8 +53,8 @@ typedef void (^FTGooglePlacesAPISearchRequestCompletionHandler)(FTGooglePlacesAP
 + (void)provideAPIKey:(NSString *)APIKey;
 
 /**
- *  This optional method can be used to instruct the service to return response
- *  items as an instances of custom item subclass.
+ *  This optional method can be used to instruct the service to return search
+ *  request's response items as an instances of custom item subclass.
  *
  *  This can be particularly usefull is you want your subclass be for example
  *  map annotation. In that case, just subclass FTGooglePlacesAPIResponse
@@ -63,16 +66,25 @@ typedef void (^FTGooglePlacesAPISearchRequestCompletionHandler)(FTGooglePlacesAP
  *
  *  @param responseClass Subclass of the API response class to use
  */
-+ (void)registerResultItemClass:(Class)itemClass;
++ (void)registerSearchResultItemClass:(Class)itemClass;
 
 /**
  *  Asks the service to execute the given Google Places API Places Search request.
  *
- *  @param request Request object implementing FTGooglePlacesAPIRequest protocol. This will probably be either FTGooglePlacesAPINearbySearchRequest or FTGooglePlacesAPITextSearchRequest, but are free to provide own request implementing requred FTGooglePlacesAPIRequest protocol
+ *  @param request Request object implementing FTGooglePlacesAPIRequest protocol. This will probably be either FTGooglePlacesAPINearbySearchRequest or FTGooglePlacesAPITextSearchRequest, but you are free to provide own request implementing requred FTGooglePlacesAPIRequest protocol
  *  @param completionBlock Completion block to be called after the request was finished. If everything went without problems, response will be non-nill and error will be nil. In case of failure, response will be nil and error will be either AFNetworking error caused by networking problem or error with FTGooglePlacesAPIErrorDomain domain indicating that the networking request was successfull, but Google Places API responded with non-OK status code
  */
 + (void)executeSearchRequest:(id<FTGooglePlacesAPIRequest>)request
        withCompletionHandler:(FTGooglePlacesAPISearchRequestCompletionHandler)completion;
+
+/**
+ *  Asks the service to execute the given Google Places API Places Detail request.
+ *
+ *  @param request Request object implementing FTGooglePlacesAPIRequest protocol. This will probably be instance of FTGooglePlacesAPIDetailRequest, but you are free to provide own request implementing requred FTGooglePlacesAPIRequest protocol
+ *  @param completion Completion block to be called after the request was finished. If everything went without problems, response will be non-nill and error will be nil. In case of failure, response will be nil and error will be either AFNetworking error caused by networking problem or error with FTGooglePlacesAPIErrorDomain domain indicating that the networking request was successfull, but Google Places API responded with non-OK status code
+ */
++ (void)executeDetailRequest:(id<FTGooglePlacesAPIRequest>)request
+       withCompletionHandler:(FTGooglePlacesAPIDetailRequestCompletionhandler)completion;
 
 /**
  *  If set to YES and running in debug mode (#ifdef DEBUG), service will print some information
