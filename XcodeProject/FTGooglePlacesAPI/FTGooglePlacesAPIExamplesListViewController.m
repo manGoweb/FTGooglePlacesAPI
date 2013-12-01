@@ -12,9 +12,10 @@
 #import "FTGooglePlacesAPIExampleResultsViewController.h"
 
 typedef NS_ENUM(NSUInteger, FTGooglePlacesAPIExampleType) {
-    FTGooglePlacesAPIExampleTypeNearestCulture = 0,
+    FTGooglePlacesAPIExampleTypeNearestCulture,
     FTGooglePlacesAPIExampleTypeMuseumKeyword,
-    FTGooglePlacesAPIExampleTypeTextSearchPizzaInLondon
+    FTGooglePlacesAPIExampleTypeTextSearchPizzaInLondon,
+    FTGooglePlacesAPIExampleTypeExpensiveRestaurant
 };
 
 
@@ -50,7 +51,7 @@ typedef NS_ENUM(NSUInteger, FTGooglePlacesAPIExampleType) {
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;   //  Number of items in FTGooglePlacesAPIExampleType enum
+    return 4;   //  Number of items in FTGooglePlacesAPIExampleType enum
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -104,13 +105,14 @@ typedef NS_ENUM(NSUInteger, FTGooglePlacesAPIExampleType) {
         case FTGooglePlacesAPIExampleTypeNearestCulture:
             title = @"Nearest galleries and museums";
             break;
-        
         case FTGooglePlacesAPIExampleTypeMuseumKeyword:
             title = @"Matching \"museum\", near and open";
             break;
-        
         case FTGooglePlacesAPIExampleTypeTextSearchPizzaInLondon:
             title = @"Text search \"pizza in london\"";
+            break;
+        case FTGooglePlacesAPIExampleTypeExpensiveRestaurant:
+            title = @"Nearest very expensive restaurants";
             break;
     }
     
@@ -126,13 +128,14 @@ typedef NS_ENUM(NSUInteger, FTGooglePlacesAPIExampleType) {
         case FTGooglePlacesAPIExampleTypeNearestCulture:
             subtitle = @"rankBy=distance&types=art_gallery|museum";
             break;
-        
         case FTGooglePlacesAPIExampleTypeMuseumKeyword:
             subtitle = @"keyword=museum&opennow=true&radius=2000";
             break;
-        
         case FTGooglePlacesAPIExampleTypeTextSearchPizzaInLondon:
             subtitle = @"query=pizza+in+london";
+            break;
+        case FTGooglePlacesAPIExampleTypeExpensiveRestaurant:
+            subtitle = @"types=restaurant&minprice=4";
             break;
     }
     
@@ -200,6 +203,20 @@ typedef NS_ENUM(NSUInteger, FTGooglePlacesAPIExampleType) {
             result = request;
         }
             break;
+        
+        /**
+         *  This is an example of request defining results price.
+         *  You can use minPrice and maxPrice for example for searching
+         *  free museums, expensive restaurants etc.
+         */
+        case FTGooglePlacesAPIExampleTypeExpensiveRestaurant:
+        {
+            FTGooglePlacesAPINearbySearchRequest *request = [[FTGooglePlacesAPINearbySearchRequest alloc] initWithLocationCoordinate:self.locationCoordinate];
+            request.types = @[@"restaurant"];
+            request.minPrice = 4;
+            
+            result = request;
+        }
     }
     
     return result;

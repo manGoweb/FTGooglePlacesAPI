@@ -69,7 +69,10 @@
 {
     [super viewWillAppear:animated];
     
-    [self startSearching];
+    //  Controller is first displayed - start searching
+    if ([_results count] == 0) {
+        [self startSearching];
+    }
 }
 
 #pragma mark Table view data source

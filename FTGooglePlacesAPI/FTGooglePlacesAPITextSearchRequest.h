@@ -83,6 +83,16 @@
 @property (nonatomic, copy) NSString *language;
 
 /**
+ *  Restricts results to only those places within the specified range. Valid values
+ *  range between 0 (most affordable) to 4 (most expensive), inclusive. The exact amount
+ *  indicated by a specific value will vary from region to region.
+ *  When passed in value is >4, 4 is used
+ *  Default value is NSUIntegerMax indicating this value will not be present in a request
+ */
+@property (nonatomic, assign) NSUInteger minPrice;
+@property (nonatomic, assign) NSUInteger maxPrice;
+
+/**
  *  Returns only those Places that are open for business at the time
  *  the query is sent. Places that do not specify opening hours
  *  in the Google Places database will not be returned if you

@@ -65,6 +65,18 @@
     NSArray *expectedNames = @[@"testname", @"agsasg*{;'[>–"];
     XCTAssertEqualObjects(request.names, expectedNames, @"names is wrong");
     
+    // min and max price
+    XCTAssertEqual(request.minPrice, (NSUInteger)NSUIntegerMax, @"default minPrice is wrong");
+    XCTAssertEqual(request.maxPrice, (NSUInteger)NSUIntegerMax, @"default maxPrice is wrong");
+    
+    //  Test accessors are properly adjusting values
+    request.minPrice = 123;
+    XCTAssertEqual(request.minPrice, (NSUInteger)4, @"minPrice bigger value should be 4");
+
+    request.maxPrice = 3243;
+    XCTAssertEqual(request.maxPrice, (NSUInteger)4, @"maxPrice bigger value should be 4");
+    
+    
     //  Open now
     XCTAssertFalse(request.openNow, @"default openNow is wrong");
     request.openNow = YES;

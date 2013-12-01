@@ -62,6 +62,8 @@ static const NSUInteger kMaxRadius = 50000;
         _radius = 5000;
         _rankBy = FTGooglePlacesAPIRequestParamRankByProminence;
         _language = [FTGooglePlacesAPIUtils deviceLanguage];
+        _minPrice = NSUIntegerMax;
+        _maxPrice = NSUIntegerMax;
     }
     return self;
 }
@@ -80,6 +82,26 @@ static const NSUInteger kMaxRadius = 50000;
     }
     
     [self didChangeValueForKey:@"radius"];
+}
+
+- (void)setMinPrice:(NSUInteger)minPrice
+{
+    [self willChangeValueForKey:@"minPrice"];
+    
+    //  value ranges 0-4
+    _minPrice = MAX(0,MIN(4, minPrice));
+    
+    [self didChangeValueForKey:@"minPrice"];
+}
+
+- (void)setMaxPrice:(NSUInteger)maxPrice
+{
+    [self willChangeValueForKey:@"maxPrice"];
+    
+    //  value ranges 0-4
+    _maxPrice = MAX(0,MIN(4, maxPrice));
+    
+    [self didChangeValueForKey:@"maxPrice"];
 }
 
 #pragma mark Superclass overrides
@@ -113,6 +135,14 @@ static const NSUInteger kMaxRadius = 50000;
     
     if ([_names count] > 0) {
         params[@"name"] = [_names componentsJoinedByString:@"|"];
+    }
+    
+    if (_minPrice != NSUIntegerMax) {
+        params[@"minprice"] = [NSString stringWithFormat:@"%d", _minPrice];
+    }
+    
+    if (_maxPrice != NSUIntegerMax) {
+        params[@"maxprice"] = [NSString stringWithFormat:@"%d", _maxPrice];
     }
     
     if (_openNow) {
