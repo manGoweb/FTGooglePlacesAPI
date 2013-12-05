@@ -46,20 +46,9 @@
 @interface FTGooglePlacesAPISearchResponse : FTGooglePlacesAPIResponse
 
 /**
- *  Request which resulted in this response
- */
-//@property (nonatomic, strong, readonly) id<FTGooglePlacesAPIRequest> request;
-
-/**
  *  Array of results items. Items are instances of class provided in init... method
  */
 @property (nonatomic, strong, readonly) NSArray *results;
-
-/**
- *  Contains response status
- *  Details: https://developers.google.com/places/documentation/search#PlaceSearchStatusCodes
- */
-//@property (nonatomic, assign, readonly) FTGooglePlacesAPIResponseStatus status;
 
 /**
  *  Token which can be used for paging results like this one.
@@ -74,13 +63,6 @@
  *  to conform Google Terms and Conditions
  */
 @property (nonatomic, strong, readonly) NSArray *htmlAttributions;
-
-/**
- *  Calls designated initializer with nil class
- *  @see initWithDictionary:request:resultsItemClass:
- */
-//- (instancetype)initWithDictionary:(NSDictionary *)dictionary
-//                           request:(id<FTGooglePlacesAPIRequest>)request;
 
 /**
  *  Designated initializer for a response.

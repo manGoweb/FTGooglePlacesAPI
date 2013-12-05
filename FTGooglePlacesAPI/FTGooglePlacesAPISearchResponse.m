@@ -61,7 +61,14 @@
 {
     //  Either there is no custom class or it has to be subclass of FTGooglePlacesAPIResponse so
     //  the code can rely there will be required properties
-    NSAssert(!resultsItemClass || [resultsItemClass isSubclassOfClass:[FTGooglePlacesAPISearchResponse class]], @"Custom response item class in FTGooglePlacesAPISearchResponse has to be a subclass of FTGooglePlacesAPIResponse");
+    //  If this expectation fails, it is clearly programmers fault, so let him know!
+    if (resultsItemClass &&
+        ![resultsItemClass isSubclassOfClass:[FTGooglePlacesAPISearchResponse class]])
+    {
+        @throw [NSException exceptionWithName:NSInvalidArgumentException
+                                       reason:@"Custom response item class in FTGooglePlacesAPISearchResponse must be a subclass of FTGooglePlacesAPIResponse"
+                                     userInfo:nil];
+    }
 
     self = [super initWithDictionary:dictionary request:request];
     if (self)
@@ -76,7 +83,7 @@
 
 - (id<FTGooglePlacesAPIRequest>)nextPageRequest
 {
-    if ([_nextPageToken length] == 0) {
+    if (![self hasNextPage]) {
         return nil;
     }
     

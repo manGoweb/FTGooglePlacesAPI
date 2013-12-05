@@ -32,6 +32,9 @@
 
 #import "FTGooglePlacesAPICommon.h"
 
+/**
+ *  Request on an item details
+ */
 @interface FTGooglePlacesAPIDetailRequest : NSObject <FTGooglePlacesAPIRequest>
 
 /**

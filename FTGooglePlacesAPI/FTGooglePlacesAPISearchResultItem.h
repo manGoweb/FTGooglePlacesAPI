@@ -33,7 +33,7 @@
  *  Class encapsulating concrete record of Google Places API Response (item in the "results" array)
  */
 typedef NS_ENUM(NSUInteger, FTGooglePlacesAPISearchResultItemOpenedState) {
-    FTGooglePlacesAPISearchResultItemOpenedStateUnknown,  //  Values was not in the response
+    FTGooglePlacesAPISearchResultItemOpenedStateUnknown,  //  Value was not in the response
     FTGooglePlacesAPISearchResultItemOpenedStateOpened,   //  Item is opened
     FTGooglePlacesAPISearchResultItemOpenedStateClosed    //  Item is closed
 };

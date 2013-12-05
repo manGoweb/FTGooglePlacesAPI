@@ -55,7 +55,11 @@ typedef NS_ENUM(NSUInteger, FTGooglePlacesAPIResponseStatus) {
 /**
  *  Basic "abstract" object for encapsulating Google Places API response.
  *  DO NOT USE this class DIRECTLY. It is meant to be more of a abstract
- *  class, which is unfortunatelly not supported in Objective-C
+ *  class, which is unfortunatelly not supported in Objective-C.
+ *
+ *  This class and all of its subclasses are Key-Value coding ready.
+ *  You can use |valueForKeyPath:| for accessing values from the original 
+ *  response dictionary.
  */
 @interface FTGooglePlacesAPIResponse : NSObject
 
@@ -82,16 +86,6 @@ typedef NS_ENUM(NSUInteger, FTGooglePlacesAPIResponseStatus) {
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
                            request:(id<FTGooglePlacesAPIRequest>)request;
 
-/**
- *  Using this method, you can access any value from the original NSDictionary
- *  using key path. This is usefull if you are interested in some values
- *  not implemented into object's interface
- *
- *  @param keyPath key path of the value in an original dictionary / response
- *
- *  @return Value at given key path
- */
-//- (id)valueForKeyPath:(NSString *)keyPath;
 
 + (NSString *)localizedNameOfStatus:(FTGooglePlacesAPIResponseStatus)status;
 + (NSString *)localizedDescriptionForStatus:(FTGooglePlacesAPIResponseStatus)status;
