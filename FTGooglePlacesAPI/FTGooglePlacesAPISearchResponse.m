@@ -63,7 +63,7 @@
     //  the code can rely there will be required properties
     //  If this expectation fails, it is clearly programmers fault, so let him know!
     if (resultsItemClass &&
-        ![resultsItemClass isSubclassOfClass:[FTGooglePlacesAPISearchResponse class]])
+        ![resultsItemClass isSubclassOfClass:[FTGooglePlacesAPISearchResultItem class]])
     {
         @throw [NSException exceptionWithName:NSInvalidArgumentException
                                        reason:@"Custom response item class in FTGooglePlacesAPISearchResponse must be a subclass of FTGooglePlacesAPIResponse"

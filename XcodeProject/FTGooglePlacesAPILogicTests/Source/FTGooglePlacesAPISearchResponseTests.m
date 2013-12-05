@@ -12,6 +12,8 @@
 #import "FTGooglePlacesAPISearchResultItem.h"
 #import "FTGooglePlacesAPIDictionaryRequest.h"
 
+#import "MockFTGooglePlacesAPISearchResultItemSubclass.h"
+
 @interface FTGooglePlacesAPISearchResponseTests : FTGooglePlacesAPITestCase
 
 @end
@@ -85,6 +87,18 @@
     
     response = [[FTGooglePlacesAPISearchResponse alloc] initWithDictionary:@{} request:nil];
     XCTAssertNil(response, @"response should be nil");
+}
+
+- (void)testProperResponseClassIsChecked
+{
+    //  Check that it works with the proper subclass
+    id mockSubclass = [[MockFTGooglePlacesAPISearchResultItemSubclass alloc] initWithDictionary:@{@"key":@"value"}];
+    
+    XCTAssertNoThrow([[FTGooglePlacesAPISearchResponse alloc] initWithDictionary:@{} request:nil resultsItemClass:mockSubclass], @"Should not throw exception as the provided class is right");
+    
+    
+    //  Check expecption is throws if resultItemClass is specified, but is not the proper subclass
+    XCTAssertThrows([[FTGooglePlacesAPISearchResponse alloc] initWithDictionary:@{} request:nil resultsItemClass:[NSObject class]], @"Should throw exception when the resultsItemClass is not subclass of FTGooglePlacesAPISearchResultItem");
 }
 
 - (void)testRequestAndNextPageRequestMethod

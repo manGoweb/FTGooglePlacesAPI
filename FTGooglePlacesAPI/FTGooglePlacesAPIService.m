@@ -33,12 +33,28 @@
 #import "FTGooglePlacesAPIDetailResponse.h"
 
 
+/**
+ *  Helper logging macro for printing log messages only in DEBUG mode and when
+ *  logging is enabled by settings. Works the same as NSLog()
+ *
+ *  @param format Ouput string format
+ *  @param ... Output string parameters
+ */
+#ifdef DEBUG
+    #define FTGPServiceLog(format, ...) if (FTGooglePlacesAPIDebugLoggingEnabled) { NSLog(format, ##__VA_ARGS__); }
+#else
+    #define FTGPServiceLog(format, ...) ((void)0)
+#endif
+
+
 NSString *const FTGooglePlacesAPIBaseURL = @"https://maps.googleapis.com/maps/api/place/";
 
 /**
  *  Private methods interface
  */
 @interface FTGooglePlacesAPIService (Private)
+
++ (AFHTTPRequestOperationManager *)ftgp_httpRequestOperationManager;
 
 + (NSString *)ftgp_queryStringWithDictionary:(NSDictionary *)dictionary;
 + (NSError *)ftgp_errorForResponseStatus:(FTGooglePlacesAPIResponseStatus)status;
@@ -57,7 +73,7 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
 /**
  *  Shared singleton instance
  */
-+ (instancetype)sharedService;
++ (FTGooglePlacesAPIService *)sharedService;
 
 @end
 
@@ -126,11 +142,7 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
         
         FTGooglePlacesAPISearchResponse *response = [[FTGooglePlacesAPISearchResponse alloc] initWithDictionary:responseObject request:request resultsItemClass:resultsItemClass];
         
-#ifdef DEBUG
-        if (FTGooglePlacesAPIDebugLoggingEnabled) {
-            NSLog(@"%@ received response. Status: %@, number of results: %d", [self class], [FTGooglePlacesAPISearchResponse localizedNameOfStatus:response.status], [response.results count]);
-        }
-#endif
+        FTGPServiceLog(@"%@ received response. Status: %@, number of results: %d", [self class], [FTGooglePlacesAPISearchResponse localizedNameOfStatus:response.status], [response.results count]);
         
         // Check if everything went OK
         if (response && response.status == FTGooglePlacesAPIResponseStatusOK) {
@@ -198,14 +210,10 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
     NSString *requestUrlString = [NSString stringWithFormat:@"%@%@/json?%@", FTGooglePlacesAPIBaseURL, [request requestTypeUrlString], paramsQueryString];
     requestUrlString = [requestUrlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
-#ifdef DEBUG
-    if (FTGooglePlacesAPIDebugLoggingEnabled) {
-        NSLog(@"%@ performing request: %@", [self class], requestUrlString);
-    }
-#endif
+    FTGPServiceLog(@"%@ performing request: %@", [self class], requestUrlString);
     
     //  Perform request using AFNetworking
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    AFHTTPRequestOperationManager *manager = [self ftgp_httpRequestOperationManager];
     
     [manager GET:requestUrlString
       parameters:nil
@@ -224,6 +232,11 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
 #pragma mark - Private methods category
 
 @implementation FTGooglePlacesAPIService (Private)
+
++ (AFHTTPRequestOperationManager *)ftgp_httpRequestOperationManager
+{
+    return [AFHTTPRequestOperationManager manager];
+}
 
 + (NSString *)ftgp_queryStringWithDictionary:(NSDictionary *)dictionary
 {
