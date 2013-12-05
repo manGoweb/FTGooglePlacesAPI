@@ -105,6 +105,9 @@
         case FTGooglePlacesAPIResponseStatusInvalidRequest:
             name = NSLocalizedString(@"Invalid Request", @"FTGooglePlacesAPISearchResponse name of status FTGooglePlacesAPIResponseStatusInvalidRequest");
             break;
+        case FTGooglePlacesAPIResponseStatusNotFound:
+            name = NSLocalizedString(@"Place not found", @"FTGooglePlacesAPISearchResponse name of status FTGooglePlacesAPIResponseStatusNotFound");
+            break;
         case FTGooglePlacesAPIResponseStatusUnknown:
             name = NSLocalizedString(@"Unknown", @"FTGooglePlacesAPISearchResponse name of status FTGooglePlacesAPIResponseStatusUnknown");
             break;
@@ -133,6 +136,9 @@
             break;
         case FTGooglePlacesAPIResponseStatusInvalidRequest:
             description = NSLocalizedString(@"Request was invalid. Either \"location\" or \"radius\" parameter is probably missing.", nil);
+            break;
+        case FTGooglePlacesAPIResponseStatusNotFound:
+            description = NSLocalizedString(@"Referenced place was not found.", nil);
             break;
         case FTGooglePlacesAPIResponseStatusUnknown:
             description = NSLocalizedString(@"Google Places API returned unknown status code.", nil);
@@ -168,6 +174,9 @@
     }
     else if ([string isEqualToString:@"INVALID_REQUEST"]) {
         return FTGooglePlacesAPIResponseStatusInvalidRequest;
+    }
+    else if ([string isEqualToString:@"NOT_FOUND"]) {
+        return FTGooglePlacesAPIResponseStatusNotFound;
     } else {
         return FTGooglePlacesAPIResponseStatusUnknown;
     }

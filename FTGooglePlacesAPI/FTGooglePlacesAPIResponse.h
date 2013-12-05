@@ -39,17 +39,13 @@
 
 
 typedef NS_ENUM(NSUInteger, FTGooglePlacesAPIResponseStatus) {
-    /**
-     *  Unknown state will be used only in case unknown status is present
-     *  in the input dictionary.
-     *  This should never happen unless the API specs change
-     */
-    FTGooglePlacesAPIResponseStatusUnknown = 0,
+    FTGooglePlacesAPIResponseStatusUnknown = 0, // Default or UNKNOWN_ERROR
     FTGooglePlacesAPIResponseStatusOK, // OK
     FTGooglePlacesAPIResponseStatusNoResults, // ZERO_RESULTS
     FTGooglePlacesAPIResponseStatusAPILimitExceeded, // OVER_QUERY_LIMIT
     FTGooglePlacesAPIResponseStatusRequestDenied, // REQUEST_DENIED
-    FTGooglePlacesAPIResponseStatusInvalidRequest // INVALID_REQUEST
+    FTGooglePlacesAPIResponseStatusInvalidRequest, // INVALID_REQUEST
+    FTGooglePlacesAPIResponseStatusNotFound // NOT_FOUND
 };
 
 /**

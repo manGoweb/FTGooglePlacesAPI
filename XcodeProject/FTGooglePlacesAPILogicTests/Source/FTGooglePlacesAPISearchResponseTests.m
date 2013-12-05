@@ -87,29 +87,6 @@
     XCTAssertNil(response, @"response should be nil");
 }
 
-- (void)testStatuses
-{
-    FTGooglePlacesAPISearchResponse *response;
-    
-    response = [[FTGooglePlacesAPISearchResponse alloc] initWithDictionary:@{@"status": @"jasngbgbubguobgO"} request:nil];
-    XCTAssertEqual(response.status, FTGooglePlacesAPIResponseStatusUnknown, @"status should be FTGooglePlacesAPIResponseStatusUnknown");
-    
-    response = [[FTGooglePlacesAPISearchResponse alloc] initWithDictionary:@{@"status": @"OK"} request:nil];
-    XCTAssertEqual(response.status, FTGooglePlacesAPIResponseStatusOK, @"status should be FTGooglePlacesAPIResponseStatusOK");
-    
-    response = [[FTGooglePlacesAPISearchResponse alloc] initWithDictionary:@{@"status": @"ZERO_RESULTS"} request:nil];
-    XCTAssertEqual(response.status, FTGooglePlacesAPIResponseStatusNoResults, @"status should be FTGooglePlacesAPIResponseStatusNoResults");
-    
-    response = [[FTGooglePlacesAPISearchResponse alloc] initWithDictionary:@{@"status": @"OVER_QUERY_LIMIT"} request:nil];
-    XCTAssertEqual(response.status, FTGooglePlacesAPIResponseStatusAPILimitExceeded, @"status should be FTGooglePlacesAPIResponseStatusAPILimitExceeded");
-    
-    response = [[FTGooglePlacesAPISearchResponse alloc] initWithDictionary:@{@"status": @"REQUEST_DENIED"} request:nil];
-    XCTAssertEqual(response.status, FTGooglePlacesAPIResponseStatusRequestDenied, @"status should be FTGooglePlacesAPIResponseStatusRequestDenied");
-    
-    response = [[FTGooglePlacesAPISearchResponse alloc] initWithDictionary:@{@"status": @"INVALID_REQUEST"} request:nil];
-    XCTAssertEqual(response.status, FTGooglePlacesAPIResponseStatusInvalidRequest, @"status should be FTGooglePlacesAPIResponseStatusInvalidRequest");
-}
-
 - (void)testRequestAndNextPageRequestMethod
 {
     NSDictionary *dictionary = [[self class] JSONFromFileNamed:@"FTGooglePlacesAPIResponse-test1-OK.json"];

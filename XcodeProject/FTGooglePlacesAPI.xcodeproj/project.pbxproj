@@ -67,6 +67,7 @@
 		A07E9D651848E7EF00A9A4D2 /* FTGooglePlacesAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A07E9D641848E7EF00A9A4D2 /* FTGooglePlacesAPIResponse.m */; };
 		A07E9D661848E7EF00A9A4D2 /* FTGooglePlacesAPIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A07E9D641848E7EF00A9A4D2 /* FTGooglePlacesAPIResponse.m */; };
 		A07E9D6A1848F1A000A9A4D2 /* FTGooglePlacesAPIExampleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A07E9D691848F1A000A9A4D2 /* FTGooglePlacesAPIExampleDetailViewController.m */; };
+		A0957B971850C0CB00D04466 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0957B961850C0CB00D04466 /* libOCMock.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -158,6 +159,13 @@
 		A07E9D641848E7EF00A9A4D2 /* FTGooglePlacesAPIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGooglePlacesAPIResponse.m; sourceTree = "<group>"; };
 		A07E9D681848F1A000A9A4D2 /* FTGooglePlacesAPIExampleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTGooglePlacesAPIExampleDetailViewController.h; sourceTree = "<group>"; };
 		A07E9D691848F1A000A9A4D2 /* FTGooglePlacesAPIExampleDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGooglePlacesAPIExampleDetailViewController.m; sourceTree = "<group>"; };
+		A0957B901850C0CB00D04466 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
+		A0957B911850C0CB00D04466 /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
+		A0957B921850C0CB00D04466 /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMConstraint.h; sourceTree = "<group>"; };
+		A0957B931850C0CB00D04466 /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMock.h; sourceTree = "<group>"; };
+		A0957B941850C0CB00D04466 /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
+		A0957B951850C0CB00D04466 /* OCMockRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockRecorder.h; sourceTree = "<group>"; };
+		A0957B961850C0CB00D04466 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0246C78183D10850052416D /* XCTest.framework in Frameworks */,
+				A0957B971850C0CB00D04466 /* libOCMock.a in Frameworks */,
 				A0246C79183D10850052416D /* UIKit.framework in Frameworks */,
 				A0246C7A183D10850052416D /* Foundation.framework in Frameworks */,
 			);
@@ -349,6 +358,7 @@
 				A0246C90183D111D0052416D /* Basic */,
 				A0246CB7183E18B30052416D /* Requests */,
 				A0246C91183D11220052416D /* Results */,
+				A0957B8D1850C0CB00D04466 /* Thirdparty */,
 				A0246C92183D112E0052416D /* Supporting files */,
 			);
 			path = FTGooglePlacesAPILogicTests;
@@ -504,6 +514,36 @@
 				A07E9D691848F1A000A9A4D2 /* FTGooglePlacesAPIExampleDetailViewController.m */,
 			);
 			name = Detail;
+			sourceTree = "<group>";
+		};
+		A0957B8D1850C0CB00D04466 /* Thirdparty */ = {
+			isa = PBXGroup;
+			children = (
+				A0957B8E1850C0CB00D04466 /* OCMock */,
+			);
+			path = Thirdparty;
+			sourceTree = "<group>";
+		};
+		A0957B8E1850C0CB00D04466 /* OCMock */ = {
+			isa = PBXGroup;
+			children = (
+				A0957B8F1850C0CB00D04466 /* Headers */,
+				A0957B961850C0CB00D04466 /* libOCMock.a */,
+			);
+			path = OCMock;
+			sourceTree = "<group>";
+		};
+		A0957B8F1850C0CB00D04466 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				A0957B901850C0CB00D04466 /* NSNotificationCenter+OCMAdditions.h */,
+				A0957B911850C0CB00D04466 /* OCMArg.h */,
+				A0957B921850C0CB00D04466 /* OCMConstraint.h */,
+				A0957B931850C0CB00D04466 /* OCMock.h */,
+				A0957B941850C0CB00D04466 /* OCMockObject.h */,
+				A0957B951850C0CB00D04466 /* OCMockRecorder.h */,
+			);
+			path = Headers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -790,6 +830,10 @@
 				GCC_PREFIX_HEADER = "FTGooglePlacesAPI/FTGooglePlacesAPI-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "FTGooglePlacesAPILogicTests/FTGooglePlacesAPILogicTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/fuerte5/Developer/_Opensource/FTGooglePlacesAPI/XcodeProject/FTGooglePlacesAPILogicTests/Thirdparty/OCMock,
+				);
 				PRODUCT_NAME = FTGooglePlacesAPITLogicTests;
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -807,6 +851,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FTGooglePlacesAPI/FTGooglePlacesAPI-Prefix.pch";
 				INFOPLIST_FILE = "FTGooglePlacesAPILogicTests/FTGooglePlacesAPILogicTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/fuerte5/Developer/_Opensource/FTGooglePlacesAPI/XcodeProject/FTGooglePlacesAPILogicTests/Thirdparty/OCMock,
+				);
 				PRODUCT_NAME = FTGooglePlacesAPITLogicTests;
 				WRAPPER_EXTENSION = xctest;
 			};
