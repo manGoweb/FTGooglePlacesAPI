@@ -103,7 +103,7 @@
 
 - (void)testRequestAndNextPageRequestMethod
 {
-    NSDictionary *dictionary = [[self class] JSONFromFileNamed:@"FTGooglePlacesAPIResponse-test1-OK.json"];
+    NSDictionary *dictionary = [[self class] JSONFromFileNamed:@"FTGooglePlacesAPIResponse-test1-Nearby-Search-OK.json"];
     
     FTGooglePlacesAPIDictionaryRequest *request = [[FTGooglePlacesAPIDictionaryRequest alloc] initWithDictionary:@{@"testkey": @"testvalue"} requestType:@"testrequest"];
     
@@ -124,7 +124,7 @@
 
 - (void)testParsingRealResponseOK
 {
-    NSDictionary *dictionary = [[self class] JSONFromFileNamed:@"FTGooglePlacesAPIResponse-test1-OK.json"];
+    NSDictionary *dictionary = [[self class] JSONFromFileNamed:@"FTGooglePlacesAPIResponse-test1-Nearby-Search-OK.json"];
     
     FTGooglePlacesAPIDictionaryRequest *request = [[FTGooglePlacesAPIDictionaryRequest alloc] initWithDictionary:@{@"testkey": @"testvalue"} requestType:@"testrequest"];
     

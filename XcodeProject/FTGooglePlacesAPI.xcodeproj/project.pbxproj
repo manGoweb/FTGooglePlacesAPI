@@ -46,7 +46,6 @@
 		A0246C79183D10850052416D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01BDF49183BD70100A24F40 /* UIKit.framework */; };
 		A0246C7A183D10850052416D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01BDF45183BD70100A24F40 /* Foundation.framework */; };
 		A0246C8B183D10F50052416D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A0246C83183D10F50052416D /* InfoPlist.strings */; };
-		A0246C9E183D21EA0052416D /* FTGooglePlacesAPIResponse-test1-OK.json in Resources */ = {isa = PBXBuildFile; fileRef = A0246C9A183D21EA0052416D /* FTGooglePlacesAPIResponse-test1-OK.json */; };
 		A0246C9F183D21EA0052416D /* FTGooglePlacesAPIResponse-test2-NoResults.json in Resources */ = {isa = PBXBuildFile; fileRef = A0246C9B183D21EA0052416D /* FTGooglePlacesAPIResponse-test2-NoResults.json */; };
 		A0246CA0183D21EA0052416D /* FTGooglePlacesAPIResponse-test3-InvalidRequest.json in Resources */ = {isa = PBXBuildFile; fileRef = A0246C9C183D21EA0052416D /* FTGooglePlacesAPIResponse-test3-InvalidRequest.json */; };
 		A0246CA3183D24150052416D /* FTGooglePlacesAPIResponse-test4-RequestDenied.json in Resources */ = {isa = PBXBuildFile; fileRef = A0246CA2183D24150052416D /* FTGooglePlacesAPIResponse-test4-RequestDenied.json */; };
@@ -72,6 +71,18 @@
 		A0957BDE18523A6600D04466 /* FTGooglePlacesAPIServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0957BDA18523A6600D04466 /* FTGooglePlacesAPIServiceTests.m */; };
 		A0957BE218523B4E00D04466 /* MockFTGooglePlacesAPIService.m in Sources */ = {isa = PBXBuildFile; fileRef = A0957BE118523B4E00D04466 /* MockFTGooglePlacesAPIService.m */; };
 		A0957BE618523B7100D04466 /* MockFTGooglePlacesAPISearchResultItemSubclass.m in Sources */ = {isa = PBXBuildFile; fileRef = A0957BE518523B7100D04466 /* MockFTGooglePlacesAPISearchResultItemSubclass.m */; };
+		A0957BF418523DE700D04466 /* FTGooglePlacesAPIService.m in Sources */ = {isa = PBXBuildFile; fileRef = A01BDF80183BD82D00A24F40 /* FTGooglePlacesAPIService.m */; };
+		A0957BF518523E2C00D04466 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A01BDF91183BD83B00A24F40 /* AFHTTPRequestOperation.m */; };
+		A0957BF618523E2C00D04466 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A01BDF93183BD83B00A24F40 /* AFHTTPRequestOperationManager.m */; };
+		A0957BF718523E2C00D04466 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A01BDF95183BD83B00A24F40 /* AFHTTPSessionManager.m */; };
+		A0957BF818523E2C00D04466 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A01BDF98183BD83B00A24F40 /* AFNetworkReachabilityManager.m */; };
+		A0957BF918523E2C00D04466 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = A01BDF9A183BD83B00A24F40 /* AFSecurityPolicy.m */; };
+		A0957BFA18523E2C00D04466 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A01BDF9C183BD83B00A24F40 /* AFURLConnectionOperation.m */; };
+		A0957BFB18523E2C00D04466 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = A01BDF9E183BD83B00A24F40 /* AFURLRequestSerialization.m */; };
+		A0957BFC18523E2C00D04466 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = A01BDFA0183BD83B00A24F40 /* AFURLResponseSerialization.m */; };
+		A0957BFD18523E2C00D04466 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A01BDFA2183BD83B00A24F40 /* AFURLSessionManager.m */; };
+		A0F90BB01855F29200171CAE /* MockAFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F90BAF1855F29200171CAE /* MockAFHTTPRequestOperationManager.m */; };
+		A0F90BB418561ABB00171CAE /* FTGooglePlacesAPIResponse-test1-Nearby-Search-OK.json in Resources */ = {isa = PBXBuildFile; fileRef = A0F90BB318561ABB00171CAE /* FTGooglePlacesAPIResponse-test1-Nearby-Search-OK.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -140,7 +151,6 @@
 		A0246C80183D10850052416D /* FTGooglePlacesAPITLogicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FTGooglePlacesAPITLogicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0246C84183D10F50052416D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A0246C95183D13280052416D /* FTGooglePlacesAPILogicTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "FTGooglePlacesAPILogicTests-Info.plist"; sourceTree = "<group>"; };
-		A0246C9A183D21EA0052416D /* FTGooglePlacesAPIResponse-test1-OK.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FTGooglePlacesAPIResponse-test1-OK.json"; sourceTree = "<group>"; };
 		A0246C9B183D21EA0052416D /* FTGooglePlacesAPIResponse-test2-NoResults.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FTGooglePlacesAPIResponse-test2-NoResults.json"; sourceTree = "<group>"; };
 		A0246C9C183D21EA0052416D /* FTGooglePlacesAPIResponse-test3-InvalidRequest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FTGooglePlacesAPIResponse-test3-InvalidRequest.json"; sourceTree = "<group>"; };
 		A0246CA2183D24150052416D /* FTGooglePlacesAPIResponse-test4-RequestDenied.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FTGooglePlacesAPIResponse-test4-RequestDenied.json"; sourceTree = "<group>"; };
@@ -176,6 +186,9 @@
 		A0957BF118523CFD00D04466 /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMock.h; path = FTGooglePlacesAPILogicTests/Thirdparty/OCMock/OCMock/OCMock.h; sourceTree = SOURCE_ROOT; };
 		A0957BF218523CFD00D04466 /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMockObject.h; path = FTGooglePlacesAPILogicTests/Thirdparty/OCMock/OCMock/OCMockObject.h; sourceTree = SOURCE_ROOT; };
 		A0957BF318523CFD00D04466 /* OCMockRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMockRecorder.h; path = FTGooglePlacesAPILogicTests/Thirdparty/OCMock/OCMock/OCMockRecorder.h; sourceTree = SOURCE_ROOT; };
+		A0F90BAE1855F29200171CAE /* MockAFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockAFHTTPRequestOperationManager.h; path = Source/Mocks/MockAFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		A0F90BAF1855F29200171CAE /* MockAFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MockAFHTTPRequestOperationManager.m; path = Source/Mocks/MockAFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		A0F90BB318561ABB00171CAE /* FTGooglePlacesAPIResponse-test1-Nearby-Search-OK.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FTGooglePlacesAPIResponse-test1-Nearby-Search-OK.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -365,10 +378,7 @@
 		A0246C82183D10F50052416D /* FTGooglePlacesAPILogicTests */ = {
 			isa = PBXGroup;
 			children = (
-				A0246C90183D111D0052416D /* Basic */,
-				A0957BDF18523A7500D04466 /* Service */,
-				A0246CB7183E18B30052416D /* Requests */,
-				A0246C91183D11220052416D /* Response */,
+				A0957BFE18523E8700D04466 /* Tests */,
 				A0957B8D1850C0CB00D04466 /* Thirdparty */,
 				A0246C92183D112E0052416D /* Supporting files */,
 			);
@@ -408,7 +418,7 @@
 		A0246C99183D21EA0052416D /* TestData */ = {
 			isa = PBXGroup;
 			children = (
-				A0246C9A183D21EA0052416D /* FTGooglePlacesAPIResponse-test1-OK.json */,
+				A0F90BB318561ABB00171CAE /* FTGooglePlacesAPIResponse-test1-Nearby-Search-OK.json */,
 				A0246C9B183D21EA0052416D /* FTGooglePlacesAPIResponse-test2-NoResults.json */,
 				A0246C9C183D21EA0052416D /* FTGooglePlacesAPIResponse-test3-InvalidRequest.json */,
 				A0246CA2183D24150052416D /* FTGooglePlacesAPIResponse-test4-RequestDenied.json */,
@@ -573,6 +583,8 @@
 			children = (
 				A0957BE018523B4E00D04466 /* MockFTGooglePlacesAPIService.h */,
 				A0957BE118523B4E00D04466 /* MockFTGooglePlacesAPIService.m */,
+				A0F90BAE1855F29200171CAE /* MockAFHTTPRequestOperationManager.h */,
+				A0F90BAF1855F29200171CAE /* MockAFHTTPRequestOperationManager.m */,
 			);
 			name = Mock;
 			sourceTree = "<group>";
@@ -584,6 +596,17 @@
 				A0957BE518523B7100D04466 /* MockFTGooglePlacesAPISearchResultItemSubclass.m */,
 			);
 			name = Mock;
+			sourceTree = "<group>";
+		};
+		A0957BFE18523E8700D04466 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A0246C90183D111D0052416D /* Basic */,
+				A0957BDF18523A7500D04466 /* Service */,
+				A0246CB7183E18B30052416D /* Requests */,
+				A0246C91183D11220052416D /* Response */,
+			);
+			name = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -668,8 +691,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0246C8B183D10F50052416D /* InfoPlist.strings in Resources */,
+				A0F90BB418561ABB00171CAE /* FTGooglePlacesAPIResponse-test1-Nearby-Search-OK.json in Resources */,
 				A0246CA0183D21EA0052416D /* FTGooglePlacesAPIResponse-test3-InvalidRequest.json in Resources */,
-				A0246C9E183D21EA0052416D /* FTGooglePlacesAPIResponse-test1-OK.json in Resources */,
 				A0246CA3183D24150052416D /* FTGooglePlacesAPIResponse-test4-RequestDenied.json in Resources */,
 				A0246C9F183D21EA0052416D /* FTGooglePlacesAPIResponse-test2-NoResults.json in Resources */,
 			);
@@ -720,24 +743,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0246CB5183E17730052416D /* FTGooglePlacesAPIDictionaryRequest.m in Sources */,
-				A0957BDB18523A6600D04466 /* FTGooglePlacesAPIResponseTests.m in Sources */,
-				A0957BDD18523A6600D04466 /* FTGooglePlacesAPISearchResultItemTests.m in Sources */,
-				A0957BDC18523A6600D04466 /* FTGooglePlacesAPISearchResponseTests.m in Sources */,
-				A0957BD01852398400D04466 /* FTGooglePlacesAPITestCase.m in Sources */,
-				A0957BD618523A4C00D04466 /* FTGooglePlacesAPINearbySearchRequestTests.m in Sources */,
 				A0246C6E183D10850052416D /* FTGooglePlacesAPICommon.m in Sources */,
-				A0957BD518523A4C00D04466 /* FTGooglePlacesAPIDictionaryRequestTest.m in Sources */,
-				A0246C70183D10850052416D /* FTGooglePlacesAPISearchResponse.m in Sources */,
-				A07E9D661848E7EF00A9A4D2 /* FTGooglePlacesAPIResponse.m in Sources */,
-				A0246C71183D10850052416D /* FTGooglePlacesAPISearchResultItem.m in Sources */,
+				A0957BF418523DE700D04466 /* FTGooglePlacesAPIService.m in Sources */,
+				A0246CB5183E17730052416D /* FTGooglePlacesAPIDictionaryRequest.m in Sources */,
+				A0246C73183D10850052416D /* FTGooglePlacesAPINearbySearchRequest.m in Sources */,
 				A0246C72183D10850052416D /* FTGooglePlacesAPITextSearchRequest.m in Sources */,
+				A07E9D661848E7EF00A9A4D2 /* FTGooglePlacesAPIResponse.m in Sources */,
+				A0246C70183D10850052416D /* FTGooglePlacesAPISearchResponse.m in Sources */,
+				A0246C71183D10850052416D /* FTGooglePlacesAPISearchResultItem.m in Sources */,
+				A07E9D5D1848E23600A9A4D2 /* FTGooglePlacesAPIDetailRequest.m in Sources */,
+				A0957BDB18523A6600D04466 /* FTGooglePlacesAPIResponseTests.m in Sources */,
+				A07E9D611848E75300A9A4D2 /* FTGooglePlacesAPIDetailResponse.m in Sources */,
+				A0957BD01852398400D04466 /* FTGooglePlacesAPITestCase.m in Sources */,
+				A0957BDE18523A6600D04466 /* FTGooglePlacesAPIServiceTests.m in Sources */,
+				A0957BD518523A4C00D04466 /* FTGooglePlacesAPIDictionaryRequestTest.m in Sources */,
+				A0957BD618523A4C00D04466 /* FTGooglePlacesAPINearbySearchRequestTests.m in Sources */,
+				A0957BDC18523A6600D04466 /* FTGooglePlacesAPISearchResponseTests.m in Sources */,
+				A0957BDD18523A6600D04466 /* FTGooglePlacesAPISearchResultItemTests.m in Sources */,
 				A0957BE218523B4E00D04466 /* MockFTGooglePlacesAPIService.m in Sources */,
 				A0957BE618523B7100D04466 /* MockFTGooglePlacesAPISearchResultItemSubclass.m in Sources */,
-				A0246C73183D10850052416D /* FTGooglePlacesAPINearbySearchRequest.m in Sources */,
-				A07E9D611848E75300A9A4D2 /* FTGooglePlacesAPIDetailResponse.m in Sources */,
-				A07E9D5D1848E23600A9A4D2 /* FTGooglePlacesAPIDetailRequest.m in Sources */,
-				A0957BDE18523A6600D04466 /* FTGooglePlacesAPIServiceTests.m in Sources */,
+				A0957BF518523E2C00D04466 /* AFHTTPRequestOperation.m in Sources */,
+				A0957BF618523E2C00D04466 /* AFHTTPRequestOperationManager.m in Sources */,
+				A0957BF718523E2C00D04466 /* AFHTTPSessionManager.m in Sources */,
+				A0957BF818523E2C00D04466 /* AFNetworkReachabilityManager.m in Sources */,
+				A0F90BB01855F29200171CAE /* MockAFHTTPRequestOperationManager.m in Sources */,
+				A0957BF918523E2C00D04466 /* AFSecurityPolicy.m in Sources */,
+				A0957BFA18523E2C00D04466 /* AFURLConnectionOperation.m in Sources */,
+				A0957BFB18523E2C00D04466 /* AFURLRequestSerialization.m in Sources */,
+				A0957BFC18523E2C00D04466 /* AFURLResponseSerialization.m in Sources */,
+				A0957BFD18523E2C00D04466 /* AFURLSessionManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -883,6 +917,14 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/FTGooglePlacesAPILogicTests/Thirdparty/OCMock\"",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-framework",
+					XCTest,
+					"-force_load",
+					"\"$(SRCROOT)/FTGooglePlacesAPILogicTests/Thirdparty/OCMock/libOCMock.a\"",
+				);
 				PRODUCT_NAME = FTGooglePlacesAPITLogicTests;
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -908,6 +950,14 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/FTGooglePlacesAPILogicTests/Thirdparty/OCMock\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-framework",
+					XCTest,
+					"-force_load",
+					"\"$(SRCROOT)/FTGooglePlacesAPILogicTests/Thirdparty/OCMock/libOCMock.a\"",
 				);
 				PRODUCT_NAME = FTGooglePlacesAPITLogicTests;
 				WRAPPER_EXTENSION = xctest;
