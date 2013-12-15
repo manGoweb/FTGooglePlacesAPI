@@ -12,7 +12,8 @@
 
 @property (nonatomic, assign) BOOL shouldFireSuccessBlock;
 @property (nonatomic, strong) AFHTTPRequestOperation *requestOperation;
-@property (nonatomic, strong, readonly) NSString *lastRequestUrlString;
+@property (nonatomic, strong, readonly) NSString *lastURLString;
+@property (nonatomic, strong, readonly) NSMutableURLRequest *lastURLRequest;
 
 - (void)setFailureErrorToReturn:(NSError *)error;
 - (void)setResponseObjectToReturn:(id)responseObject;

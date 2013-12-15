@@ -18,11 +18,6 @@ static id MockFTGooglePlacesAPIServiceHTTPRequestOperatioManager;
     return [[self class] singletonInstance];
 }
 
-+ (id)ftgp_httpRequestOperationManager
-{
-    return MockFTGooglePlacesAPIServiceHTTPRequestOperatioManager;
-}
-
 #pragma mark - Helper methods
 
 + (FTGooglePlacesAPIService *)singletonInstance
@@ -33,11 +28,6 @@ static id MockFTGooglePlacesAPIServiceHTTPRequestOperatioManager;
 + (void)setSingletonInstance:(FTGooglePlacesAPIService *)singletonInstance
 {
     MockFTGooglePlacesAPIServiceSingletonInstance = singletonInstance;
-}
-
-+ (void)setHTTPRequestOperationManager:(id)manager
-{
-    MockFTGooglePlacesAPIServiceHTTPRequestOperatioManager = manager;
 }
 
 + (void)createDefaultSingletonInstance

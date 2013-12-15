@@ -49,23 +49,22 @@
 
 NSString *const FTGooglePlacesAPIBaseURL = @"https://maps.googleapis.com/maps/api/place/";
 
-/**
- *  Private methods interface
- */
-@interface FTGooglePlacesAPIService (Private)
-
-+ (AFHTTPRequestOperationManager *)ftgp_httpRequestOperationManager;
-
-+ (NSString *)ftgp_queryStringWithDictionary:(NSDictionary *)dictionary;
-+ (NSError *)ftgp_errorForResponseStatus:(FTGooglePlacesAPIResponseStatus)status;
-
-@end
-
-#pragma mark -
 
 static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
 
+
+#pragma mark - Private interface definition
+
+/**
+ *  Class continuation category with private properties
+ */
 @interface FTGooglePlacesAPIService ()
+
+/**
+ *  AFNetworking request manager. This manager is lazily intitialized in custom getter.
+ *  Default implementation is initialized with base URL of Google Places API
+ */
+@property (nonatomic, strong) AFHTTPRequestOperationManager *httpRequestOperationManager;
 
 @property (nonatomic, copy) NSString *apiKey;
 @property (nonatomic, weak) Class searchResultsItemClass;
@@ -78,6 +77,18 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
 @end
 
 
+/**
+ *  Private methods interface
+ */
+@interface FTGooglePlacesAPIService (Private)
+
++ (NSError *)ftgp_errorForResponseStatus:(FTGooglePlacesAPIResponseStatus)status;
+
+@end
+
+
+#pragma mark -
+#pragma mark - Implementation
 
 @implementation FTGooglePlacesAPIService
 
@@ -106,7 +117,7 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
     return self;
 }
 
-#pragma mark Accessors
+#pragma mark - Accessors
 
 - (void)setApiKey:(NSString *)apiKey
 {
@@ -114,7 +125,21 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
     _apiKey = apiKey;
 }
 
-#pragma mark Class methods
+#pragma mark Private
+
+- (AFHTTPRequestOperationManager *)httpRequestOperationManager
+{
+    if (!_httpRequestOperationManager)
+    {
+        NSURL *baseUrl = [NSURL URLWithString:FTGooglePlacesAPIBaseURL];
+        _httpRequestOperationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:baseUrl];
+        _httpRequestOperationManager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    }
+    
+    return _httpRequestOperationManager;
+}
+
+#pragma mark - Public class methods
 
 + (void)provideAPIKey:(NSString *)APIKey
 {
@@ -142,7 +167,7 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
         
         FTGooglePlacesAPISearchResponse *response = [[FTGooglePlacesAPISearchResponse alloc] initWithDictionary:responseObject request:request resultsItemClass:resultsItemClass];
         
-        FTGPServiceLog(@"%@ received response. Status: %@, number of results: %d", [self class], [FTGooglePlacesAPISearchResponse localizedNameOfStatus:response.status], [response.results count]);
+        FTGPServiceLog(@"%@ received Search response. Status: %@, number of results: %d", [self class], [FTGooglePlacesAPISearchResponse localizedNameOfStatus:response.status], [response.results count]);
         
         // Check if everything went OK
         if (response && response.status == FTGooglePlacesAPIResponseStatusOK) {
@@ -170,6 +195,8 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
         //  Try to parse response to object
         FTGooglePlacesAPIDetailResponse *response = [[FTGooglePlacesAPIDetailResponse alloc] initWithDictionary:responseObject request:request];
         
+        FTGPServiceLog(@"%@ received Detail response. Status: %@", [self class], [FTGooglePlacesAPISearchResponse localizedNameOfStatus:response.status]);
+        
         // Check if everything went OK
         if (response && response.status == FTGooglePlacesAPIResponseStatusOK) {
             completion(response, nil);
@@ -187,14 +214,18 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
     FTGooglePlacesAPIDebugLoggingEnabled = enabled;
 }
 
-#pragma mark - Private methods
+#pragma mark - Private class methods
 
 + (void)executeRequest:(id<FTGooglePlacesAPIRequest>)request
  withCompletionHandler:(void(^)(NSDictionary *responseObject, NSError *error))completion
 {
     NSAssert(completion, @"You must provide completion block for the Google Places API request execution. Performing request without handling does not make any sense.");
     
-    NSString *apiKey = [[[self class] sharedService] apiKey];
+    //  Instance
+    FTGooglePlacesAPIService *service = [[self class] sharedService];
+    
+    //  Check API key
+    NSString *apiKey = service.apiKey;
     NSAssert([apiKey length] > 0, @"You must first provide API key using [FTGooglePlacesAPIService provideAPIKey:] before executing Google Places API requests");
     
     NSMutableDictionary *params = [[request placesAPIRequestParams] mutableCopy];
@@ -203,61 +234,33 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
     params[@"key"] = apiKey;
     params[@"sensor"] = @"true";    //  Constant for now
     
-    //  Encode parameters dictionary into URL query string
-    NSString *paramsQueryString  = [[self class] ftgp_queryStringWithDictionary:params];
-    
-    //  Construct full request URL with percent escaping
-    NSString *requestUrlString = [NSString stringWithFormat:@"%@%@/json?%@", FTGooglePlacesAPIBaseURL, [request requestTypeUrlString], paramsQueryString];
-    requestUrlString = [requestUrlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    
-    FTGPServiceLog(@"%@ performing request: %@", [self class], requestUrlString);
+    //  Create relative request path
+    //  Places API base URL is already configured in AFNetworking HTTP manager
+    NSString *requestPath = [NSString stringWithFormat:@"%@/json", [request requestTypeUrlString]];
     
     //  Perform request using AFNetworking
-    AFHTTPRequestOperationManager *manager = [self ftgp_httpRequestOperationManager];
+    AFHTTPRequestOperationManager *manager = service.httpRequestOperationManager;
     
-    [manager GET:requestUrlString
-      parameters:nil
+    //  Perform request
+    [manager GET:requestPath
+      parameters:params
          success:^(AFHTTPRequestOperation *operation, id responseObject)
      {
+         FTGPServiceLog(@"%@ request SUCCESS (Request URL: %@)", [self class], operation.request.URL);
          completion(responseObject, nil);
      }
          failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
+         FTGPServiceLog(@"%@ request FAILURE: (Request URL: %@, Error: %@)", [self class], operation.request.URL, error);
          completion(nil, error);
      }];
 }
 
 @end
 
-#pragma mark - Private methods category
+#pragma mark - Private methods category implementation
 
 @implementation FTGooglePlacesAPIService (Private)
-
-+ (AFHTTPRequestOperationManager *)ftgp_httpRequestOperationManager
-{
-    return [AFHTTPRequestOperationManager manager];
-}
-
-+ (NSString *)ftgp_queryStringWithDictionary:(NSDictionary *)dictionary
-{
-    NSMutableString *ms = [NSMutableString string];
-    
-    [dictionary enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *obj, BOOL *stop) {
-        
-        if ([ms length] > 0) {
-            [ms appendString:@"&"];
-        }
-        //  Parameters with [NSNull null] value are without, just keys should be
-        //  present in the URL
-        if ((NSNull *)obj == [NSNull null]) {
-            [ms appendString:key];
-        } else {
-            [ms appendFormat:@"%@=%@", key, obj];
-        }
-    }];
-    
-    return [ms copy];
-}
 
 + (NSError *)ftgp_errorForResponseStatus:(FTGooglePlacesAPIResponseStatus)status
 {

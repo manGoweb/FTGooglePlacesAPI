@@ -10,8 +10,6 @@
 
 @interface MockFTGooglePlacesAPIService : FTGooglePlacesAPIService
 
-+ (void)setHTTPRequestOperationManager:(id)manager;
-
 + (FTGooglePlacesAPIService *)singletonInstance;
 + (void)setSingletonInstance:(FTGooglePlacesAPIService *)singletonInstance;
 

@@ -35,7 +35,8 @@
                         success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
                         failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
 {
-    _lastRequestUrlString = URLString;
+    _lastURLString = URLString;
+    _lastURLRequest = [super.requestSerializer requestWithMethod:@"GET" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:parameters];
     
     if (_shouldFireSuccessBlock && success) {
         success(nil, _responseObject);
@@ -53,7 +54,8 @@
                          success:(void (^)(AFHTTPRequestOperation *operation))success
                          failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
 {
-    _lastRequestUrlString = URLString;
+    _lastURLString = URLString;
+    _lastURLRequest = [super.requestSerializer requestWithMethod:@"HEAD" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:parameters];
 
     if (_shouldFireSuccessBlock && success) {
         success(nil);
@@ -71,7 +73,8 @@
                          success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
                          failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
 {
-    _lastRequestUrlString = URLString;
+    _lastURLString = URLString;
+    _lastURLRequest = [super.requestSerializer requestWithMethod:@"POST" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:parameters];
     
     if (_shouldFireSuccessBlock && success) {
         success(nil, _responseObject);
@@ -89,7 +92,9 @@
                         success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
                         failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
 {
-    _lastRequestUrlString = URLString;
+    _lastURLString = URLString;
+    _lastURLRequest = [super.requestSerializer requestWithMethod:@"PUT" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:parameters];
+
     
     if (_shouldFireSuccessBlock && success) {
         success(nil, _responseObject);
@@ -107,7 +112,8 @@
                           success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
                           failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
 {
-    _lastRequestUrlString = URLString;
+    _lastURLString = URLString;
+    _lastURLRequest = [super.requestSerializer requestWithMethod:@"PATCH" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:parameters];
     
     if (_shouldFireSuccessBlock && success) {
         success(nil, _responseObject);
@@ -125,7 +131,8 @@
                            success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
                            failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
 {
-    _lastRequestUrlString = URLString;
+    _lastURLString = URLString;
+    _lastURLRequest = [super.requestSerializer requestWithMethod:@"DELETE" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:parameters];
     
     if (_shouldFireSuccessBlock && success) {
         success(nil, _responseObject);

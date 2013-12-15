@@ -24,6 +24,7 @@
  */
 @interface FTGooglePlacesAPIService (PrivateTestsHelpers)
 
+@property (nonatomic, strong) AFHTTPRequestOperationManager *httpRequestOperationManager;
 @property (nonatomic, copy) NSString *apiKey;
 @property (nonatomic, weak) Class searchResultsItemClass;
 
@@ -101,7 +102,7 @@
     
     //  Mock service
     [self configureBasicMockService];
-    [MockFTGooglePlacesAPIService setHTTPRequestOperationManager:mockHTTPManager];
+    [MockFTGooglePlacesAPIService sharedService].httpRequestOperationManager = mockHTTPManager;
     
     [MockFTGooglePlacesAPIService executeRequest:mockRequest withCompletionHandler:^(NSDictionary *responseObject, NSError *error) {}];
 
@@ -113,8 +114,8 @@
     [MockFTGooglePlacesAPIService createDefaultSingletonInstance];
     [MockFTGooglePlacesAPIService provideAPIKey:@"fakeAPIKey"];
     
-    MockAFHTTPRequestOperationManager *requestManager = [[MockAFHTTPRequestOperationManager alloc] initWithBaseURL:nil];
-    [MockFTGooglePlacesAPIService setHTTPRequestOperationManager:requestManager];
+    MockAFHTTPRequestOperationManager *mockHTTPManager = [[MockAFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:FTGooglePlacesAPIBaseURL]];
+    [MockFTGooglePlacesAPIService sharedService].httpRequestOperationManager = mockHTTPManager;
     
     id mockRequest = [OCMockObject mockForProtocol:@protocol(FTGooglePlacesAPIRequest)];
     [[[mockRequest expect] andReturn:@"testtype"] requestTypeUrlString];
@@ -130,7 +131,8 @@
     
     //  We can only test for a prefix because the params are dictionary and we cannot
     //  rely on exact order of parameters
-    XCTAssert([requestManager.lastRequestUrlString hasPrefix:expectedURLStringPrefix], @"");
+    XCTAssertEqualObjects(mockHTTPManager.lastURLString, @"testtype/json", @"");
+    XCTAssert([[[mockHTTPManager.lastURLRequest URL] absoluteString] hasPrefix:expectedURLStringPrefix], @"");
     
     [mockRequest verify];
 }
@@ -143,10 +145,11 @@
     //  Configure Service to use fake Mock AFNetworking
     [self configureBasicMockService];
     
-    MockAFHTTPRequestOperationManager *requestManager = [[MockAFHTTPRequestOperationManager alloc] initWithBaseURL:nil];
-    [MockFTGooglePlacesAPIService setHTTPRequestOperationManager:requestManager];
+    MockAFHTTPRequestOperationManager *mockHTTPManager = [[MockAFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:FTGooglePlacesAPIBaseURL]];
+    [MockFTGooglePlacesAPIService sharedService].httpRequestOperationManager = mockHTTPManager;
+
     
-    [requestManager setFailureErrorToReturn:expectedError];
+    [mockHTTPManager setFailureErrorToReturn:expectedError];
     
     //  Test general public interface
     id mockRequest = [self createMockRequest];
@@ -269,14 +272,14 @@
     //  Configure Service to use fake Mock AFNetworking
     [self configureBasicMockService];
     
-    MockAFHTTPRequestOperationManager *requestManager = [[MockAFHTTPRequestOperationManager alloc] initWithBaseURL:nil];
-    [MockFTGooglePlacesAPIService setHTTPRequestOperationManager:requestManager];
+    MockAFHTTPRequestOperationManager *mockHTTPManager = [[MockAFHTTPRequestOperationManager alloc] initWithBaseURL:nil];
+    [MockFTGooglePlacesAPIService sharedService].httpRequestOperationManager = mockHTTPManager;
     
     //  Load valid JSON response
-    [requestManager setResponseObjectToReturn:responseObject];
+    [mockHTTPManager setResponseObjectToReturn:responseObject];
     
     if (mockManager) {
-        *mockManager = requestManager;
+        *mockManager = mockHTTPManager;
     }
 }
 
