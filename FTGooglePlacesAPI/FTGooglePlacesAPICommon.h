@@ -28,17 +28,25 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ *  Error domain used in NSErrors representing error response code returned
+ *  in a Places API response
+ */
 extern NSString * const FTGooglePlacesAPIErrorDomain;
 
+/**
+ *  Each request passed to the FTGooglePlacesAPIService needs to implement this
+ *  protocol.
+ */
 @protocol FTGooglePlacesAPIRequest <NSObject>
 
 /**
- *  Returns type of request as a string used in the request URL as a last component of the Places API url
- *  Only "nearbysearch" or "textsearch" are available at the moment
+ *  Returns type (method) of request as a string used in the request URL as a last component
+ *  of the Places API url (after ../place/ and before /json?params)
  *
  *  @return String usable in the request URL
  */
-- (NSString *)requestTypeUrlString;
+- (NSString *)placesAPIRequestMethod;
 
 /**
  *  Returns dictionary of all request parameters (without "output" format)

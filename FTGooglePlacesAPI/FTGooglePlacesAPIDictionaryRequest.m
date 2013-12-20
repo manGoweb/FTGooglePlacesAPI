@@ -31,8 +31,8 @@
 
 @implementation FTGooglePlacesAPIDictionaryRequest {
     
+    NSString *_placesAPIRequestMethod;
     NSDictionary *_placesAPIRequestParams;
-    NSString *_requestTypeUrlString;
 }
 
 - (instancetype)init
@@ -48,17 +48,17 @@
     
     self = [super init];
     if (self) {
+        _placesAPIRequestMethod = requestType;
         _placesAPIRequestParams = dictionary;
-        _requestTypeUrlString = requestType;
     }
     return self;
 }
 
 #pragma mark FTGooglePlacesAPIRequest protocol
 
-- (NSString *)requestTypeUrlString
+- (NSString *)placesAPIRequestMethod
 {
-    return _requestTypeUrlString;
+    return _placesAPIRequestMethod;
 }
 
 - (NSDictionary *)placesAPIRequestParams

@@ -48,7 +48,7 @@
     
     request = [[FTGooglePlacesAPIDictionaryRequest alloc] initWithDictionary:@{@"testkey": @"testvalue"} requestType:@"testrequest"];
     
-    XCTAssertEqualObjects([request requestTypeUrlString], @"testrequest", @"requestTypeUrlString is wrong");
+    XCTAssertEqualObjects([request placesAPIRequestMethod], @"testrequest", @"requestTypeUrlString is wrong");
     XCTAssertEqualObjects([request placesAPIRequestParams], @{@"testkey": @"testvalue"}, @"placesAPIRequestParams is wrong");
 }
 

@@ -102,7 +102,7 @@ static const NSUInteger kMaxRadius = 50000;
 
 #pragma mark - FTGooglePlacesAPIRequest protocol
 
-- (NSString *)requestTypeUrlString
+- (NSString *)placesAPIRequestMethod
 {
     return @"textsearch";
 }

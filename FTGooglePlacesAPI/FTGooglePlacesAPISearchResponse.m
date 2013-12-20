@@ -89,7 +89,7 @@
     
     NSDictionary *dictionary = @{@"pagetoken": _nextPageToken};
     
-    FTGooglePlacesAPIDictionaryRequest *request = [[FTGooglePlacesAPIDictionaryRequest alloc] initWithDictionary:dictionary requestType:[self.request requestTypeUrlString]];
+    FTGooglePlacesAPIDictionaryRequest *request = [[FTGooglePlacesAPIDictionaryRequest alloc] initWithDictionary:dictionary requestType:[self.request placesAPIRequestMethod]];
     
     return request;
 }

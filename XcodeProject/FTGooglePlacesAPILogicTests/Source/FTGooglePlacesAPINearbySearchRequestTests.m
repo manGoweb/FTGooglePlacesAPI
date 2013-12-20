@@ -102,13 +102,13 @@
 - (void)testProtocolRequestType
 {
     FTGooglePlacesAPINearbySearchRequest *request = [[FTGooglePlacesAPINearbySearchRequest alloc] initWithLocationCoordinate:_locationCoordinate];
-    XCTAssertEqualObjects([request requestTypeUrlString], @"nearbysearch", @"request type is wrong");
+    XCTAssertEqualObjects([request placesAPIRequestMethod], @"nearbysearch", @"request type is wrong");
 }
 
 - (void)testProtocolParameters1
 {
     FTGooglePlacesAPINearbySearchRequest *request = [[FTGooglePlacesAPINearbySearchRequest alloc] initWithLocationCoordinate:_locationCoordinate];
-    XCTAssertEqualObjects([request requestTypeUrlString], @"nearbysearch", @"request type is wrong");
+    XCTAssertEqualObjects([request placesAPIRequestMethod], @"nearbysearch", @"request type is wrong");
     
     request.keyword = @"test keyword";
     request.rankBy = FTGooglePlacesAPIRequestParamRankByDistance;
@@ -130,7 +130,7 @@
 - (void)testProtocolParameters2
 {
     FTGooglePlacesAPINearbySearchRequest *request = [[FTGooglePlacesAPINearbySearchRequest alloc] initWithLocationCoordinate:_locationCoordinate];
-    XCTAssertEqualObjects([request requestTypeUrlString], @"nearbysearch", @"request type is wrong");
+    XCTAssertEqualObjects([request placesAPIRequestMethod], @"nearbysearch", @"request type is wrong");
     
     request.rankBy = FTGooglePlacesAPIRequestParamRankByProminence;
     request.types = @[@"store"];

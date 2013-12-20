@@ -97,7 +97,7 @@
     id mockRequest = [OCMockObject mockForProtocol:@protocol(FTGooglePlacesAPIRequest)];
     id mockHTTPManager = [OCMockObject niceMockForClass:[AFHTTPRequestOperationManager class]];
     
-    [[[mockRequest expect] andReturn:@"testrequesttype"] requestTypeUrlString];
+    [[[mockRequest expect] andReturn:@"testrequesttype"] placesAPIRequestMethod];
     [[[mockRequest expect] andReturn:@{ @"key": @"value" }] placesAPIRequestParams];
     
     //  Mock service
@@ -118,7 +118,7 @@
     [MockFTGooglePlacesAPIService sharedService].httpRequestOperationManager = mockHTTPManager;
     
     id mockRequest = [OCMockObject mockForProtocol:@protocol(FTGooglePlacesAPIRequest)];
-    [[[mockRequest expect] andReturn:@"testtype"] requestTypeUrlString];
+    [[[mockRequest expect] andReturn:@"testtype"] placesAPIRequestMethod];
     [[[mockRequest expect] andReturn:@{
         @"xkey1": @"value1",
         @"xkey2": @"value2"
@@ -255,7 +255,7 @@
 {
     id mockRequest = [OCMockObject mockForProtocol:@protocol(FTGooglePlacesAPIRequest)];
     
-    [[[mockRequest expect] andReturn:@"testtype"] requestTypeUrlString];
+    [[[mockRequest expect] andReturn:@"testtype"] placesAPIRequestMethod];
     [[[mockRequest expect] andReturn:@{@"param1": @"value1"}] placesAPIRequestParams];
     
     return mockRequest;

@@ -236,7 +236,7 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
     
     //  Create relative request path
     //  Places API base URL is already configured in AFNetworking HTTP manager
-    NSString *requestPath = [NSString stringWithFormat:@"%@/json", [request requestTypeUrlString]];
+    NSString *requestPath = [NSString stringWithFormat:@"%@/json", [request placesAPIRequestMethod]];
     
     //  Perform request using AFNetworking
     AFHTTPRequestOperationManager *manager = service.httpRequestOperationManager;

@@ -57,7 +57,7 @@
 
 #pragma mark - FTGooglePlacesAPIRequest protocol
 
-- (NSString *)requestTypeUrlString
+- (NSString *)placesAPIRequestMethod
 {
     return @"details";
 }

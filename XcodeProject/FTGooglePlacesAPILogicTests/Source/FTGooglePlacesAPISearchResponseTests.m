@@ -117,7 +117,7 @@
     id<FTGooglePlacesAPIRequest>nextPageRequest = [response nextPageRequest];
     XCTAssertNotNil(nextPageRequest, @"nextPageRequest should not be nil");
     
-    XCTAssertEqualObjects([nextPageRequest requestTypeUrlString], @"testrequest", @"nextPageRequest requestTypeUrlString is wrong");
+    XCTAssertEqualObjects([nextPageRequest placesAPIRequestMethod], @"testrequest", @"nextPageRequest requestTypeUrlString is wrong");
     NSDictionary *expectedRequestParams = @{@"pagetoken": @"CmRbAAAAPRe43WuMoqKDiLcauzH5NR5Agm6U5pqiP5gPALHlvKSe89bdGpjNj7VCnHXn0-7gr1b2CeuZyJW0PvUultBCu8IAFOWINBvhQ2u_b1URH6Fs_MI_P6jN551VrBxSYjEKEhBf08hzwZ3fXu4zMRhhIpMfGhR75rfrvBBpTtlS9AwJ2JpIeCrMBA"};
     XCTAssertEqualObjects([nextPageRequest placesAPIRequestParams], expectedRequestParams, @"pageToken returned by nextPageRequest: is wrong");
 }
