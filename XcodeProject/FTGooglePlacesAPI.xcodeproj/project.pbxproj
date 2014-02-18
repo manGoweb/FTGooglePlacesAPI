@@ -54,6 +54,8 @@
 		A0246CAE183D29BA0052416D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0246CAB183D29BA0052416D /* Default@2x.png */; };
 		A0246CB4183E17730052416D /* FTGooglePlacesAPIDictionaryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0246CB3183E17730052416D /* FTGooglePlacesAPIDictionaryRequest.m */; };
 		A0246CB5183E17730052416D /* FTGooglePlacesAPIDictionaryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0246CB3183E17730052416D /* FTGooglePlacesAPIDictionaryRequest.m */; };
+		A0456B4F18B38A4E002D26B8 /* powered-by-google-on-white.png in Resources */ = {isa = PBXBuildFile; fileRef = A0456B4D18B38A4E002D26B8 /* powered-by-google-on-white.png */; };
+		A0456B5018B38A4E002D26B8 /* powered-by-google-on-white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0456B4E18B38A4E002D26B8 /* powered-by-google-on-white@2x.png */; };
 		A07E9D5C1848E23600A9A4D2 /* FTGooglePlacesAPIDetailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A07E9D5B1848E23600A9A4D2 /* FTGooglePlacesAPIDetailRequest.m */; };
 		A07E9D5D1848E23600A9A4D2 /* FTGooglePlacesAPIDetailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A07E9D5B1848E23600A9A4D2 /* FTGooglePlacesAPIDetailRequest.m */; };
 		A07E9D601848E75300A9A4D2 /* FTGooglePlacesAPIDetailResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A07E9D5F1848E75300A9A4D2 /* FTGooglePlacesAPIDetailResponse.m */; };
@@ -159,6 +161,8 @@
 		A0246CAB183D29BA0052416D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		A0246CB2183E17730052416D /* FTGooglePlacesAPIDictionaryRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTGooglePlacesAPIDictionaryRequest.h; sourceTree = "<group>"; };
 		A0246CB3183E17730052416D /* FTGooglePlacesAPIDictionaryRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGooglePlacesAPIDictionaryRequest.m; sourceTree = "<group>"; };
+		A0456B4D18B38A4E002D26B8 /* powered-by-google-on-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "powered-by-google-on-white.png"; sourceTree = "<group>"; };
+		A0456B4E18B38A4E002D26B8 /* powered-by-google-on-white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "powered-by-google-on-white@2x.png"; sourceTree = "<group>"; };
 		A07E9D5A1848E23600A9A4D2 /* FTGooglePlacesAPIDetailRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTGooglePlacesAPIDetailRequest.h; sourceTree = "<group>"; };
 		A07E9D5B1848E23600A9A4D2 /* FTGooglePlacesAPIDetailRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGooglePlacesAPIDetailRequest.m; sourceTree = "<group>"; };
 		A07E9D5E1848E75300A9A4D2 /* FTGooglePlacesAPIDetailResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTGooglePlacesAPIDetailResponse.h; sourceTree = "<group>"; };
@@ -220,7 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				A01BDF75183BD82D00A24F40 /* FTGooglePlacesAPI */,
-				A01BDF4B183BD70100A24F40 /* XcodeProject */,
+				A01BDF4B183BD70100A24F40 /* EXAMPLE */,
 				A0246C82183D10F50052416D /* FTGooglePlacesAPILogicTests */,
 				A01BDF44183BD70100A24F40 /* Frameworks */,
 				A01BDF43183BD70100A24F40 /* Products */,
@@ -247,7 +251,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A01BDF4B183BD70100A24F40 /* XcodeProject */ = {
+		A01BDF4B183BD70100A24F40 /* EXAMPLE */ = {
 			isa = PBXGroup;
 			children = (
 				A01BDF54183BD70100A24F40 /* FTAppDelegate.h */,
@@ -257,7 +261,7 @@
 				A0246CA6183D29BA0052416D /* Resources */,
 				A01BDF4C183BD70100A24F40 /* Supporting Files */,
 			);
-			name = XcodeProject;
+			name = EXAMPLE;
 			path = FTGooglePlacesAPI;
 			sourceTree = "<group>";
 		};
@@ -438,6 +442,8 @@
 			isa = PBXGroup;
 			children = (
 				A0246CA8183D29BA0052416D /* Splashscreen */,
+				A0456B4D18B38A4E002D26B8 /* powered-by-google-on-white.png */,
+				A0456B4E18B38A4E002D26B8 /* powered-by-google-on-white@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -681,8 +687,10 @@
 			files = (
 				A01BDF50183BD70100A24F40 /* InfoPlist.strings in Resources */,
 				A0246CAD183D29BA0052416D /* Default.png in Resources */,
+				A0456B5018B38A4E002D26B8 /* powered-by-google-on-white@2x.png in Resources */,
 				A0246CAE183D29BA0052416D /* Default@2x.png in Resources */,
 				A0246CAC183D29BA0052416D /* Default-568h@2x.png in Resources */,
+				A0456B4F18B38A4E002D26B8 /* powered-by-google-on-white.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

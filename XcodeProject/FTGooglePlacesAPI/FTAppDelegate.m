@@ -25,6 +25,8 @@
     [FTGooglePlacesAPIService provideAPIKey:@"<#PLACE YOUR API KEY HERE#>"];
     
     self.window.rootViewController = navController;
+    
+    [self createAttributionsViews];
     [self.window makeKeyAndVisible];
     
     return YES;
@@ -55,6 +57,29 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Helper methods
+
+- (void)createAttributionsViews
+{
+    UIView *containerView = self.window.rootViewController.view;
+    
+    //  To comply with Google Places API Policies at https://developers.google.com/places/policies
+    //  we display "Powered by Google" logo. For simplicity, it is simply added as a subview
+    //  to root controller's view. This ensures the logo is always visible.
+    UIImage *googleLogo = [UIImage imageNamed:@"powered-by-google-on-white"];
+    UIImageView *googleLogoView = [[UIImageView alloc] initWithImage:googleLogo];
+    googleLogoView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleRightMargin;
+    googleLogoView.userInteractionEnabled = NO;
+    googleLogoView.opaque = NO;
+    
+    CGRect googleLogoFrame = googleLogoView.frame;
+    googleLogoFrame.origin = CGPointMake(10.0f,
+                                         CGRectGetHeight(containerView.frame) - googleLogo.size.height - 10.0f);
+    googleLogoView.frame = googleLogoFrame;
+    
+    [containerView addSubview:googleLogoView];
 }
 
 @end
