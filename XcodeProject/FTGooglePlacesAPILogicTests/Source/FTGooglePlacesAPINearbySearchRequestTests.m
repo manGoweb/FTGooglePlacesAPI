@@ -42,7 +42,8 @@
 {
     FTGooglePlacesAPINearbySearchRequest *request = [[FTGooglePlacesAPINearbySearchRequest alloc] initWithLocationCoordinate:_locationCoordinate];
     
-    XCTAssertEqual(request.locationCoordinate, _locationCoordinate, @"locationCoordinate is wrong");
+    XCTAssertEqual(request.locationCoordinate.latitude, _locationCoordinate.latitude, @"locationCoordinate is wrong");
+    XCTAssertEqual(request.locationCoordinate.longitude, _locationCoordinate.longitude, @"locationCoordinate is wrong");
 
     //  Radius
     XCTAssertEqual(request.radius, (NSUInteger)5000, @"default radius is wrong");
