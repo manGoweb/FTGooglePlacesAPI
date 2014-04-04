@@ -30,7 +30,14 @@ Perform Google Places API requests with ease in a few lines of code. Library inc
 </table>
 
 ##Instalation
- 
+
+### CocoaPods
+
+*FTGooglePlacesAPI* is available as a CocoaPod
+
+    pod 'FTGooglePlacesAPI'
+
+### Manual (or using git submodule)
  1. Implement [AFNetworking 2.0][4]
     - FTGooglePlacesAPI uses AFNetworking 2.0 for all of its networking. Why? Because it rocks!
  2. Download source files from this repository

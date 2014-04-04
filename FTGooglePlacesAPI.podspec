@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 				    - Place Search
 				        - Nearby Search (search places withing a specified area)
 				        - Text Search (search places based on a search string)
-					- [Place Details][3] (get more comprehensive information about a place)
+					- Place Details (get more comprehensive information about a place)
                    DESC
 
   s.homepage     = "https://github.com/FuerteInternational/FTGooglePlacesAPI"
