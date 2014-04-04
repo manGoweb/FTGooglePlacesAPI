@@ -77,7 +77,7 @@ static const NSUInteger kMaxRadius = 50000;
     //  Validate radius
     _radius = radius;
     if (_radius > kMaxRadius) {
-        NSLog(@"WARNING: %s: Radius %dm is too big. Maximum radius is %dm, using maximum", __PRETTY_FUNCTION__, radius, kMaxRadius);
+        NSLog(@"WARNING: %s: Radius %ldm is too big. Maximum radius is %ldm, using maximum", __PRETTY_FUNCTION__, (unsigned long)radius, (unsigned long)kMaxRadius);
         _radius = kMaxRadius;
     }
     
@@ -126,7 +126,7 @@ static const NSUInteger kMaxRadius = 50000;
     params[@"location"] = [NSString stringWithFormat:@"%.7f,%.7f", _locationCoordinate.latitude, _locationCoordinate.longitude];
     
     if (_rankBy != FTGooglePlacesAPIRequestParamRankByDistance) {
-        params[@"radius"] = [NSString stringWithFormat:@"%d", _radius];
+        params[@"radius"] = [NSString stringWithFormat:@"%ld", (unsigned long)_radius];
     }
     
     //  Optional parameters
@@ -138,11 +138,11 @@ static const NSUInteger kMaxRadius = 50000;
     }
     
     if (_minPrice != NSUIntegerMax) {
-        params[@"minprice"] = [NSString stringWithFormat:@"%d", _minPrice];
+        params[@"minprice"] = [NSString stringWithFormat:@"%ld", (unsigned long)_minPrice];
     }
     
     if (_maxPrice != NSUIntegerMax) {
-        params[@"maxprice"] = [NSString stringWithFormat:@"%d", _maxPrice];
+        params[@"maxprice"] = [NSString stringWithFormat:@"%ld", (unsigned long)_maxPrice];
     }
     
     if (_openNow) {

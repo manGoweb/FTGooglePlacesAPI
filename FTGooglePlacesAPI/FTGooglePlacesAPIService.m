@@ -167,7 +167,7 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
         
         FTGooglePlacesAPISearchResponse *response = [[FTGooglePlacesAPISearchResponse alloc] initWithDictionary:responseObject request:request resultsItemClass:resultsItemClass];
         
-        FTGPServiceLog(@"%@ received Search response. Status: %@, number of results: %d", [self class], [FTGooglePlacesAPISearchResponse localizedNameOfStatus:response.status], [response.results count]);
+        FTGPServiceLog(@"%@ received Search response. Status: %@, number of results: %ld", [self class], [FTGooglePlacesAPISearchResponse localizedNameOfStatus:response.status], (unsigned long)[response.results count]);
         
         // Check if everything went OK
         if (response && response.status == FTGooglePlacesAPIResponseStatusOK) {

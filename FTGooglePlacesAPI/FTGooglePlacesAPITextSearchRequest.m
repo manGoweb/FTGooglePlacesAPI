@@ -122,7 +122,7 @@ static const NSUInteger kMaxRadius = 50000;
     
     //  Radius is optional for text search
     if (_radius <= kMaxRadius) {
-        params[@"radius"] = [NSString stringWithFormat:@"%d", _radius];
+        params[@"radius"] = [NSString stringWithFormat:@"%ld", (unsigned long)_radius];
     }
     
     //  Optional parameters
@@ -131,11 +131,11 @@ static const NSUInteger kMaxRadius = 50000;
     };
     
     if (_minPrice != NSUIntegerMax) {
-        params[@"minprice"] = [NSString stringWithFormat:@"%d", _minPrice];
+        params[@"minprice"] = [NSString stringWithFormat:@"%ld", (unsigned long)_minPrice];
     }
     
     if (_maxPrice != NSUIntegerMax) {
-        params[@"maxprice"] = [NSString stringWithFormat:@"%d", _maxPrice];
+        params[@"maxprice"] = [NSString stringWithFormat:@"%ld", (unsigned long)_maxPrice];
     }
     
     if (_openNow) {
