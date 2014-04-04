@@ -66,7 +66,7 @@ static const NSUInteger kMaxRadius = 50000;
     //  Validate radius
     _radius = radius;
     if (_radius > kMaxRadius) {
-        NSLog(@"WARNING: %s: Radius %dm is too big. Maximum radius is %dm, using maximum", __PRETTY_FUNCTION__, radius, kMaxRadius);
+        NSLog(@"WARNING: %s: Radius %ldm is too big. Maximum radius is %ldm, using maximum", __PRETTY_FUNCTION__, (unsigned long)radius, (unsigned long)kMaxRadius);
         _radius = kMaxRadius;
     }
     
