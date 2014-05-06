@@ -52,10 +52,10 @@ typedef NS_ENUM(NSUInteger, FTGooglePlacesAPISearchResultItemOpenedState) {
 @property (nonatomic, strong, readonly) NSString *addressString;    // "vicinity" from the response
 @property (nonatomic, assign, readonly) FTGooglePlacesAPISearchResultItemOpenedState openedState;
 @property (nonatomic, strong, readonly) NSString *iconImageUrl;
-@property (nonatomic, assign, readonly) CGFloat rating;
+@property (nonatomic, assign, readonly) float rating;
 @property (nonatomic, strong, readonly) NSString *reference;
 @property (nonatomic, strong, readonly) NSArray *types;
-
+@property (nonatomic, strong) NSArray *photos;
 /**
  *  You can access complete response dictionary using this property.
  *  In case implementation changes in a future and there will be new values
