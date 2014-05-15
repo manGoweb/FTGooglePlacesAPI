@@ -31,6 +31,7 @@
 #import "FTGooglePlacesAPIDetailResponse.h"
 
 #import "FTGooglePlacesAPICommon.h"
+#import "FTGooglePlacePhotoItem.h" 
 
 @interface FTGooglePlacesAPIDetailResponse (Private)
 
@@ -103,6 +104,23 @@
     _websiteUrl = [NSURL URLWithString:[dictionary ftgp_nilledObjectForKey:@"website"]];
     
     _utcOffset = [[dictionary ftgp_nilledObjectForKey:@"utc_offset"] doubleValue];
+    
+    NSArray *photos = [dictionary ftgp_nilledObjectForKey:@"photos"];
+    if (photos)
+    {
+        NSMutableArray *photosArray = [NSMutableArray arrayWithCapacity:photos.count];
+        for (NSDictionary *photoDic in photos) {
+            FTGooglePlacePhotoItem *photo = [FTGooglePlacePhotoItem new];
+            photo.photoReference = photoDic[@"photo_reference"];
+            photo.htmlAttributions = photoDic[@"html_attributions"];
+            photo.height = [[photoDic ftgp_nilledObjectForKey:@"height"] floatValue];
+            photo.width = [[photoDic ftgp_nilledObjectForKey:@"width"] floatValue];
+            
+            [photosArray addObject:photo];
+        }
+        _photos = photosArray;
+    }
+    
 }
 
 @end
