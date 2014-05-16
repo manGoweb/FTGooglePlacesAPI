@@ -66,4 +66,9 @@
     return _placesAPIRequestParams;
 }
 
+-(BOOL)isJSONRequest
+{
+    return YES;
+}
+
 @end

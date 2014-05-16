@@ -149,4 +149,8 @@ static const NSUInteger kMaxRadius = 50000;
     return [params copy];
 }
 
+-(BOOL)isJSONRequest
+{
+    return YES;
+}
 @end
