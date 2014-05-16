@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+@class UIImage;
 
 @interface FTGooglePlacePhotoItem : NSObject
 
 @property (nonatomic, strong) NSArray *htmlAttributions;
 @property (nonatomic, copy) NSString *photoReference;
 @property (nonatomic) NSInteger height, width;
+
+-(void)resolveImage:(void(^)(UIImage *))completion;
 
 @end

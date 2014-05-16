@@ -209,6 +209,22 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
     }];
 }
 
++ (void)executePhotoRequest:(id<FTGooglePlacesAPIRequest>)request
+       withCompletionHandler:(FTGooglePlacesAPIPhotoRequestCompletionhandler)completion
+{
+    [[self class] executeRequest:request withCompletionHandler:^(id responseObject, NSError *error) {
+        
+        //  Networing, parsing or other general error
+        if (error) {
+            completion(nil, error);
+            return;
+        }
+        
+        completion(responseObject, nil);
+    }];
+}
+
+
 + (void)setDebugLoggingEnabled:(BOOL)enabled
 {
     FTGooglePlacesAPIDebugLoggingEnabled = enabled;
@@ -243,6 +259,16 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
     }
     //  Perform request using AFNetworking
     AFHTTPRequestOperationManager *manager = service.httpRequestOperationManager;
+    
+    //Set the manager responseSerializer to AFImageResponseSerializer in case not JSON Request.
+    if ([request isJSONRequest])
+    {
+        manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    }
+    else
+    {
+        manager.responseSerializer = [AFImageResponseSerializer serializer];
+    }
     
     //  Perform request
     [manager GET:requestPath

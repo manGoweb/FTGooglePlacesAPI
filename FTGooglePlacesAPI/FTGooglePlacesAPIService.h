@@ -29,6 +29,7 @@
 #import <Foundation/Foundation.h>
 
 #import "FTGooglePlacesAPICommon.h"
+@class UIImage;
 
 @class FTGooglePlacesAPISearchResponse;
 @class FTGooglePlacesAPIDetailResponse;
@@ -38,6 +39,8 @@ extern NSString *const FTGooglePlacesAPIBaseURL;
 typedef void (^FTGooglePlacesAPISearchRequestCompletionHandler)(FTGooglePlacesAPISearchResponse *response, NSError *error);
 
 typedef void (^FTGooglePlacesAPIDetailRequestCompletionhandler)(FTGooglePlacesAPIDetailResponse *response, NSError *error);
+
+typedef void (^FTGooglePlacesAPIPhotoRequestCompletionhandler)(UIImage *response, NSError *error);
 
 /**
  *  This class provides encapsulated functionality for communication with Google Places API
@@ -85,6 +88,15 @@ typedef void (^FTGooglePlacesAPIDetailRequestCompletionhandler)(FTGooglePlacesAP
  */
 + (void)executeDetailRequest:(id<FTGooglePlacesAPIRequest>)request
        withCompletionHandler:(FTGooglePlacesAPIDetailRequestCompletionhandler)completion;
+
+/**
+ *  Asks the service to execute the given Google Places API Photo request.
+ *
+ *  @param request    Request object implementing FTGooglePlacesAPIRequest protocol. This will probably be instance of FTGooglePlacesAPIPhotoRequest, but you are free to provide own request implementing requred FTGooglePlacesAPIRequest protocol
+ *  @param completion Completion block to be called after the request was finished. If everything went without problems, response will be non-nill and error will be nil. In case of failure, response will be nil and error will be either AFNetworking error caused by networking problem or error with FTGooglePlacesAPIErrorDomain domain indicating that the networking request was successfull, but Google Places API responded with non-OK status code
+ */
++ (void)executePhotoRequest:(id<FTGooglePlacesAPIRequest>)request
+      withCompletionHandler:(FTGooglePlacesAPIPhotoRequestCompletionhandler)completion;
 
 /**
  *  If set to YES and running in debug mode (#ifdef DEBUG), service will print some information
