@@ -131,6 +131,8 @@
             review.authorName = [reviewDic ftgp_nilledObjectForKey:@"author_name"];
             review.authorURL = [reviewDic ftgp_nilledObjectForKey:@"author_url"];
             review.reviewBody = [reviewDic ftgp_nilledObjectForKey:@"text"];
+            review.rating = [[reviewDic ftgp_nilledObjectForKey:@"rating"] doubleValue];
+            review.time = [[reviewDic ftgp_nilledObjectForKey:@"time"] doubleValue];
             [reviewsArray addObject:review];
         }
         _reviews = reviewsArray;

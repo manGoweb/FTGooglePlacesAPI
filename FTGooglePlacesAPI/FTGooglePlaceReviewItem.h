@@ -12,5 +12,6 @@
 
 @property (nonatomic, copy) NSString *authorName, *authorURL, *reviewBody;
 @property (nonatomic) float rating;
+@property (nonatomic) NSInteger time;
 
 @end
