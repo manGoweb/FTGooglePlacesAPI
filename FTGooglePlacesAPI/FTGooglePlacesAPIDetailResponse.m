@@ -32,6 +32,7 @@
 
 #import "FTGooglePlacesAPICommon.h"
 #import "FTGooglePlacePhotoItem.h" 
+#import "FTGooglePlaceReviewItem.h"
 
 @interface FTGooglePlacesAPIDetailResponse (Private)
 
@@ -121,6 +122,19 @@
         _photos = photosArray;
     }
     
+    NSArray *reviews = [dictionary ftgp_nilledObjectForKey:@"reviews"];
+    if (reviews)
+    {
+        NSMutableArray *reviewsArray = [NSMutableArray arrayWithCapacity:reviews.count];
+        for (NSDictionary *reviewDic in reviews) {
+            FTGooglePlaceReviewItem *review = [FTGooglePlaceReviewItem new];
+            review.authorName = [reviewDic ftgp_nilledObjectForKey:@"author_name"];
+            review.authorURL = [reviewDic ftgp_nilledObjectForKey:@"author_url"];
+            review.reviewBody = [reviewDic ftgp_nilledObjectForKey:@"text"];
+            [reviewsArray addObject:review];
+        }
+        _reviews = reviewsArray;
+    }
 }
 
 @end

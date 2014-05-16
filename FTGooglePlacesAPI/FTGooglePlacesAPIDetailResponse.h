@@ -87,6 +87,7 @@
 @property (nonatomic, strong, readonly) NSString *iconImageUrl;
 @property (nonatomic, assign, readonly) float rating;
 @property (nonatomic, strong) NSArray *photos;
+@property (nonatomic, strong) NSArray *reviews;
 
 /**
  *  Contains a unique token that you can use to retrieve additional information
