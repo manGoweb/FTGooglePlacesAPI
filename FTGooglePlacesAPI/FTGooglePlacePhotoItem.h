@@ -17,4 +17,6 @@
 
 -(void)resolveImage:(void(^)(UIImage *))completion;
 
+-(id)initWithDictionary:(NSDictionary *)dictionary;
+
 @end

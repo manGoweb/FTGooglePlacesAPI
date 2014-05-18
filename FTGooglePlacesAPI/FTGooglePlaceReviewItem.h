@@ -14,4 +14,7 @@
 @property (nonatomic) float rating;
 @property (nonatomic) NSInteger time;
 
+
+-(id)initWithDictionary:(NSDictionary *)dictionary;
+
 @end

@@ -111,12 +111,8 @@
     {
         NSMutableArray *photosArray = [NSMutableArray arrayWithCapacity:photos.count];
         for (NSDictionary *photoDic in photos) {
-            FTGooglePlacePhotoItem *photo = [FTGooglePlacePhotoItem new];
-            photo.photoReference = photoDic[@"photo_reference"];
-            photo.htmlAttributions = photoDic[@"html_attributions"];
-            photo.height = [[photoDic ftgp_nilledObjectForKey:@"height"] floatValue];
-            photo.width = [[photoDic ftgp_nilledObjectForKey:@"width"] floatValue];
             
+            FTGooglePlacePhotoItem *photo = [[FTGooglePlacePhotoItem alloc] initWithDictionary:photoDic];
             [photosArray addObject:photo];
         }
         _photos = photosArray;
@@ -127,12 +123,7 @@
     {
         NSMutableArray *reviewsArray = [NSMutableArray arrayWithCapacity:reviews.count];
         for (NSDictionary *reviewDic in reviews) {
-            FTGooglePlaceReviewItem *review = [FTGooglePlaceReviewItem new];
-            review.authorName = [reviewDic ftgp_nilledObjectForKey:@"author_name"];
-            review.authorURL = [reviewDic ftgp_nilledObjectForKey:@"author_url"];
-            review.reviewBody = [reviewDic ftgp_nilledObjectForKey:@"text"];
-            review.rating = [[reviewDic ftgp_nilledObjectForKey:@"rating"] doubleValue];
-            review.time = [[reviewDic ftgp_nilledObjectForKey:@"time"] doubleValue];
+            FTGooglePlaceReviewItem *review = [[FTGooglePlaceReviewItem alloc] initWithDictionary: reviewDic];
             [reviewsArray addObject:review];
         }
         _reviews = reviewsArray;
