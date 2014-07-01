@@ -270,6 +270,7 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
         manager.responseSerializer = [AFImageResponseSerializer serializer];
     }
     
+    manager.requestSerializer.cachePolicy = NSURLRequestReturnCacheDataElseLoad;
     //  Perform request
     [manager GET:requestPath
       parameters:params
