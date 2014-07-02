@@ -146,6 +146,7 @@
     
     _iconImageUrl = [dictionary ftgp_nilledObjectForKey:@"icon"];
     _rating = [[dictionary ftgp_nilledObjectForKey:@"rating"] floatValue];
+    _placeId = [dictionary ftgp_nilledObjectForKey:@"place_id"];
     _reference = [dictionary ftgp_nilledObjectForKey:@"reference"];
     _types = [dictionary ftgp_nilledObjectForKey:@"types"];
 }

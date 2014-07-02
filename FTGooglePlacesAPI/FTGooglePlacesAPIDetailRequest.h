@@ -40,8 +40,9 @@
 /**
  *  Reference with which the request was initialized.
  *  This is a unique identifier for a place (itemId from the ResultItem)
+ *  See deprecation notice for 'reference replaced by placeid': https://developers.google.com/places/documentation/search#deprecatio
  */
-@property (nonatomic, strong, readonly) NSString *reference;
+@property (nonatomic, strong, readonly) NSString *placeId;
 
 - (instancetype)initWithReference:(NSString *)reference;
 
