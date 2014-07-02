@@ -61,6 +61,14 @@ extern NSString * const FTGooglePlacesAPIErrorDomain;
  */
 - (NSDictionary *)placesAPIRequestParams;
 
+/**
+ *  Most of the request are asking for JSON response from the API.
+ *  Some requests - like GoogleAPIPhotoRequest do not.
+ *
+ *  @return BOOL YES if the request requires JSON.
+ */
+- (BOOL)isJSONRequest;
+
 @end
 
 //  Utilities

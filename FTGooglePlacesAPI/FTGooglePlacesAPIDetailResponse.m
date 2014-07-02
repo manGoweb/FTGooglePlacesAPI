@@ -31,6 +31,8 @@
 #import "FTGooglePlacesAPIDetailResponse.h"
 
 #import "FTGooglePlacesAPICommon.h"
+#import "FTGooglePlacePhotoItem.h" 
+#import "FTGooglePlaceReviewItem.h"
 
 @interface FTGooglePlacesAPIDetailResponse (Private)
 
@@ -103,6 +105,29 @@
     _websiteUrl = [NSURL URLWithString:[dictionary ftgp_nilledObjectForKey:@"website"]];
     
     _utcOffset = [[dictionary ftgp_nilledObjectForKey:@"utc_offset"] doubleValue];
+    
+    NSArray *photos = [dictionary ftgp_nilledObjectForKey:@"photos"];
+    if (photos)
+    {
+        NSMutableArray *photosArray = [NSMutableArray arrayWithCapacity:photos.count];
+        for (NSDictionary *photoDic in photos) {
+            
+            FTGooglePlacePhotoItem *photo = [[FTGooglePlacePhotoItem alloc] initWithDictionary:photoDic];
+            [photosArray addObject:photo];
+        }
+        _photos = photosArray;
+    }
+    
+    NSArray *reviews = [dictionary ftgp_nilledObjectForKey:@"reviews"];
+    if (reviews)
+    {
+        NSMutableArray *reviewsArray = [NSMutableArray arrayWithCapacity:reviews.count];
+        for (NSDictionary *reviewDic in reviews) {
+            FTGooglePlaceReviewItem *review = [[FTGooglePlaceReviewItem alloc] initWithDictionary: reviewDic];
+            [reviewsArray addObject:review];
+        }
+        _reviews = reviewsArray;
+    }
 }
 
 @end

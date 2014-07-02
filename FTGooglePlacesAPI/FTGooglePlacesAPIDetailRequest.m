@@ -67,4 +67,9 @@
     return @{@"reference": _reference};
 }
 
+-(BOOL)isJSONRequest
+{
+    return YES;
+}
+
 @end

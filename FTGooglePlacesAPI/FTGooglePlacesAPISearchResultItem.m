@@ -28,6 +28,7 @@
 
 #import "FTGooglePlacesAPISearchResultItem.h"
 #import "FTGooglePlacesAPICommon.h"
+#import "FTGooglePlacePhotoItem.h"
 
 /**
  *  Private methods interface
@@ -148,6 +149,18 @@
     _rating = [[dictionary ftgp_nilledObjectForKey:@"rating"] floatValue];
     _reference = [dictionary ftgp_nilledObjectForKey:@"reference"];
     _types = [dictionary ftgp_nilledObjectForKey:@"types"];
+    
+    NSArray *photos = [dictionary ftgp_nilledObjectForKey:@"photos"];
+    if (photos)
+    {
+        NSMutableArray *photosArray = [NSMutableArray arrayWithCapacity:photos.count];
+        for (NSDictionary *photoDic in photos) {
+            
+            FTGooglePlacePhotoItem *photo = [[FTGooglePlacePhotoItem alloc] initWithDictionary:photoDic];
+            [photosArray addObject:photo];
+        }
+        _photos = photosArray;
+    }
 }
 
 @end
