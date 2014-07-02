@@ -34,16 +34,16 @@
 
 #pragma mark Lifecycle
 
-- (instancetype)initWithReference:(NSString *)reference
+- (instancetype)initWithReference:(NSString *)placeId
 {
-    if ([reference length] == 0) {
+    if ([placeId length] == 0) {
         NSLog(@"WARNING: Trying to create FTGooglePlacesAPIDetailRequest with empty reference. Returning nil");
         return nil;
     }
     
     self = [super init];
     if (self) {
-        _reference = reference;
+        _placeId = placeId;
     }
     return self;
 }
@@ -52,7 +52,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@: %p> Reference: %@", [self class], self, _reference];
+    return [NSString stringWithFormat:@"<%@: %p> PlaceId: %@", [self class], self, _placeId];
 }
 
 #pragma mark - FTGooglePlacesAPIRequest protocol
@@ -64,7 +64,7 @@
 
 - (NSDictionary *)placesAPIRequestParams
 {
-    return @{@"reference": _reference};
+    return @{@"placeid": _placeId};
 }
 
 @end

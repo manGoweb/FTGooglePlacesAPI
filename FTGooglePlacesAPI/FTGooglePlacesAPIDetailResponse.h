@@ -94,6 +94,13 @@
  *  token is not guaranteed to be returned for any given Place across different searches.
  */
 @property (nonatomic, strong, readonly) NSString *reference;
+/**
+ *
+ * See deprecation notice for 'reference replaced by placeid': https://developers.google.com/places/documentation/search#deprecation
+ *
+ */
+@property (nonatomic, strong, readonly) NSString *placeId;
+
 @property (nonatomic, strong, readonly) NSArray *types;
 @property (nonatomic, strong, readonly) NSURL *url;
 @property (nonatomic, strong, readonly) NSURL *websiteUrl;

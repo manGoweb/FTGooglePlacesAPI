@@ -53,7 +53,15 @@ typedef NS_ENUM(NSUInteger, FTGooglePlacesAPISearchResultItemOpenedState) {
 @property (nonatomic, assign, readonly) FTGooglePlacesAPISearchResultItemOpenedState openedState;
 @property (nonatomic, strong, readonly) NSString *iconImageUrl;
 @property (nonatomic, assign, readonly) CGFloat rating;
+
+/**
+ *
+ * See deprecation notice for 'reference replaced by placeid': https://developers.google.com/places/documentation/search#deprecation
+ *
+ */
+@property (nonatomic, strong, readonly) NSString *placeId;
 @property (nonatomic, strong, readonly) NSString *reference;
+
 @property (nonatomic, strong, readonly) NSArray *types;
 
 /**
