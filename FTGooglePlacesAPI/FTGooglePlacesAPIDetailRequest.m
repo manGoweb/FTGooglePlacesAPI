@@ -34,6 +34,47 @@
 
 #pragma mark Lifecycle
 
+- (instancetype)initWithPlaceId:(NSString *)placeId
+{
+    if ([placeId length] == 0) {
+        NSLog(@"WARNING: Trying to create FTGooglePlacesAPIDetailRequest with empty placeId. Returning nil");
+        return nil;
+    }
+    
+    self = [super init];
+    if (self) {
+        _placeId = placeId;
+    }
+    return self;
+}
+
+#pragma mark - Superclass overrides
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"<%@: %p> Place ID: %@", [self class], self, _placeId];
+}
+
+#pragma mark - FTGooglePlacesAPIRequest protocol
+
+- (NSString *)placesAPIRequestMethod
+{
+    return @"details";
+}
+
+- (NSDictionary *)placesAPIRequestParams
+{
+    if (_placeId) {
+        return @{@"placeid": _placeId};
+    }
+    else {
+        return @{@"reference": _reference};
+    }
+    
+}
+
+#pragma mark - Deprecations
+
 - (instancetype)initWithReference:(NSString *)reference
 {
     if ([reference length] == 0) {
@@ -46,25 +87,6 @@
         _reference = reference;
     }
     return self;
-}
-
-#pragma mark - Superclass overrides
-
-- (NSString *)description
-{
-    return [NSString stringWithFormat:@"<%@: %p> Reference: %@", [self class], self, _reference];
-}
-
-#pragma mark - FTGooglePlacesAPIRequest protocol
-
-- (NSString *)placesAPIRequestMethod
-{
-    return @"details";
-}
-
-- (NSDictionary *)placesAPIRequestParams
-{
-    return @{@"reference": _reference};
 }
 
 @end

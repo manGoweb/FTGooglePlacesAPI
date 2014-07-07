@@ -1,446 +1,589 @@
 {
-   "debug_info" : [],
-   "html_attributions" : [],
-   "next_page_token" : "CmRbAAAAPRe43WuMoqKDiLcauzH5NR5Agm6U5pqiP5gPALHlvKSe89bdGpjNj7VCnHXn0-7gr1b2CeuZyJW0PvUultBCu8IAFOWINBvhQ2u_b1URH6Fs_MI_P6jN551VrBxSYjEKEhBf08hzwZ3fXu4zMRhhIpMfGhR75rfrvBBpTtlS9AwJ2JpIeCrMBA",
-   "results" : [
-      {
-         "geometry" : {
-            "location" : {
-               "lat" : 51.502514,
-               "lng" : -0.118782
-            }
-         },
-         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
-         "id" : "5139d09fbccf4c974fce66f7d88269c149bac0a5",
-         "name" : "London Film Museum South Bank",
-         "opening_hours" : {
-            "open_now" : true
-         },
-         "photos" : [
-            {
-               "height" : 1154,
-               "html_attributions" : [
-                  "\u003ca href=\"https://plus.google.com/104713496079301355451\"\u003ecesar vazquez\u003c/a\u003e"
-               ],
-               "photo_reference" : "CpQBhwAAAGrcxIZjBi4SjrS_r0Mao4-tKOx9nA4SBoq2JP_hqmbEu5VWCUto4LZCsITIJm-59Uq1leE3iTDHHZhIL5K9u6Ebr9yzC05aG_88Nd0br2Sh531QPGolXppUE_9OMvZKGpqGdanugJXmCiUF5XsNNayhsjm8GfN6X_e27HqX36DcwrsDi9bC0oTZtW_raMbdohIQ_v57OFUFtmj5tslXxJpJQxoUAxFyqvU0m9DGYbey2FjyZO5oG-M",
-               "width" : 2048
-            }
-         ],
-         "rating" : 3.6,
-         "reference" : "CoQBfwAAAJSJZj5Q1WmZQktfYDc4bAqYFA3cybr_lRuhjVAGsZDrWObfY0jc8fxbnRD2sQG6X1ubmi2XmdYdqfYlwTyBbuixWxpdR1LL8r-imYTFOrgK0SRaeGduoPpus0m3dpGLE3Jx8sp_4gDFcS5W_qIF0QWTWWovAwPlY9jvmJZhwd50EhDqhQ1nGCrXPZg44GnN6c3OGhQglbMDQZ17aTZnnzn8lagwMMOU6Q",
-         "types" : [ "museum", "establishment" ],
-         "vicinity" : "1st Floor, Riverside Building, County Hall, London"
-      },
-      {
-         "geometry" : {
-            "location" : {
-               "lat" : 51.505013,
-               "lng" : -0.127382
-            }
-         },
-         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
-         "id" : "2ca380707674cecedf8fb44f889dccc23421665d",
-         "name" : "The Household Cavalry Museum",
-         "opening_hours" : {
-            "open_now" : true
-         },
-         "photos" : [
-            {
-               "height" : 426,
-               "html_attributions" : [
-                  "\u003ca href=\"https://plus.google.com/115860134132577714793\"\u003eSergey Korshunov\u003c/a\u003e"
-               ],
-               "photo_reference" : "CnRnAAAAeMGhHj2FsCtiWwSc5O0w7iHo5-bpRohLLD5eRqWmYdBtORDNkIRHIX__mbtH0x_q68GLxrbMFp7W-1OGfuGIFwwpw78oeB5Voh4cyCm8q20E8-rbcIVqsUZWlAqienmAIz8J25VX_KN0l3MPt1plkBIQdHWSqjgfQTiJwM2S4a-taRoU06ZCcGLFBjge_8Ts26jOiQ8czS8",
-               "width" : 640
-            }
-         ],
-         "rating" : 3.7,
-         "reference" : "CoQBfgAAAAAMKKT6Jv5MMHwsmaQEwyjJBBvO2-b7k09vdmouCZX0A-eWB1RDZRyEOCZ1eBDM_7pR6OTKOmIxUEr2yaTAnLEEhFtliIU3CRjGDTpRMIJx1GocaUHW2HTsKlzs1IR9CBiUnVXdr1lK1mNb1A0InE3VtDT38WON9zy8M39EqbXjEhCut4uJHqEfD45DC0sfNoB6GhQoKdM5V_doTuVFRMt1XaN8zEdyng",
-         "types" : [ "museum", "establishment" ],
-         "vicinity" : "Horse Guards Avenue, London"
-      },
-      {
-         "geometry" : {
-            "location" : {
-               "lat" : 51.50015,
-               "lng" : -0.117689
-            }
-         },
-         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
-         "id" : "3b45318457e0d17d7c489873b36dceb32b3ebbd5",
-         "name" : "Florence Nightingale Museum",
-         "opening_hours" : {
-            "open_now" : true
-         },
-         "photos" : [
-            {
-               "height" : 480,
-               "html_attributions" : [ "From a Google User" ],
-               "photo_reference" : "CoQBegAAAPJwCOB0PN8P5QdRlPvB07L7SL2ae2IH7zWdo11ZeWdO8ejS7-ikBxU6EiyOSYtG4tZusOAVKcdg_q_-H0Gex4C0oxpK_zGkTwet7Oq_b5xPWlyX3J41G5KGiwpL_FtYPFcCa9W-N4HGIxStCFoc0R9ET_yoE9PvKNtS-aJAW2uDEhCtntODXXHM7mMdrdFy_OHwGhSlWnWwf6-PzggzLjKut33cqQj1ew",
-               "width" : 640
-            }
-         ],
-         "rating" : 3.8,
-         "reference" : "CoQBfQAAAGUzyraEzalRZPXw-HJ3Fh7w1Mg_P7WbgCu1jY4pf52bWWkq3W5UIlJoWk8ysrCp6E7WYSbSGEu4RlvyH55cZIsOMcnf7u6_fgu4Z5iUjQ_eSmzWid9hOElIfltqeKM6C52gRysZndnK285NbC0lXOurrpScxdyTWqZCXzQKhScBEhBdfActeg9Jmz1Xh45hn402GhRb6ObDo2PGj3O6aOHGKYZjtObrOQ",
-         "types" : [ "museum", "establishment" ],
-         "vicinity" : "2 Lambeth Palace Road, London"
-      },
-      {
-         "geometry" : {
-            "location" : {
-               "lat" : 51.5,
-               "lng" : -0.116667
-            }
-         },
-         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
-         "id" : "42a2a88b1084613d5057e7f4de2b9caa445a0b55",
-         "name" : "Moore's Traditional Museum",
-         "reference" : "CoQBewAAANR6syklx4w2Tys782OutxZf3EWOnriswerE8yOYPtmua4-9rxA9t24NJLop4ZmiAkkPFp7Qn_wZA6lmoCih0eYLGr6ut2F9jnjKIkoRPqG77NHua5raZIAPpR96o1hHu2P-IAvzodWJ9OA_BKPCeVyA1brG1qwWIr11tGaoIzgFEhD_rSeaKN5colVB_hqw0fyDGhR6DqvdmX42doYQBoyiBusICjh6vg",
-         "types" : [ "museum", "establishment" ],
-         "vicinity" : "Peel"
-      },
-      {
-         "geometry" : {
-            "location" : {
-               "lat" : 51.506384,
-               "lng" : -0.126982
-            }
-         },
-         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/art_gallery-71.png",
-         "id" : "0675e1e5b08151d610cc11fbdb43e87cf0b72ab9",
-         "name" : "Frost & Reed Ltd",
-         "reference" : "CoQBcQAAAAD2h8C0Q7fwQgKgoFd3aoYBLnD9t4qkrS8pKnRkEYorfr7akgCmrvX48YnNBJ0WC3uhy4CZDfL06iXAQGWodtFLMaQ0npiTk512OEu-vc_2hZHoFUxNbyPN5M7TNRqCm2N28p7wA0uMWuhEgvRKDL93Ra3H98QdJ8GuUYYkxJ5nEhC2-PPc5IjzoX0h__amVCUmGhS0z0al7E0yKR48FgLPqEe4JMyJCA",
-         "types" : [ "art_gallery", "establishment" ],
-         "vicinity" : "2-4 King Street, St James's and Whitehall, London, SW1Y 6QP"
-      },
-      {
-         "geometry" : {
-            "location" : {
-               "lat" : 51.495738,
-               "lng" : -0.127601
-            }
-         },
-         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/art_gallery-71.png",
-         "id" : "7045267a2fda9e65ac2ea44a51b41794a0308e4a",
-         "name" : "12 Star Gallery",
-         "reference" : "CnRwAAAAdjAFLgRZZ7RwaZoXsHvaEfM-LTaNkG8-pOvqnuiCj6xSyVXzaN2ozpa1lSbo3jdwkDjO09HZLpQJF44--k7pcPihO-jgimYwQJ5NrN0bbxtohPbYhxWG7E1AMNHkSxCkYFsXW2RJxge7NePRxx6U3RIQOPKiOiYlFyN0zKTb_l-TzhoUmgUwTIh8KZYg6pYABcs9iwu4lzw",
-         "types" : [ "art_gallery", "establishment" ],
-         "vicinity" : "Europe House, 32 Smith Square, London"
-      },
-      {
-         "geometry" : {
-            "location" : {
-               "lat" : 51.506424,
-               "lng" : -0.130081
-            }
-         },
-         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/art_gallery-71.png",
-         "id" : "bcab2728febe0d6da12551767cdf8a02eee39e2b",
-         "name" : "Mall Galleries",
-         "opening_hours" : {
-            "open_now" : true
-         },
-         "photos" : [
-            {
-               "height" : 180,
-               "html_attributions" : [],
-               "photo_reference" : "CnRnAAAAvx2jKtg9fBOZ225JQywAztIkuVEx8lyIu8_Jp58vpjvBRortCMI30SirLf3jhnNo3rcYCYpCd4SmrPeN-puJ8W-Vxp4iKj7LUxf4EsyKt8fKTrDoFiX9YVvY9v9pnPUx_GjbOhgOSnyIwWL8juL13xIQ2z26YGwjgPl4aG_tUKGTjBoUu_CDxXtasBu7Ib-R-2cL_pIo-_c",
-               "width" : 230
-            }
-         ],
-         "rating" : 4.7,
-         "reference" : "CnRwAAAAqdq-ncIKEk2HdIy4fKOl4uFV7UDu8O6xO2DBPAjCNXYr6-3FV29qt07OQ_M4WrHejoWBtrgksKe3fiAeTru2HxSHdnukuKvJCL9acMVTsU_96yOvx5YrZus56gMISUmzwEQZH2KX4OZ_pRG2Qm5r5BIQp8LeC4xX0FPYWXrgHE3nahoUwGJakbq0CYH8ltCpyc6fxtSWylU",
-         "types" : [ "art_gallery", "establishment" ],
-         "vicinity" : "The Mall, London"
-      },
-      {
-         "geometry" : {
-            "location" : {
-               "lat" : 51.506351,
-               "lng" : -0.130284
-            }
-         },
-         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/art_gallery-71.png",
-         "id" : "b83e8ebaed98605b64596a6c6e204158e95b1738",
-         "name" : "Iconastas",
-         "opening_hours" : {
-            "open_now" : true
-         },
-         "reference" : "CnRqAAAAMTLknvkOQq_JtyOKIsU0P-7HD1VOHOssxOSWc3PzBCk3oC1bRdAWW5E0dq51H5AVlr7CuQ5f3zLmwfGL7wrGWPnkbSmdXCtLH2gSk9gXojSAu3tjgO7W_Nxw7j0CYkQ7STqFqphVIfPDQiJXY5pUGhIQT_RRjEmy0nOq4OYKibPITBoUQUdeEetglXgbz_Blm5iXZXimFcY",
-         "types" : [ "art_gallery", "establishment" ],
-         "vicinity" : "5 Piccadilly Arcade, London"
-      },
-      {
-         "geometry" : {
-            "location" : {
-               "lat" : 51.507647,
-               "lng" : -0.124991
-            }
-         },
-         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
-         "id" : "37474403ad3263ad86f98209a47884f4f459c1f4",
-         "name" : "Benjamin Franklin House",
-         "opening_hours" : {
-            "open_now" : true
-         },
-         "photos" : [
-            {
-               "height" : 246,
-               "html_attributions" : [],
-               "photo_reference" : "CoQBfAAAAOZmHqi9CJzRB0TVS7AieDGHVklvQBaq8NS3lviipW0VVhx4EVxBRz0FR8i-2cNZLufztaLtLX88Z2gkMbbIJwO0gqVv9OoKy8pvmzsGalfvHSJm86kGJak4oPGJpuTFFdv9fAfWKdZGRqNq4mA5aeKOr9UGd5BjTB5QkVy9UqqwEhDIwUsitnbZ1O1WsPC3AAnvGhSOetXg-2xdIzY8W5kINZ0PIo-v1A",
-               "width" : 365
-            }
-         ],
-         "reference" : "CoQBeQAAADkorxRgpsROzvIie7r83ugWdEUIxKmOE6dgZ-UczENXmRQvmlk-BEvkd-RK8Y514vUCG78uBuEueknLXZsSs1D8-FiyasyytAJk1EKGdA-L9Bi6LoC9r1qAMGlyDjcziwUVoJF21ih6qwuc7KdXoCj96Qciaw5m4ErSpUBK-E-ZEhBBdO4zzXDlldsPUS1TmUWjGhTLZPlF4BqZ7zPalxM_i2uYyICjDA",
-         "types" : [ "museum", "establishment" ],
-         "vicinity" : "36 Craven Street, London"
-      },
-      {
-         "geometry" : {
-            "location" : {
-               "lat" : 51.506415,
-               "lng" : -0.130968
-            }
-         },
-         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
-         "id" : "8a067ef079f63e24fa4841eb325e72243f1d3240",
-         "name" : "Institute Of Contemporary Arts",
-         "opening_hours" : {
-            "open_now" : true
-         },
-         "photos" : [
-            {
-               "height" : 480,
-               "html_attributions" : [
-                  "\u003ca href=\"https://plus.google.com/110114155784038384149\"\u003eInder Negi\u003c/a\u003e"
-               ],
-               "photo_reference" : "CnRoAAAAuUsY51puGDRA-l-qIE5PZ-nA_iGPtwp8Z7gTEycNPjRcfIhDqlK_rrYvpxOnmtQSB9lCHqu37YZNrff7doEAYWLr4D7rnjSZt8SkHyE7JUj5D6HRzOFhKYQcjrIdqJnyJAg270jVlFcB5SCH6_V6-BIQ59LsfaU6mft4_jmKwmvcGhoUzC4ZkhB8rhyZRthc_Uz3NphaL-I",
-               "width" : 640
-            }
-         ],
-         "rating" : 4.1,
-         "reference" : "CoQBfwAAABhkMD-gSx--J9f1DswD84dqumDDyJ-2uDgD_pf82xphJVKQAdgKBFrPzbSUUlqT7I1QyoYcgd61F-rq6lDqjaIdE1Lcw2ljeKkdlUSIopUgEJ8R6VBDOJBletketTH45lppPJyJuE3If4aOnT2sUbEA9YAkOCUluuw39SzwUd52EhBe8B-CmcEpZnRNkBjwy2wRGhTQ89SDtWulzX1T52j5Eq5-v7jlLQ",
-         "types" : [
-            "book_store",
-            "store",
-            "cafe",
-            "bar",
-            "art_gallery",
-            "food",
-            "establishment"
-         ],
-         "vicinity" : "The Mall, London"
-      },
-      {
-         "geometry" : {
-            "location" : {
-               "lat" : 51.504913,
-               "lng" : -0.11571
-            }
-         },
-         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/art_gallery-71.png",
-         "id" : "eb664f5395481ad1d701a8a02be541ce17c6c604",
-         "name" : "Topolski Century",
-         "photos" : [
-            {
-               "height" : 648,
-               "html_attributions" : [
-                  "\u003ca href=\"https://plus.google.com/100255388573765575211\"\u003eJack Hubbard\u003c/a\u003e"
-               ],
-               "photo_reference" : "CnRoAAAAi-eTrXQ2yZPkYoCCzTMcj61vf0A3_-oUDeN2LTEVJZ2bgFGk2Y2KO2grr4gsk9SdgwrTl74sCMvgyippHpc-UXRbLt4FYaOJJtdnp9DVa2xiX8kDtoyyQXEtWmmFRF05AIDfvovMhOzztkUaDq1p-RIQo7RBKj4mZWrR0aSNOH6aShoUICANbpt3-I0rJ_usbAGS6GAkjFI",
-               "width" : 1152
-            }
-         ],
-         "reference" : "CoQBcgAAAC2Odl1eM7wnEoW9D94taUcEi4MmaJGlA7NRNkdBXtUCHSZ_VtJfnSSevvyxVuGIA1J_1GHzVVgta8-oAD1LJHDQMAE1VjITgUrnuFF79Aq_ECCswZv8jZm0BXhU4Zdld5wsEEYZeJPSbkaZcy0kLR47ArUKQO2GJoLHKFzmWAIhEhD1Zm0L_A8nTgfC3voXV6snGhSxXw4dD6FStR-WhTyQjm_FDFOX4g",
-         "types" : [ "art_gallery", "establishment" ],
-         "vicinity" : "150-152 Concert Hall Approach, London"
-      },
-      {
-         "geometry" : {
-            "location" : {
-               "lat" : 51.507834,
-               "lng" : -0.125404
-            }
-         },
-         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/art_gallery-71.png",
-         "id" : "e7aa7224a43766cc883396f8713d81b5e578fdee",
-         "name" : "British Optical Association Museum",
-         "photos" : [
-            {
-               "height" : 1266,
-               "html_attributions" : [],
-               "photo_reference" : "CpQBigAAAK5dGR9N2PKBh6BhEltLai0uGylkEyvnWT2LHPC6SJf8iKcmQqi9HLbL4ealqhoNizX_BWDj1iVQXFUWjmOOVVOxxqiBuW6BS1v99Z-7DgmyWB8B7a_ixvguzyVRFxUXmLdFSRzpFWCq6HdvILI2uHhWH40bSl1UNQdJ0VC0dEkOgXjOg-a_lBz6BEiq7v3u0BIQKP1lVpqG1zTAVVcDzMabOBoU3KE4NmXL_HwT5QcW7oHcQoltxIA",
-               "width" : 1275
-            }
-         ],
-         "reference" : "CpQBhAAAABmCuZiYu5n7IXPN0KinxTXGValx3SeNkrB4Am57GNfMmeTRZEiGAsD2i0HrtwHNeOcdCjPj2ChFiIx5ZlJH2ZoOcPlNwuvL9EPLWRmyMRtuVpaOwS_Z3rM2YthsOrEbZGsSZVr9BvnAQ3tQXJSla0R6gYNx5WMuFXiI3NXN-PACqbAuovXL8tK0THZGNJOUixIQSiLacIDEYlrqwTxauokdhBoUSM_olQm9laV3Vq97Q5HTAL-jmyU",
-         "types" : [ "art_gallery", "museum", "school", "establishment" ],
-         "vicinity" : "41-42 Craven Street, London"
-      },
-      {
-         "geometry" : {
-            "location" : {
-               "lat" : 51.500198,
-               "lng" : -0.113782
-            }
-         },
-         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/art_gallery-71.png",
-         "id" : "189ddb4564d09b98b20d830a77a83da81c6f4d2f",
-         "name" : "Matteo Merla",
-         "reference" : "CnRuAAAAjLKKg7bdexnhuY_wn-LhdffuiVQje_2cLyz4aSyEPJzOl1qUvG-6nnZ98ltI6yl5G_fOzZksOrLcdPIpgYjMsBLOUQyB0Ukbqswb5qae9yFm8VqD-JKvsaLGOoOjgCQYJxccFUlWIJqOH9chysUnDxIQO0Umyh0mV-Aveygy1S4pbhoU09tLHYgbirmUFuW1jFuKBcxJe-Y",
-         "types" : [ "art_gallery", "establishment" ],
-         "vicinity" : "3 Lower Marsh, London"
-      },
-      {
-         "geometry" : {
-            "location" : {
-               "lat" : 51.505652,
-               "lng" : -0.116439
-            }
-         },
-         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/art_gallery-71.png",
-         "id" : "816e5130a10499b86e947146d9d9c6b141659b31",
-         "name" : "Southbank Centre",
-         "opening_hours" : {
-            "open_now" : true
-         },
-         "photos" : [
-            {
-               "height" : 1536,
-               "html_attributions" : [
-                  "\u003ca href=\"https://plus.google.com/103160020423874855730\"\u003eBjörn H\u003c/a\u003e"
-               ],
-               "photo_reference" : "CnRuAAAA1mCArB3L-K8pE94nh9TMqXyKq_pzhI5Ia0dSkB_yezBh_Jhxjq6OIHerbVywL-mBvyv1688ezjUWV-0F9EOsvzuQHwSAzmvzY1j3-lMGAn-houWmhqS4OS6vXb6y3ME1HIJYaN26nRwO-I7g1Tp6jRIQYH_iqdiHNqMG3PzVMQAm4hoUpviZd11WsKMVi9NzghfgsuZ_SVQ",
-               "width" : 2048
-            }
-         ],
-         "rating" : 4.5,
-         "reference" : "CoQBcQAAAN6rwg5JEk-oFX6BepcnXdzAfWAOt2G6I9k7MhQPbdnISDtZPA7Nawl1H4QIFzo6HEuZzlLkW8ydoyrL-S9h7_Z8szliVAHssuL081SDqHsOLlaLrJZjRxWjPD0izlVJHDQtNGGrzrQlF0TFK2WTIbeDnBMbhhmAwpAceov-O1S-EhDKGKtVOBzb-Dpd7OvsGnXaGhR29nl6AYbHKR92MOz3vqqK0wzseg",
-         "types" : [ "art_gallery", "establishment" ],
-         "vicinity" : "Belvedere Road, London"
-      },
-      {
-         "geometry" : {
-            "location" : {
-               "lat" : 51.500481,
-               "lng" : -0.113625
-            }
-         },
-         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/art_gallery-71.png",
-         "id" : "044afd7c84bbd7f513f125de3528cb5b8efba89a",
-         "name" : "Man & Eve",
-         "opening_hours" : {
-            "open_now" : true
-         },
-         "reference" : "CnRrAAAAkiI6mdI_xw8vW3qaJZ0_bb4Z5vXe3JWr2jvl3nOdv6BYhUH1uHnQhVHVKu3PHkfQgb_gMHjlpUt7RYmr21sCR7edlsio55f_zud6Xgb78fSws9e0q_hN5bNBlqRKA0OIuXC2Kh0Q8afsvo-BboX7DRIQQ4gT5A-qFDQVNkdCDB_dYRoU-d0quydVCInYNcmTowUh5BH4plA",
-         "types" : [ "art_gallery", "establishment" ],
-         "vicinity" : "120 Lower Marsh, London"
-      },
-      {
-         "geometry" : {
-            "location" : {
-               "lat" : 51.506575,
-               "lng" : -0.131166
-            }
-         },
-         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/art_gallery-71.png",
-         "id" : "57003ead7cb76faa1a68c1ff1c4165c7ee6e6fea",
-         "name" : "Lift",
-         "photos" : [
-            {
-               "height" : 648,
-               "html_attributions" : [
-                  "\u003ca href=\"https://plus.google.com/100255388573765575211\"\u003eJack Hubbard\u003c/a\u003e"
-               ],
-               "photo_reference" : "CnRoAAAA1tNzMhwk0NEVLHnfN6bQvWFJ_cQZuED9jL-SSvYTJB_hl3IQeMmTNyCyLBl5JFWr9WGEGZFDXvJhYQIMVgwIF3TYmpSpfm_6GmWHX7Bxn26FLgGEcD8on9iP5ITkSEXh0NbjacVZ15T_E7hjhaCdQBIQnozOLoV9FXrhKw148hxu5RoUk82dzBdtQp3xfRqXhG2POCwctbk",
-               "width" : 1152
-            }
-         ],
-         "reference" : "CnRmAAAA-uisag4bgQVouw2sRZQbEXxEU-pzi5WjkOrCEYdBQDtpkxEo7AczP_8eOphqSjMWIhPDhX3Sakn8I0nONt9Bf3tZncVe1jPtVsrLHli66K1ZpuD2eEnoffFG8AoTLOCfUqhkfekj4QY78eRi4j7h1hIQ0GjbEbpKkHLP0O8dFF-sjBoUpbdzmCk_RCqwGO2dPO6u_OkisHo",
-         "types" : [ "art_gallery", "establishment" ],
-         "vicinity" : "12 Carlton House Terrace, London"
-      },
-      {
-         "geometry" : {
-            "location" : {
-               "lat" : 51.507717,
-               "lng" : -0.127931
-            }
-         },
-         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/art_gallery-71.png",
-         "id" : "bb925d78dc69abf21852d0fd06bc672d4e5e3004",
-         "name" : "Nacionalinė galerija",
-         "reference" : "CoQBdwAAACaJUvGUrsjiEzhxFUliRYPRZIJ4--4kGYHXZzOtN4f4mM4JRbzSbbSDdTWDnH7U76KmbmrlTCz_s4JdbElYMRxAvtEK656YkfAd7QmXyX3aSWyX-AthA_kAzWD5fuvpBOIOVk4tkQ6maffgZtYFCKA_8nJPAY8eFvUrtmvRDJdBEhCs2AoZOaWDT3lBHV9u8GstGhRYcadiCjxOqaLw2ycDMGkDmI37fw",
-         "types" : [ "art_gallery", "establishment" ],
-         "vicinity" : "London"
-      },
-      {
-         "geometry" : {
-            "location" : {
-               "lat" : 51.506945,
-               "lng" : -0.130618
-            }
-         },
-         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/art_gallery-71.png",
-         "id" : "d57f4c2871bd31c58d69c7d7b6ab6783ce0e10b8",
-         "name" : "Federation Of British Artists",
-         "opening_hours" : {
-            "open_now" : true
-         },
-         "photos" : [
-            {
-               "height" : 2048,
-               "html_attributions" : [],
-               "photo_reference" : "CnRnAAAAEV294vGgQcKu7KHUOhKXZse-a6W7oGTOWGCkaFF3MhS2VtdQh3lw9Ihnkt4-AYReBtI_0Uo2ykJAY0a4izcFefEIQMIRNUa2YxMvRpdRfHaIK1tKq9hqYyPmXnrMxGyMzFfrafnlv7Nz0W8Ler4KbhIQ_0-7hiY3VM104WziNVyABxoU7nk7t0_-rYgYO2S6Jf75v2pjCcc",
-               "width" : 1371
-            }
-         ],
-         "reference" : "CoQBfwAAAPTEE-AGqFZHlRfXGEXlJXZsd6ZaFZJG7bvSSMOu1dzDiPnUovT9PqjXP_IQtFD47vdMxhzuSAwleC6__C8cRlmZdXxj-SmYWFoul_C9-5aMqSQhkHNhuK5g4W58denFiy1kAsdfYaz0kEieRaiNRNJOLW-IYtI593mTiiiQPTk5EhDbHM1YRdjAdULxc8QG_anuGhRUJDzgTb04dO9-nGM381_RXIOSAA",
-         "types" : [ "art_gallery", "establishment" ],
-         "vicinity" : "17 Carlton House Terrace, London"
-      },
-      {
-         "geometry" : {
-            "location" : {
-               "lat" : 51.49467,
-               "lng" : -0.120285
-            }
-         },
-         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
-         "id" : "63b278f9fd1b8dbe142c868a38b30fbfb830abba",
-         "name" : "Garden Museum",
-         "opening_hours" : {
-            "open_now" : true
-         },
-         "photos" : [
-            {
-               "height" : 864,
-               "html_attributions" : [
-                  "\u003ca href=\"https://plus.google.com/112546499714468970956\"\u003eFedor Korobeynikov\u003c/a\u003e"
-               ],
-               "photo_reference" : "CnRoAAAA4nlEu5s2JuHyal1yoQtlqCcGGhkq4A_p0N2CIjwnAUTiD5Ti9nvNZ--k-pCwYrcD0kVJWIn7RUlfMqgc_x3cMGB-WbYLgH6EtuOUuzvw7J1LqIDaYBgFBU7nS9qk9_7DyFjDdSjHQSfTbMCWtJxlBRIQjUZfQhaaQptxKrsrdet8gxoUUq_ES0eNI4sbm_jFggDYao7cIkk",
-               "width" : 1152
-            }
-         ],
-         "rating" : 3.8,
-         "reference" : "CnRuAAAAp6O4DvGIjtB1cN3d17kN5qipW31mnjOjHuLk-UIwZiLgfO_Xiu_wx9dmS0FVukR2ZRRf5i-gIRnduxFvipUzTihKu4W7FoLWFX5jhOQfohzQs-CxEnKuJj9oKp84lN8fFzMqnD9ty9aDoLwJ-NEg1BIQwyK-BF6YKCtnu4_gWvjO7hoUrdQ43bnQAk_MRSfLBTboGTRrcro",
-         "types" : [ "store", "museum", "establishment" ],
-         "vicinity" : "5 Lambeth Palace Road, London"
-      },
-      {
-         "geometry" : {
-            "location" : {
-               "lat" : 51.508098,
-               "lng" : -0.123059
-            }
-         },
-         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/art_gallery-71.png",
-         "id" : "41cca4fcd3ac05ad78346ac7c25ab2d676ce69e6",
-         "name" : "Proud Galleries",
-         "reference" : "CnRwAAAA6KMpwXUK7Uud5-8w4HtZKodGT9n8jxT53MQtcY03fFlbVU1C60ODFjsOsW4Fq7ZagZqxgb6ga90MJzazCl9WM4enr6M2xEo4zayxpDqX2Qef_TlU6NJqM7sPe6QLx5RVkcBsRRajJtJAMMMSMrGothIQ7KuiBRxrFmGh3Gl0kEZIuRoUrAgQxr19EQweqH1RrvcMJ_pmFRA",
-         "types" : [ "art_gallery", "establishment" ],
-         "vicinity" : "5 Buckingham Street, London"
-      }
-   ],
-   "status" : "OK"
+    "html_attributions": [
+    ],
+    "next_page_token": "CoQCAAEAACUEBVd58EGiJKFOe1KoEFks9jia46vhv6Bi4sR0ExZaFgvu6XqK2xgB6RXYqdWX1QP26UlcCR7DGiBwhH2-FN528X9J-CUH0JjUxauAzJjuxhyyxt946AW1ETRqecANfJdZ5_cjRwhR-0qQ13HeiQaB_riQPMG4SAqKcb8OMcHMtSJrJUacIIifXTNyxJpEbP8dvETT-pDM-0zl9qmTO0aqGdmz0EzyPAEuMCmZEMUI0gnZJvvDvaar_L4KCL6bhjGFqs5OrW-DIn1Vo5CI8bVD4VRINLdxAk7ovLOxT04p1M9qo6JNJ5ZZYntyX2MC64SvIe2RtFIGDGy046xJho4SECVEEiNhLUaQw1_2dUSO4zUaFKqr08lGcqbMqGhRJ9VG69t6YMgj",
+    "results": [
+                {
+                "geometry": {
+                "location": {
+                "lat": 51.50233,
+                "lng": -0.127661
+                }
+                },
+                "icon": "http://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
+                "id": "ded3d4530b9507102bc76a1e81d469449c02dc9f",
+                "name": "Churchill War Rooms",
+                "opening_hours": {
+                "open_now": false
+                },
+                "photos": [
+                           {
+                           "height": 768,
+                           "html_attributions": [
+                                                 "From a Google User"
+                                                 ],
+                           "photo_reference": "CoQBcgAAAFQa_Ue-Rk9HbwqGjzXtePnrTiYANN7vjh6FHE6ldamtC2-KCXQMK3kcyMVzY6n648fhMt4B82ob7TRulNU0AMRZ2eObmow2FEhPWZ5xzvdbdhguimaGQ3ssnDOcY0biGidxEHIJ7-6YdB0kT2cmCDtgQ_v2InIo3lonGOZtx1aJEhCqOg91rPohKKeRk5WLp6ZkGhQtRuzZu6XYc2sKbtCsJXrbDY2i5g",
+                           "width": 1024
+                           }
+                           ],
+                "place_id": "ChIJq4lX1doEdkgR5JXPstgQjc0",
+                "rating": 4.2,
+                "reference": "CoQBdQAAAEtNFmdB9aVtnVwL1dWeVgp756LX3xvweLiiin-atHwp9wnPOu7JWVEtG95-DnEXrpqPVyP-v6hpJzK5hwG_emosesPYBFOISEYatHwhfcjzygq44OpPlSS1ikie0HJ438jr4-V8ErAlayYgYPiGM78yANkv5d-BQHK33C_k5Y3sEhBUFPVp6GbaoGFh89UGPWezGhRxn-YXIWy-fUqcijsBnwStnWMz5g",
+                "scope": "GOOGLE",
+                "types": [
+                          "museum",
+                          "establishment"
+                          ],
+                "vicinity": "Clive Steps, King Charles Street, London"
+                },
+                {
+                "geometry": {
+                "location": {
+                "lat": 51.498502,
+                "lng": -0.126432
+                }
+                },
+                "icon": "http://maps.gstatic.com/mapfiles/place_api/icons/travel_agent-71.png",
+                "id": "7d7eefa64447e645842882a57e9b2d7f199654ac",
+                "name": "Jewel Tower",
+                "opening_hours": {
+                "open_now": false
+                },
+                "photos": [
+                           {
+                           "height": 257,
+                           "html_attributions": [
+                           ],
+                           "photo_reference": "CnRuAAAAE7wkuG6JrUCkAf9mpQiGHSo980YpMhj7-5RpYXDg5ZlYXyOwqlYEAvJGG43PxnxaRi1hrmRN3fJjoTxKCXiQvlHRo_y12-Wg7c8_LjvfARuM63rsYvDq7oBDEv2NpVZKJr4dYtt3TRzzZ6tJp57D0BIQXRK3HQwZO6jMOZWLKh_lahoUCjrX4NhfSW5KYwF7_SBZIATbsTs",
+                           "width": 320
+                           }
+                           ],
+                "place_id": "ChIJF5YlesMEdkgRT4fo3zv-vBo",
+                "rating": 3.4,
+                "reference": "CnRsAAAA2NQeoSiRcY-X7hbVcoXyjHgVtMpa7-1wKqHuk6mlQzrEQLc14KFrLVKje2geRZUPyA7zhP1b-mZhzbz_bHFKS_28u7jR7iz_4aVtswGDtAwKKgjjnlh-gKXNrd6Ip921BSer3gXHKb7Czpzas3vNcxIQ_HOrxGsyeZSg_BKyHo47zhoUKRiAyptjfZ_kH_mRC1PrqgUPFeo",
+                "scope": "GOOGLE",
+                "types": [
+                          "travel_agency",
+                          "museum",
+                          "establishment"
+                          ],
+                "vicinity": "Abingdon St, London, Westminster"
+                },
+                {
+                "geometry": {
+                "location": {
+                "lat": 51.498502,
+                "lng": -0.126432
+                }
+                },
+                "icon": "http://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
+                "id": "8cca13884c1c50b8e3723e38172e18f25050035f",
+                "name": "English Heritage",
+                "place_id": "ChIJWaRjd8MEdkgRP5f3pzZG2j8",
+                "reference": "CoQBcQAAAHibwM57Zo22oLDspggxpjlDNRR48Fe5g9urcqqAu6GYE3Yi9OoERsZ2eJqBc8uj9s3mxZ40abxRFuAnhLZXuDUK4PchEQ_PvqSI9CEJAVDaAISRE82GVo6uT2zV003sXyg0TW0Xsa_NBDQyN115C9AmbQp72M1atkQtezswUDDJEhCXaBIqH3yfN7JCr2M9Nyz1GhQpF8D6R0rYBEpCkAuQfEjUIJw7OQ",
+                "scope": "GOOGLE",
+                "types": [
+                          "museum",
+                          "establishment"
+                          ],
+                "vicinity": "The Jewel Tower, Old Palace Yard, London"
+                },
+                {
+                "geometry": {
+                "location": {
+                "lat": 51.505013,
+                "lng": -0.127382
+                }
+                },
+                "icon": "http://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
+                "id": "2ca380707674cecedf8fb44f889dccc23421665d",
+                "name": "The Household Cavalry Museum",
+                "opening_hours": {
+                "open_now": false
+                },
+                "photos": [
+                           {
+                           "height": 426,
+                           "html_attributions": [
+                                                 "<a href=\"https://plus.google.com/115860134132577714793\">Sergey Korshunov</a>"
+                                                 ],
+                           "photo_reference": "CnRnAAAAkh7qH27ez5Eze-WgtqtO-2l0P6517CVsFSJrIRtUUYcK6-FiOMhB4Qfdf2AaE1r56YYK2dcXkl3ZpdxLXgzqox2ZE1RPBFL4NW3P68GNAheAR0u6N0lZNbGwb5NeEOFreWeIAOgi2XKMIh9r9C79QRIQyiQmBKegGope4UcnFe5QlRoU_zbVxFMAI1w5ARaG9NxbYee1BDc",
+                           "width": 640
+                           }
+                           ],
+                "place_id": "ChIJj8pl-M8EdkgRYHpGjyF-BKc",
+                "rating": 4.1,
+                "reference": "CoQBfgAAANo3qFAfSIYvE-exmXrSunrda7PUT2VnPi_Q3olb2dS2R21cONsb_Jl_FIdu4lndf-IHt6jWVESiDnakF0MSdi07LbDQ_bGFsXE3DP0yz0jV7jOorFu6eX9QizbdIwSosdkWYLRTBwXTgY8b9h_UvNUW4QT6nmy4dl5rtXl6b3gIEhA53NqMj-k5DqtDFe2JC0HFGhR_M1-aHvhrHVKjqiX5hDaS5Lv4zw",
+                "scope": "GOOGLE",
+                "types": [
+                          "museum",
+                          "establishment"
+                          ],
+                "vicinity": "Horse Guards Ave, London"
+                },
+                {
+                "geometry": {
+                "location": {
+                "lat": 51.50015,
+                "lng": -0.117689
+                }
+                },
+                "icon": "http://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
+                "id": "3b45318457e0d17d7c489873b36dceb32b3ebbd5",
+                "name": "Florence Nightingale Museum",
+                "opening_hours": {
+                "open_now": false
+                },
+                "photos": [
+                           {
+                           "height": 1600,
+                           "html_attributions": [
+                           ],
+                           "photo_reference": "CnRnAAAAZOJmjemuc7K0TGJeNCpNKAc7GKz2CYocb-gN5s-HHHyjlmG9jpeCPQa4ayyDOSuMaRYz1-elwPLFikH7R0BJIb2ZBzCvz17_sNYNJtgZbfZuA5XOglkDeJwsTM7h7OY5H2z9CLTODh0gk08YVABjDxIQvdSIAHsBWGT_Q7vDMHWdThoUVOzPgkKPFsT3XYrsbQ2MVXMnFPE",
+                           "width": 2844
+                           }
+                           ],
+                "place_id": "ChIJE7Y9vrgEdkgRLifdCCl3FZ4",
+                "rating": 3.6,
+                "reference": "CoQBfQAAAOGlnMcSn6c4NC7fSa0T16Va4og8redi9rXbPqf66ZqYkMaE6ndJ-Zzt8CcFei7EztPxvPp6XPlJn461r-j_mmRopoKrLB7DGswnUjYkmnYcKPq0p5cinRAEwH_68W1QJTYlnEgeXzfHkdUwvZppxHEYf9xlWmWgOxEZ0nB4z8FNEhD3hrykodo9cwbTm3N430BmGhQzanYx_h3BkEwsjd4T4PUNgXl4_A",
+                "scope": "GOOGLE",
+                "types": [
+                          "museum",
+                          "establishment"
+                          ],
+                "vicinity": "2 Lambeth Palace Rd, London"
+                },
+                {
+                "geometry": {
+                "location": {
+                "lat": 51.502038,
+                "lng": -0.115904
+                }
+                },
+                "icon": "http://maps.gstatic.com/mapfiles/place_api/icons/art_gallery-71.png",
+                "id": "df736fb359ba80bf48219bcea55bf449336a694f",
+                "name": "Graffiti Kings London - Hire A Graffiti Artist",
+                "opening_hours": {
+                "open_now": true
+                },
+                "photos": [
+                           {
+                           "height": 1171,
+                           "html_attributions": [
+                           ],
+                           "photo_reference": "CnRnAAAAxqhGOcTsolzVJQKft6TG2A5filBxdjop_GuO2rB0njGi86dz6kllFOT48C9SCsvwWUEgZFi0f4okxhWr64aJ_z2JG2evinyo33vFIyt2XRIhV6kXKh9aoDX3xwyyQWV8bh6RgWpkec65jUsU4qlsPhIQRQHSpdDXf3AUmB7evvsV5hoUogZZdanDeTAlTtKI8Vnu7f-bRO0",
+                           "width": 1600
+                           }
+                           ],
+                "place_id": "ChIJkTQiXrgEdkgRLXvm9HyBDes",
+                "reference": "CqQBkQAAACy2nL2CwLvSyPiJXq8yYauCurFc05A7DPraQCOJyZatJnt-Pgzhy-uzmOAsYqrsiv2Deo1xjLgNLn6UuVLkeu9nLLCcMdLXYIs_EGBpPonNsnGFNIUAiZ71LJxDBR6vLPwD6ADXpKPVIkZeFNklOtk8vUrjYuMMES46Y8YdO_u3ExYPq_ARRhwMRMXOj6iDyA7LMKeg9UL4WjW3KCuZzaESEAV9J6ptGaV9GuAn8tGiM_0aFMhEwITbyhloFf6G8B52k5UzFbLB",
+                "scope": "GOOGLE",
+                "types": [
+                          "art_gallery",
+                          "establishment"
+                          ],
+                "vicinity": "1 Leake St, London"
+                },
+                {
+                "geometry": {
+                "location": {
+                "lat": 51.506384,
+                "lng": -0.126982
+                }
+                },
+                "icon": "http://maps.gstatic.com/mapfiles/place_api/icons/art_gallery-71.png",
+                "id": "0675e1e5b08151d610cc11fbdb43e87cf0b72ab9",
+                "name": "Frost & Reed Ltd",
+                "place_id": "ChIJobnyCdcEdkgRbQWpfmZQ7TU",
+                "reference": "CoQBcQAAAMUcIpApUaGbE8spzUGG2wvfRoyviGytMH_QxoWGxXAfTTpdIFqAdDML_z6x-1mooGo6UsqaTSl-b4bTInxD8QD_44G4seOVUBnf2CQjOPa1zoNDWHW2X1YXZzrh0Hxup1Kp42mfpSDpZ3q6eWeUkifIOHY8D3yiIIQUIrU9np9uEhCJ4G9U-BaXwGqKzlsiyrttGhRlt5w1x2vhpHFEBGY_heHB7Z5qJg",
+                "scope": "GOOGLE",
+                "types": [
+                          "art_gallery",
+                          "establishment"
+                          ],
+                "vicinity": "2-4 King Street, St James's and Whitehall, London, SW1Y 6QP"
+                },
+                {
+                "geometry": {
+                "location": {
+                "lat": 51.495738,
+                "lng": -0.127601
+                }
+                },
+                "icon": "http://maps.gstatic.com/mapfiles/place_api/icons/art_gallery-71.png",
+                "id": "7045267a2fda9e65ac2ea44a51b41794a0308e4a",
+                "name": "12 Star Gallery",
+                "opening_hours": {
+                "open_now": false
+                },
+                "photos": [
+                           {
+                           "height": 1600,
+                           "html_attributions": [
+                           ],
+                           "photo_reference": "CnRnAAAAsqr7eLrGX_o3AgeqW-ct8HVITcc-Drr5NIsewAWGQupUQRtoK__MWBWDat29gJqEHBfkgnVTgpX8WFlJF5H1Ghv1FRXk9iXqT_k_2uHXYTyoBK1grpH02EDShEVbV0eM-AXnwgtqPyP_QENytj-MQhIQkdKg-lBavqMkKhKgZJlHXxoUdjnx1ypbRiIO7S1ZHXNy9MZ_Ltg",
+                           "width": 2844
+                           }
+                           ],
+                "place_id": "ChIJlRWnN9sEdkgROiOKVEaLknU",
+                "reference": "CnRwAAAAjBxtD7gGRmzpDd0TSgfXztgGwKQ_KvauFZVpK01_9daZF7B4ZHhmGQKgPSgpofY2gGo6BcN4XY4TruvcrcIiF9JlWdb7QE10bAD8lke3XXAGpyYOie6amp0GJTLcHEmY_DI2bt7SrMnGPNe9KO7uQRIQ0IaPfJ-obxiy5jQLZzKpDhoUcwV70GgWDy_X1CGUYwULxqHYOeU",
+                "scope": "GOOGLE",
+                "types": [
+                          "art_gallery",
+                          "establishment"
+                          ],
+                "vicinity": "Europe House, 32 Smith Square, London"
+                },
+                {
+                "geometry": {
+                "location": {
+                "lat": 51.506351,
+                "lng": -0.130284
+                }
+                },
+                "icon": "http://maps.gstatic.com/mapfiles/place_api/icons/art_gallery-71.png",
+                "id": "b83e8ebaed98605b64596a6c6e204158e95b1738",
+                "name": "Iconastas",
+                "opening_hours": {
+                "open_now": false
+                },
+                "place_id": "ChIJw1R2RNYEdkgRz3jzLf1iAy0",
+                "reference": "CnRqAAAAuQNqnHtlxzyHovJgROot2PGkPG2otaBupC17gHDNvjZKVPDAwb9IWHxnmuy2U40ja92abNijsWWfodhtPxYrYv0MGgDhHcyq1cmt6awdpyn3oC3_-e7lq04w12KXgcac2SD29Qgm9XJmTCnsmwDtQBIQEZcTFXtQKHERwD_Qx_3qfBoU5e_auQSoq1r8KVQMPh7_7hfZk5c",
+                "scope": "GOOGLE",
+                "types": [
+                          "art_gallery",
+                          "establishment"
+                          ],
+                "vicinity": "5 Piccadilly Arcade, London"
+                },
+                {
+                "geometry": {
+                "location": {
+                "lat": 51.506692,
+                "lng": -0.130028
+                }
+                },
+                "icon": "http://maps.gstatic.com/mapfiles/place_api/icons/art_gallery-71.png",
+                "id": "f1866122dcd3fb1e398f0407760641a919c3048d",
+                "name": "Mall Galleries",
+                "opening_hours": {
+                "open_now": false
+                },
+                "photos": [
+                           {
+                           "height": 480,
+                           "html_attributions": [
+                                                 "<a href=\"https://plus.google.com/105854162578054029636\">Miyis Rojas</a>"
+                                                 ],
+                           "photo_reference": "CnRoAAAAJ0oSWHctzxqOErx4FKTva9xCxfR2lADe3W9X6AurmjiJ11mTEmW9iNlH0vZLIYuCDjtuPjbgwokc1Drmp8P2NItxZCOiNpxA_b8qocbAjXeh85gKtCVqHfbQ7tuleFyMjoNKKgSGgDoCowX8bJmIahIQ6aaaWGIUzo28leG2sq3FzxoUTgxpctC4gND0KWt0F-dgS3SrYbk",
+                           "width": 640
+                           }
+                           ],
+                "place_id": "ChIJ9bNTJdAEdkgRmSVzJmEoXRI",
+                "rating": 4.7,
+                "reference": "CnRvAAAA1DI4oy4cKB9aVNwiV2taKZdjDEy2yBErPELjRyAL7_doR-wbulqDON7cSw3BS8sZlq-bsRZHKlSIgymX2pFosypx1DWM-FnEKocn_XhHgVVRB1msAuZoL1FT02ZwVIsgLevPyavsCeP0dbExVhj9-hIQUKbAKcIleM7u5wOjExhqZhoU9P9aGJzX3W3CCQRBHblUhgqJBgY",
+                "scope": "GOOGLE",
+                "types": [
+                          "art_gallery",
+                          "establishment"
+                          ],
+                "vicinity": "The Mall, London"
+                },
+                {
+                "geometry": {
+                "location": {
+                "lat": 51.506405,
+                "lng": -0.130956
+                }
+                },
+                "icon": "http://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+                "id": "84be89583270ab1e6582b660dccd6e4bc072efe5",
+                "name": "ICA Bar & Cafe",
+                "opening_hours": {
+                "open_now": true
+                },
+                "place_id": "ChIJZ7ZoP9AEdkgRX_VY-h4p1Lc",
+                "price_level": 3,
+                "reference": "CnRwAAAASn3Jc3oF0Ma0mu_AWcFpevFtNeeh3Djz6T-t9kufmwYWSg15wcyRitWcZ0C4BwrKWDm3l9N6imb93yFVIYl2ow3_UbQN4DdO7B-oTMAWRHtJwdIyD1T2OaWa6wFqqreo8GuckhV5Zy4bO2gFLhvq3RIQ8W5t88trqXqlIigba7N4ZhoUl_AI2CBXdaUMjQrWfvWC-7tLNQY",
+                "scope": "GOOGLE",
+                "types": [
+                          "bar",
+                          "restaurant",
+                          "museum",
+                          "food",
+                          "establishment"
+                          ],
+                "vicinity": "The London Office, 62 Pall Mall, London"
+                },
+                {
+                "geometry": {
+                "location": {
+                "lat": 51.506415,
+                "lng": -0.130968
+                }
+                },
+                "icon": "http://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
+                "id": "8a067ef079f63e24fa4841eb325e72243f1d3240",
+                "name": "Institute Of Contemporary Arts",
+                "opening_hours": {
+                "open_now": false
+                },
+                "photos": [
+                           {
+                           "height": 480,
+                           "html_attributions": [
+                                                 "<a href=\"https://plus.google.com/110114155784038384149\">Inder Negi</a>"
+                                                 ],
+                           "photo_reference": "CnRoAAAApShoLbIFnW1pmG-dZAAPwQSGRnoYZvMOA5E4rcofmZb2ZD_az3nrSfI5HqYxixnzUY4J2JJdDy_znNJlDlJbm9dJa8HuYWVirDRmvM9YqGSYiAO3LDyOJpSYhD1XJTpN1vdqSixk_Nze4zuSH56LchIQWGTMDZiVkbrbdyPiVIVyChoUMUycQVR-YmGIEaVDbPcFOherhoA",
+                           "width": 640
+                           }
+                           ],
+                "place_id": "ChIJpwrHSNAEdkgR1YO1RjflYXw",
+                "rating": 4.2,
+                "reference": "CoQBfwAAAGzX0x7-RXcJiGl_ZrdmuikvXgXSZaV3Pxr7bCIKuaWhAZppI0eQzoX8p-oQlhqX9E9LvyhBjz__uiwkRzh6CzdyQPuxx3YCpTSTzDwE4Gu29mFVps4MCnPa8kcMPlpyJOebsTESuV-k2X6azm6IIlP55Ax_BZOVznfWCe0c0d2ZEhA6zvoXLmcDp1-29Ht3G_cuGhT4YWL3XNnfM6R7VbUKsz0P2c7dMg",
+                "scope": "GOOGLE",
+                "types": [
+                          "book_store",
+                          "store",
+                          "cafe",
+                          "bar",
+                          "art_gallery",
+                          "food",
+                          "establishment"
+                          ],
+                "vicinity": "The Mall, London"
+                },
+                {
+                "geometry": {
+                "location": {
+                "lat": 51.507831,
+                "lng": -0.125355
+                }
+                },
+                "icon": "http://maps.gstatic.com/mapfiles/place_api/icons/art_gallery-71.png",
+                "id": "e7aa7224a43766cc883396f8713d81b5e578fdee",
+                "name": "British Optical Association Museum",
+                "opening_hours": {
+                "open_now": false
+                },
+                "photos": [
+                           {
+                           "height": 1266,
+                           "html_attributions": [
+                           ],
+                           "photo_reference": "CnRnAAAAgDf_X3olMIfs3R-K14rNtHuIpv3b8NWH6SsHtTCKgx3PGsmZ7b-R-8cdZcaGwOkVwyfz1zQIUW8UzErKVfAHJiv7ZHu9f_UmmKu3Ny4-lY6iSDBzvMxhA3I5An_4JaXQadzCrduSBKtuKOoEWjRwyRIQUVIa5lXDvuF-Mv8SDWaYKhoUjv5sKrNE15Y4NoHfSBQ0Xw1Gb8o",
+                           "width": 1275
+                           }
+                           ],
+                "place_id": "ChIJQzLB784EdkgR72xgiximiK4",
+                "reference": "CpQBhAAAANm61VmoKqFaHkRv8nJddlgF0wT9UPD5pMmLT6l3yheDnZrJFRHFdJSlLoCFsrDHlokhTsctW3wqkwz65Zpk2JAWfzLDEFkM9KXd1oeVZtr-wfs4CHDlS3e0zIgVsHzHQzssJWTr8MzTzNyRf7R72W2GFpheah67A-OkhtTAeP2Dzzk1PlCiWj_4iO8Cw7gmnRIQCG4yCvbLezp9erIdK77D5xoUpJGjMPG_cck4uZWV-3-TA_n0QXM",
+                "scope": "GOOGLE",
+                "types": [
+                          "art_gallery",
+                          "school",
+                          "establishment"
+                          ],
+                "vicinity": "41-42 Craven St, London"
+                },
+                {
+                "geometry": {
+                "location": {
+                "lat": 51.500481,
+                "lng": -0.113625
+                }
+                },
+                "icon": "http://maps.gstatic.com/mapfiles/place_api/icons/art_gallery-71.png",
+                "id": "044afd7c84bbd7f513f125de3528cb5b8efba89a",
+                "name": "Man & Eve",
+                "opening_hours": {
+                "open_now": false
+                },
+                "place_id": "ChIJPVBNFLkEdkgR_wWtrRueQ-Q",
+                "reference": "CnRrAAAA2gkoLwewaPf07Y7Z5XMhSUXPc9S_r8erceTC3AswieK1ncBP05TqJP5QRZuBYGFYKDA_Sp_rHvEQu6uK81BtnHg95MgkTH7wHnlMJoSCZIhGydGYYI1bzTKL9SR0NNkekmxpr7vNsYjpJleKwY9HuRIQsAcIIrNRu7oRsAZWKWPyjxoUgHgCze3lQi5G0u_svpST8y-DZzc",
+                "scope": "GOOGLE",
+                "types": [
+                          "art_gallery",
+                          "establishment"
+                          ],
+                "vicinity": "120 Lower Marsh, London"
+                },
+                {
+                "geometry": {
+                "location": {
+                "lat": 51.506575,
+                "lng": -0.131166
+                }
+                },
+                "icon": "http://maps.gstatic.com/mapfiles/place_api/icons/art_gallery-71.png",
+                "id": "57003ead7cb76faa1a68c1ff1c4165c7ee6e6fea",
+                "name": "Lift",
+                "opening_hours": {
+                "open_now": false
+                },
+                "photos": [
+                           {
+                           "height": 648,
+                           "html_attributions": [
+                                                 "<a href=\"https://plus.google.com/100255388573765575211\">Jack Hubbard</a>"
+                                                 ],
+                           "photo_reference": "CnRoAAAAvIHmAjU-6Q5SrS3acZXpFl73vDxx5Ax4AgeIqCxIwIPs_pPGh1kmrmNs6O43bJBgRdBqnqDJfBxphNCowt5vBF_EYEciREl0lVodnABkRAIPA1JE6VHjD51EuDa44OJlSwEuXJpYk2ODUVVLo0n8-xIQj4SpX4V548_Y1os-UYm8mxoUtnXyDYVrlFMsF17gkYXGK2jFGQE",
+                           "width": 1152
+                           }
+                           ],
+                "place_id": "ChIJpwrHSNAEdkgRd1iLhT9bRIY",
+                "reference": "CnRmAAAAD9WC_95P0n2cABKyZ6lewGBYyHwg1PTJtQ-DMIkq28g9TOjdjy-W1YLZ6KNSaKP200wwY1z6ZY4MdR9AEjKUt6uPct5yqFAUK_SNcABPZ7GPSLjXrymp6MqBfBDX_NL7GlS1yP65QzDkkShOt8WkMhIQPU6RW1y4yKjKgFmSUfnPhxoUvFMw1ZjRpmT6xf6YVhiz4p2lGyY",
+                "scope": "GOOGLE",
+                "types": [
+                          "art_gallery",
+                          "establishment"
+                          ],
+                "vicinity": "12 Carlton House Terrace, London"
+                },
+                {
+                "geometry": {
+                "location": {
+                "lat": 51.50686,
+                "lng": -0.13054
+                }
+                },
+                "icon": "http://maps.gstatic.com/mapfiles/place_api/icons/art_gallery-71.png",
+                "id": "d57f4c2871bd31c58d69c7d7b6ab6783ce0e10b8",
+                "name": "Federation Of British Artists",
+                "opening_hours": {
+                "open_now": false
+                },
+                "photos": [
+                           {
+                           "height": 2048,
+                           "html_attributions": [
+                           ],
+                           "photo_reference": "CnRnAAAA1yvatgOdELskfhd1p29xkxJlmIY8QL13sMit9jAp3nE05tHFSWZXEs8e2zAiX4iqOEV7kbr2DCyPeIPePy21M3iw0_8H_R1y001VZju65RRoipvFygfrzgH__N-U3F8rnfhptIXEuS0FjIeENc-XPhIQKuqJ4Gx0mu47KS6WxBMxxRoUAGDuj9pisU7jK7kWGB3XGwNImNU",
+                           "width": 1371
+                           }
+                           ],
+                "place_id": "ChIJtc-TNtAEdkgRlIudMiD-i_I",
+                "reference": "CoQBfwAAAAfEd6X53r_Bdo3n5RrDB2cjYaXVbkujzFS-3k43W8ZdUkpN5beogMc_IJRliuK4OhryCv964HoF4_HeMMj0uV1pvySSDWPHLofFpAXHjjoaOAHDNCaFwXXJxpTkyj1K8fLEEjS6lj4z3Fu7Cvk5mayDF8wYIuIBE_szi1ILZWJLEhBRigIlR3uWl3BMMf4ei9imGhSrHV_9sDI2OxCh9ZH7KxQY8aM4vQ",
+                "scope": "GOOGLE",
+                "types": [
+                          "art_gallery",
+                          "establishment"
+                          ],
+                "vicinity": "17 Carlton House Terrace, London"
+                },
+                {
+                "geometry": {
+                "location": {
+                "lat": 51.49467,
+                "lng": -0.120285
+                }
+                },
+                "icon": "http://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
+                "id": "63b278f9fd1b8dbe142c868a38b30fbfb830abba",
+                "name": "Garden Museum",
+                "opening_hours": {
+                "open_now": false
+                },
+                "photos": [
+                           {
+                           "height": 1080,
+                           "html_attributions": [
+                           ],
+                           "photo_reference": "CnRnAAAAbyPj87exNYCRl3GclWfcFdQJ8PVMHgV6yLjgvCmUQ8xBmnPuHel2OU5eWL34ObVLorH8WGQU5V2FrilEIfwqfDZi-UaAtwU3DhqJVWkzHtihkfN0EzDdhnOpBccszbVUmAA4EqnSvEQYd7wVvhx2uxIQMkhMXO_YVVHPI3C3EPHXwxoUon3hGFB3WUZDZS17jekavTWdGmo",
+                           "width": 1920
+                           }
+                           ],
+                "place_id": "ChIJBUDOGcAEdkgRoQKLoxgPtWg",
+                "rating": 3.9,
+                "reference": "CnRuAAAAbBxGYw-MnrforSaBezy3PwGfbyFUYji8qt3mLDa3kZevtTL78Wj1gMzhjosPJ8dcK1Kdu0OUhil_NDBdKNIVhG5_Zxar3EkUwLCKKN5PA8Mw1fHacPbfGUn5j7T1qSoUoyTjb-fxrvzjDaj-8jinXRIQhzGbfsAkP8x_DTVPcbTH2RoUP9I0zomMvbXGH-ZGcPNy02W627E",
+                "scope": "GOOGLE",
+                "types": [
+                          "store",
+                          "museum",
+                          "establishment"
+                          ],
+                "vicinity": "5 Lambeth Palace Rd, London"
+                },
+                {
+                "geometry": {
+                "location": {
+                "lat": 51.508098,
+                "lng": -0.123059
+                }
+                },
+                "icon": "http://maps.gstatic.com/mapfiles/place_api/icons/art_gallery-71.png",
+                "id": "41cca4fcd3ac05ad78346ac7c25ab2d676ce69e6",
+                "name": "Proud Galleries",
+                "place_id": "ChIJ36Y7NMkEdkgR-bdF8X1raVA",
+                "reference": "CnRwAAAAlRbZ51UGK1UPgReucohOPDVnFj9f_1tUP1MSQqxSCc6mISM6Y4GfTCi3cnezq-DiPNsTfJxFb_P_iIDnjK4tvy8WhbUyzhDhXMIod634wxhjfxy31uq8N3NTArRSGRmpKN4RHw5MYEhNH6Uo4rzOIRIQ-VRuOXVWbBOn38eMRffnpxoUK1nPzQfczejdKYtbgmdQDQ_EpGg",
+                "scope": "GOOGLE",
+                "types": [
+                          "art_gallery",
+                          "establishment"
+                          ],
+                "vicinity": "5 Buckingham St, London"
+                },
+                {
+                "geometry": {
+                "location": {
+                "lat": 51.498591,
+                "lng": -0.113221
+                }
+                },
+                "icon": "http://maps.gstatic.com/mapfiles/place_api/icons/art_gallery-71.png",
+                "id": "b406c90fb32d6a92915eacfff4ddf8579a70d6d9",
+                "name": "Stone Theatre",
+                "opening_hours": {
+                "open_now": false
+                },
+                "photos": [
+                           {
+                           "height": 1200,
+                           "html_attributions": [
+                           ],
+                           "photo_reference": "CnRqAAAAXt1_Ka2Pk1zbDFx-xtmFm_zQSYWU6G_1_bnva8_rEFZohKPwExXG6BKn7zleO29qbmqab1wGlVJiHNjg34k62u2s8mx9-VXS1LaiJ3XKjFppuKpq7QCmoJZlgP50-HnqncilXW-Kg4oDMMAs9PMjIRIQSmXcSTo6m20oeblqCziKrhoUIoFqrRmM7UfXnKHtge9-8aeIA2g",
+                           "width": 2128
+                           }
+                           ],
+                "place_id": "ChIJUQCUyL4EdkgRDtO43md5KQA",
+                "reference": "CnRtAAAAuNhyBf6Q_GMxkMSoqCzPqj9KkJV2bbSk5dIJ-4kIEGrinBVmczXSXwIUhxMO6YJOJ7AykgQNG9WtoweeS-Pi_3wsaV2gXKEQzU6gVE-zAlWHYc-sZlrsI0IGM6ok3SP0RXZzk9JJR-yX3UcuCxmlEBIQIXZPfay1HmNRLvQAVDwfiBoUDgPpaPe3YP4U9iSbz9K0jUsnauo",
+                "scope": "GOOGLE",
+                "types": [
+                          "art_gallery",
+                          "establishment"
+                          ],
+                "vicinity": "Newnham Terrace, Hercules Road, Waterloo, London"
+                },
+                {
+                "geometry": {
+                "location": {
+                "lat": 51.498605,
+                "lng": -0.113095
+                }
+                },
+                "icon": "http://maps.gstatic.com/mapfiles/place_api/icons/art_gallery-71.png",
+                "id": "c213d677a2e552f13afc6ddac89debca42aeb519",
+                "name": "Make Space Studios",
+                "opening_hours": {
+                "open_now": false
+                },
+                "photos": [
+                           {
+                           "height": 2844,
+                           "html_attributions": [
+                           ],
+                           "photo_reference": "CnRnAAAALRmHtNFg2U4CdV6-s7CDn0E7Jc5AAD9auwWC4fwaiKYYuOCJdF9q2X4iYw0EfH4MK7AZtMHhKpIwbVPEv41XPu914ocZRf2BX5LEl_sALpkNNnDyYQwQkikw8ub8Rn_XxYPbh_u2t6EE_3PxvJmcKRIQhKHUJ6J9oGNjuwWLULJFYBoUfKR1K05nluqMAyIYAdEjx-m6Kuo",
+                           "width": 1600
+                           }
+                           ],
+                "place_id": "ChIJXxyTyL4EdkgR8SB-TvHx39o",
+                "reference": "CoQBdAAAAK35uVQIr3nS4opAzZXYl-M8XblyKPtYC-A3gwdD8N5CydHurxN_1-XX50cUZ-h20Exzr7mDdc3Ewe64V8pf_uHtQYa8mHZsz0iDmH06ND2msHMsEY9Ft5IXU6ScPWHvI2gJql7mkDhXm_fAVKaYs_6FtyimPqv7vWrdRdBiauyvEhDIP250_2r5xbTopbr_KPi8GhRet5JmA5vpDzxQoZHKJuKBpd5X5g",
+                "scope": "GOOGLE",
+                "types": [
+                          "art_gallery",
+                          "establishment"
+                          ],
+                "vicinity": "Newnham Terrace, London, Waterloo"
+                }
+                ],
+    "status": "OK"
 }

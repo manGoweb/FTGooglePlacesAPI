@@ -157,7 +157,7 @@
         FTGooglePlacesAPISearchResultItem *resultItem = _results[indexPath.row];
         
         //  Create detail request
-        FTGooglePlacesAPIDetailRequest *request = [[FTGooglePlacesAPIDetailRequest alloc] initWithReference:resultItem.reference];
+        FTGooglePlacesAPIDetailRequest *request = [[FTGooglePlacesAPIDetailRequest alloc] initWithPlaceId:resultItem.placeId];
         
         //  Create detail controller
         FTGooglePlacesAPIExampleDetailViewController *detailController = [[FTGooglePlacesAPIExampleDetailViewController alloc] initWithRequest:request];

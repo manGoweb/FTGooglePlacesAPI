@@ -37,12 +37,23 @@
  */
 @interface FTGooglePlacesAPIDetailRequest : NSObject <FTGooglePlacesAPIRequest>
 
+@property (nonatomic, strong, readonly) NSString *placeId;
+
+/**
+ *  Creates new request on a detail of place with given placeId
+ */
+- (instancetype)initWithPlaceId:(NSString *)placeId;
+
+/**
+ *  Deprecations
+ */
+
 /**
  *  Reference with which the request was initialized.
  *  This is a unique identifier for a place (itemId from the ResultItem)
  */
-@property (nonatomic, strong, readonly) NSString *reference;
+@property (nonatomic, strong, readonly) NSString *reference DEPRECATED_MSG_ATTRIBUTE("Deprecated in API by Google as of June 24, 2014. Use placeId instead. See https://developers.google.com/places/documentation/details#deprecation for more info.");
 
-- (instancetype)initWithReference:(NSString *)reference;
+- (instancetype)initWithReference:(NSString *)reference DEPRECATED_MSG_ATTRIBUTE("Uses deprecated property reference (see @reference)");
 
 @end

@@ -118,7 +118,7 @@
     XCTAssertNotNil(nextPageRequest, @"nextPageRequest should not be nil");
     
     XCTAssertEqualObjects([nextPageRequest placesAPIRequestMethod], @"testrequest", @"nextPageRequest requestTypeUrlString is wrong");
-    NSDictionary *expectedRequestParams = @{@"pagetoken": @"CmRbAAAAPRe43WuMoqKDiLcauzH5NR5Agm6U5pqiP5gPALHlvKSe89bdGpjNj7VCnHXn0-7gr1b2CeuZyJW0PvUultBCu8IAFOWINBvhQ2u_b1URH6Fs_MI_P6jN551VrBxSYjEKEhBf08hzwZ3fXu4zMRhhIpMfGhR75rfrvBBpTtlS9AwJ2JpIeCrMBA"};
+    NSDictionary *expectedRequestParams = @{@"pagetoken": @"CoQCAAEAACUEBVd58EGiJKFOe1KoEFks9jia46vhv6Bi4sR0ExZaFgvu6XqK2xgB6RXYqdWX1QP26UlcCR7DGiBwhH2-FN528X9J-CUH0JjUxauAzJjuxhyyxt946AW1ETRqecANfJdZ5_cjRwhR-0qQ13HeiQaB_riQPMG4SAqKcb8OMcHMtSJrJUacIIifXTNyxJpEbP8dvETT-pDM-0zl9qmTO0aqGdmz0EzyPAEuMCmZEMUI0gnZJvvDvaar_L4KCL6bhjGFqs5OrW-DIn1Vo5CI8bVD4VRINLdxAk7ovLOxT04p1M9qo6JNJ5ZZYntyX2MC64SvIe2RtFIGDGy046xJho4SECVEEiNhLUaQw1_2dUSO4zUaFKqr08lGcqbMqGhRJ9VG69t6YMgj"};
     XCTAssertEqualObjects([nextPageRequest placesAPIRequestParams], expectedRequestParams, @"pageToken returned by nextPageRequest: is wrong");
 }
 
@@ -132,7 +132,7 @@
     
     XCTAssertNotNil(response, @"response should not be nil");
     XCTAssertEqual(response.status, FTGooglePlacesAPIResponseStatusOK, @"status should be FTGooglePlacesAPIResponseStatusOK");
-    XCTAssertEqualObjects(response.nextPageToken, @"CmRbAAAAPRe43WuMoqKDiLcauzH5NR5Agm6U5pqiP5gPALHlvKSe89bdGpjNj7VCnHXn0-7gr1b2CeuZyJW0PvUultBCu8IAFOWINBvhQ2u_b1URH6Fs_MI_P6jN551VrBxSYjEKEhBf08hzwZ3fXu4zMRhhIpMfGhR75rfrvBBpTtlS9AwJ2JpIeCrMBA", @"nextPageToken is wrong");
+    XCTAssertEqualObjects(response.nextPageToken, @"CoQCAAEAACUEBVd58EGiJKFOe1KoEFks9jia46vhv6Bi4sR0ExZaFgvu6XqK2xgB6RXYqdWX1QP26UlcCR7DGiBwhH2-FN528X9J-CUH0JjUxauAzJjuxhyyxt946AW1ETRqecANfJdZ5_cjRwhR-0qQ13HeiQaB_riQPMG4SAqKcb8OMcHMtSJrJUacIIifXTNyxJpEbP8dvETT-pDM-0zl9qmTO0aqGdmz0EzyPAEuMCmZEMUI0gnZJvvDvaar_L4KCL6bhjGFqs5OrW-DIn1Vo5CI8bVD4VRINLdxAk7ovLOxT04p1M9qo6JNJ5ZZYntyX2MC64SvIe2RtFIGDGy046xJho4SECVEEiNhLUaQw1_2dUSO4zUaFKqr08lGcqbMqGhRJ9VG69t6YMgj", @"nextPageToken is wrong");
     XCTAssertNotNil([response nextPageRequest], @"nextPageRequest should not be nil");
     
     XCTAssertEqual([response.results count], (NSUInteger)20, @"response should have 20 results items");

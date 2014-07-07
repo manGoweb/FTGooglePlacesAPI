@@ -40,7 +40,7 @@ typedef NS_ENUM(NSUInteger, FTGooglePlacesAPISearchResultItemOpenedState) {
 
 @interface FTGooglePlacesAPISearchResultItem : NSObject
 
-@property (nonatomic, strong, readonly) NSString *itemId;   // Google's id for the item
+@property (nonatomic, strong, readonly) NSString *placeId;  // Google's id for the item
 @property (nonatomic, strong, readonly) NSString *name;
 
 /**
@@ -76,12 +76,18 @@ typedef NS_ENUM(NSUInteger, FTGooglePlacesAPISearchResultItemOpenedState) {
 
 /**
  *  Method for comparing equality of two result item objects.
- *  Objects are considered to be equal if their "itemId" equals.
+ *  Objects are considered to be equal if their "placeId" equals.
  *
  *  @param item Item to compare with
  *
  *  @return YES if both objects are considered to be equal
  */
 - (BOOL)isEqualToSearchResultItem:(FTGooglePlacesAPISearchResultItem *)item;
+
+
+/**
+ *  Deprecations
+ */
+@property (nonatomic, strong, readonly) NSString *itemId DEPRECATED_MSG_ATTRIBUTE("Deprecated in API by Google as of June 24, 2014. Use placeId instead. See https://developers.google.com/places/documentation/details#deprecation for more info.");
 
 @end

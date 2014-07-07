@@ -54,7 +54,7 @@
         [self ftgpi_importDictionary:dictionary];
         
         //  Object cannot be valid with no id
-        if ([_itemId length] == 0) {
+        if ([_placeId length] == 0) {
             return nil;
         }
         
@@ -77,7 +77,7 @@
 - (NSUInteger)hash
 {
     //  Google's ID is unique identifier of the item
-    return [_itemId hash];
+    return [_placeId hash];
 }
 
 - (BOOL)isEqual:(id)object
@@ -93,7 +93,7 @@
 
 - (BOOL)isEqualToSearchResultItem:(FTGooglePlacesAPISearchResultItem *)item
 {
-    return [_itemId isEqualToString:item.itemId];
+    return [_placeId isEqualToString:item.placeId];
 }
 
 @end
@@ -108,7 +108,7 @@
 {
     _originalDictionaryRepresentation = dictionary;
     
-    _itemId = [dictionary ftgp_nilledObjectForKey:@"id"];
+    _placeId = [dictionary ftgp_nilledObjectForKey:@"place_id"];
     _name = [dictionary ftgp_nilledObjectForKey:@"name"];
     
     
@@ -148,6 +148,9 @@
     _rating = [[dictionary ftgp_nilledObjectForKey:@"rating"] floatValue];
     _reference = [dictionary ftgp_nilledObjectForKey:@"reference"];
     _types = [dictionary ftgp_nilledObjectForKey:@"types"];
+    
+    //  Deprecated, left for backwards compatibility
+    _itemId = [dictionary ftgp_nilledObjectForKey:@"id"];
 }
 
 @end

@@ -43,6 +43,7 @@
             }
         ],
         @"rating": @(3.6),
+        @"place_id": @"ChIJyWEHuEmuEmsRm9hTkapTCrk",
         @"reference": @"CoQBgAAAAFjx_1xLA2D3kuZ83rCChllMEaGrxSeoPh6",
         @"types": @[@"museum", @"establishment"],
         @"vicinity": @"1st Floor, Riverside Building, County Hall, London"
@@ -52,7 +53,7 @@
     FTGooglePlacesAPISearchResultItem *item = [[FTGooglePlacesAPISearchResultItem alloc] initWithDictionary:dictionary];
     XCTAssertNotNil(item, @"Initialiazation should succeed");
     
-    XCTAssertEqualObjects(item.itemId, @"5139d09fbccf4c974fce66f7d88269c149bac0a5", @"itemId is wrong");
+    XCTAssertEqualObjects(item.placeId, @"ChIJyWEHuEmuEmsRm9hTkapTCrk", @"placeId is wrong");
     XCTAssertEqualObjects(item.name, @"London Film Museum South Bank", @"name is wrong");
     
     XCTAssertNotNil(item.location, @"location should be non-nil");
@@ -74,8 +75,8 @@
 
 - (void)testVeryBasicObjectWithJustId
 {
-    FTGooglePlacesAPISearchResultItem *item = [[FTGooglePlacesAPISearchResultItem alloc] initWithDictionary:@{@"id": @"someValue"}];
-    XCTAssertNotNil(item, @"item should be valid once it has id");
+    FTGooglePlacesAPISearchResultItem *item = [[FTGooglePlacesAPISearchResultItem alloc] initWithDictionary:@{@"place_id": @"someValue"}];
+    XCTAssertNotNil(item, @"item should be valid once it has placeId");
     
     item = [[FTGooglePlacesAPISearchResultItem alloc] initWithDictionary:@{}];
     XCTAssertNil(item, @"item should be nil when no id is provided");
@@ -86,8 +87,8 @@
 
 - (void)testEqualityChecking
 {
-    NSDictionary *dictionary1a = @{@"id": @"5139d09fbccf4c974fce66f7d88269c149bac0a5"};
-    NSDictionary *dictionary1b = @{@"id": @"5139d09fbccf4c974fce66f7d88269c149bac0a5"};
+    NSDictionary *dictionary1a = @{@"place_id": @"5139d09fbccf4c974fce66f7d88269c149bac0a5"};
+    NSDictionary *dictionary1b = @{@"place_id": @"5139d09fbccf4c974fce66f7d88269c149bac0a5"};
     
     FTGooglePlacesAPISearchResultItem *item1a = [[FTGooglePlacesAPISearchResultItem alloc] initWithDictionary:dictionary1a];
     FTGooglePlacesAPISearchResultItem *item1b = [[FTGooglePlacesAPISearchResultItem alloc] initWithDictionary:dictionary1b];
@@ -95,8 +96,8 @@
     XCTAssertEqualObjects(item1a, item1b, @"object are not considered to be equal, but should be");
     
     
-    NSDictionary *dictionary2a = @{@"id": @"5139d09fbccf4c974fce66f7d88269c149bac0a5"};
-    NSDictionary *dictionary2b = @{@"id": @"XAXAGFKANGOKANOAOGNAOGOIANGOI AOAANGO"};
+    NSDictionary *dictionary2a = @{@"place_id": @"5139d09fbccf4c974fce66f7d88269c149bac0a5"};
+    NSDictionary *dictionary2b = @{@"place_id": @"XAXAGFKANGOKANOAOGNAOGOIANGOI AOAANGO"};
     
     FTGooglePlacesAPISearchResultItem *item2a = [[FTGooglePlacesAPISearchResultItem alloc] initWithDictionary:dictionary2a];
     FTGooglePlacesAPISearchResultItem *item2b = [[FTGooglePlacesAPISearchResultItem alloc] initWithDictionary:dictionary2b];
@@ -106,7 +107,7 @@
 
 - (void)testEmptyValues
 {
-    NSDictionary *dictionary = @{@"id": @"5139d09fbccf4c974fce66f7d88269c149bac0a5"};
+    NSDictionary *dictionary = @{@"place_id": @"5139d09fbccf4c974fce66f7d88269c149bac0a5"};
     
     FTGooglePlacesAPISearchResultItem *item = [[FTGooglePlacesAPISearchResultItem alloc] initWithDictionary:dictionary];
     
@@ -119,7 +120,7 @@
     XCTAssertNil(item.reference, @"reference should be nil");
     XCTAssertNil(item.types, @"types should be nil");
     
-    XCTAssertEqualObjects(item.originalDictionaryRepresentation, @{@"id": @"5139d09fbccf4c974fce66f7d88269c149bac0a5"}, @"originalDictionaryRepresentation is wrong");
+    XCTAssertEqualObjects(item.originalDictionaryRepresentation, @{@"place_id": @"5139d09fbccf4c974fce66f7d88269c149bac0a5"}, @"originalDictionaryRepresentation is wrong");
 }
 
 @end

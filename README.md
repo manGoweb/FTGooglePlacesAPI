@@ -145,6 +145,9 @@ Pull requests are very welcome expecting you follow few rules:
 
 ##Version history
 
+#### 1.1
+ - Implemented deprecations for usage of `id` and `reference` properties as these has been deprecated by Google as of June 24, 2014. See [Deprecation notice in documentation](https://developers.google.com/places/documentation/details#deprecation) for more info.
+
 #### 1.0
  - First official public release
 
