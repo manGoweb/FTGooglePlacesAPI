@@ -125,7 +125,7 @@ Available methods are:
 ##Compatibility
 
  - iOS 6+
-    - Mainly because of a dependency on AFNetworking 2.0 (although it should be difficult for you to remove dependency on it)
+    - Mainly because of a dependency on AFNetworking 2.0 (although it shouldn't be difficult for you to remove dependency on it)
  - ARC
 
 ##Contact
