@@ -50,6 +50,7 @@ typedef NS_ENUM(NSUInteger, FTGooglePlacesAPISearchResultItemOpenedState) {
 @property (nonatomic, strong, readonly) CLLocation *location;
 
 @property (nonatomic, strong, readonly) NSString *addressString;    // "vicinity" from the response
+@property (nonatomic, strong, readonly) NSString *formattedAddress;
 @property (nonatomic, assign, readonly) FTGooglePlacesAPISearchResultItemOpenedState openedState;
 @property (nonatomic, strong, readonly) NSString *iconImageUrl;
 @property (nonatomic, assign, readonly) float rating;
