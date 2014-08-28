@@ -160,12 +160,7 @@
 			children = (
 				E4CF498919AF9252000AAAA4 /* FTAppDelegate.h */,
 				E4CF498A19AF9252000AAAA4 /* FTAppDelegate.m */,
-				E4CF49A919AF9304000AAAA4 /* FTGooglePlacesAPIExampleDetailViewController.h */,
-				E4CF49AA19AF9304000AAAA4 /* FTGooglePlacesAPIExampleDetailViewController.m */,
-				E4CF49AB19AF9304000AAAA4 /* FTGooglePlacesAPIExampleResultsViewController.h */,
-				E4CF49AC19AF9304000AAAA4 /* FTGooglePlacesAPIExampleResultsViewController.m */,
-				E4CF49AD19AF9304000AAAA4 /* FTGooglePlacesAPIExamplesListViewController.h */,
-				E4CF49AE19AF9304000AAAA4 /* FTGooglePlacesAPIExamplesListViewController.m */,
+				E4CF49DF19AF9A4A000AAAA4 /* View controllers */,
 				E4CF498C19AF9252000AAAA4 /* Images.xcassets */,
 				E4CF498119AF9252000AAAA4 /* Supporting Files */,
 			);
@@ -282,6 +277,43 @@
 				E4CF49C419AF96BB000AAAA4 /* MockFTGooglePlacesAPISearchResultItemSubclass.m */,
 			);
 			name = Mock;
+			sourceTree = "<group>";
+		};
+		E4CF49DF19AF9A4A000AAAA4 /* View controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E4CF49E019AF9A53000AAAA4 /* Example list */,
+				E4CF49E219AF9A64000AAAA4 /* Results list */,
+				E4CF49E119AF9A5D000AAAA4 /* Detail */,
+			);
+			name = "View controllers";
+			sourceTree = "<group>";
+		};
+		E4CF49E019AF9A53000AAAA4 /* Example list */ = {
+			isa = PBXGroup;
+			children = (
+				E4CF49AD19AF9304000AAAA4 /* FTGooglePlacesAPIExamplesListViewController.h */,
+				E4CF49AE19AF9304000AAAA4 /* FTGooglePlacesAPIExamplesListViewController.m */,
+			);
+			name = "Example list";
+			sourceTree = "<group>";
+		};
+		E4CF49E119AF9A5D000AAAA4 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				E4CF49A919AF9304000AAAA4 /* FTGooglePlacesAPIExampleDetailViewController.h */,
+				E4CF49AA19AF9304000AAAA4 /* FTGooglePlacesAPIExampleDetailViewController.m */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
+		E4CF49E219AF9A64000AAAA4 /* Results list */ = {
+			isa = PBXGroup;
+			children = (
+				E4CF49AB19AF9304000AAAA4 /* FTGooglePlacesAPIExampleResultsViewController.h */,
+				E4CF49AC19AF9304000AAAA4 /* FTGooglePlacesAPIExampleResultsViewController.m */,
+			);
+			name = "Results list";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
