@@ -27,7 +27,6 @@
     
     [self createAttributionsViews];
     [self.window makeKeyAndVisible];
-    
     return YES;
 }
 
@@ -80,5 +79,6 @@
     
     [containerView addSubview:googleLogoView];
 }
+
 
 @end

@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>6F4E3F87-C5EC-4AEE-A946-80C77E432D07</string>
+	<string>C9D92D23-1BDE-46F3-BDD5-F6CE74760691</string>
 	<key>IDESourceControlProjectName</key>
 	<string>FTGooglePlacesAPIExample</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>1048F091-23FE-4909-B91C-3E5B6CB9AAC0</key>
-		<string>ssh://github.com/FuerteInternational/FTGooglePlacesAPI.git</string>
+		<key>2AB32A91-78FC-44EB-BF07-DB62894EFBF4</key>
+		<string>ssh://github.com/marciomeschini/FTGooglePlacesAPI.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Example/FTGooglePlacesAPIExample.xcworkspace</string>
+	<string>Temp/FTGooglePlacesAPIExample.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>1048F091-23FE-4909-B91C-3E5B6CB9AAC0</key>
+		<key>2AB32A91-78FC-44EB-BF07-DB62894EFBF4</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/FuerteInternational/FTGooglePlacesAPI.git</string>
+	<string>ssh://github.com/marciomeschini/FTGooglePlacesAPI.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>1048F091-23FE-4909-B91C-3E5B6CB9AAC0</string>
+	<string>2AB32A91-78FC-44EB-BF07-DB62894EFBF4</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>1048F091-23FE-4909-B91C-3E5B6CB9AAC0</string>
+			<string>2AB32A91-78FC-44EB-BF07-DB62894EFBF4</string>
 			<key>IDESourceControlWCCName</key>
 			<string>FTGooglePlacesAPI</string>
 		</dict>
