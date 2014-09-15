@@ -1,15 +1,13 @@
 //
 //  FTAppDelegate.m
-//  FTGooglePlacesAPI
+//  FTGooglePlacesAPIExample
 //
-//  Created by Lukas Kukacka on 19/11/13.
-//  Copyright (c) 2013 Fuerte Int. Ltd. All rights reserved.
+//  Created by Marco Meschini on 28/08/2014.
+//  Copyright (c) 2014 Marco Meschini. All rights reserved.
 //
 
 #import "FTAppDelegate.h"
-
 #import "FTGooglePlacesAPIExamplesListViewController.h"
-
 #import "FTGooglePlacesAPI.h"
 
 @implementation FTAppDelegate
@@ -22,13 +20,13 @@
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:rootController];
     
 #warning Possible incomplete implementation. Make sure you add you own Google Places API key
-    [FTGooglePlacesAPIService provideAPIKey:@"<#PLACE YOUR API KEY HERE#>"];
+    [FTGooglePlacesAPIService provideAPIKey:@""];
+    
     
     self.window.rootViewController = navController;
     
     [self createAttributionsViews];
     [self.window makeKeyAndVisible];
-    
     return YES;
 }
 
@@ -81,5 +79,6 @@
     
     [containerView addSubview:googleLogoView];
 }
+
 
 @end

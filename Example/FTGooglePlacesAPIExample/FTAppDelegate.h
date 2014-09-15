@@ -1,9 +1,9 @@
 //
 //  FTAppDelegate.h
-//  FTGooglePlacesAPI
+//  FTGooglePlacesAPIExample
 //
-//  Created by Lukas Kukacka on 19/11/13.
-//  Copyright (c) 2013 Fuerte Int. Ltd. All rights reserved.
+//  Created by Marco Meschini on 28/08/2014.
+//  Copyright (c) 2014 Marco Meschini. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

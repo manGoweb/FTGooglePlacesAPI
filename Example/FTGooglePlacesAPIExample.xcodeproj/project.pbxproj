@@ -1,0 +1,716 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05405005D1B041D3AF42E730 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C13C7070BC924C1FA0A21EA7 /* libPods.a */; };
+		AD74EC0985AE4D9091362050 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C13C7070BC924C1FA0A21EA7 /* libPods.a */; };
+		E4CF497B19AF9252000AAAA4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CF497A19AF9252000AAAA4 /* Foundation.framework */; };
+		E4CF497D19AF9252000AAAA4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CF497C19AF9252000AAAA4 /* CoreGraphics.framework */; };
+		E4CF497F19AF9252000AAAA4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CF497E19AF9252000AAAA4 /* UIKit.framework */; };
+		E4CF498519AF9252000AAAA4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4CF498319AF9252000AAAA4 /* InfoPlist.strings */; };
+		E4CF498719AF9252000AAAA4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CF498619AF9252000AAAA4 /* main.m */; };
+		E4CF498B19AF9252000AAAA4 /* FTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CF498A19AF9252000AAAA4 /* FTAppDelegate.m */; };
+		E4CF498D19AF9252000AAAA4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4CF498C19AF9252000AAAA4 /* Images.xcassets */; };
+		E4CF499419AF9252000AAAA4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CF499319AF9252000AAAA4 /* XCTest.framework */; };
+		E4CF499519AF9252000AAAA4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CF497A19AF9252000AAAA4 /* Foundation.framework */; };
+		E4CF499619AF9252000AAAA4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CF497E19AF9252000AAAA4 /* UIKit.framework */; };
+		E4CF499E19AF9252000AAAA4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4CF499C19AF9252000AAAA4 /* InfoPlist.strings */; };
+		E4CF49AF19AF9304000AAAA4 /* FTGooglePlacesAPIExampleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CF49AA19AF9304000AAAA4 /* FTGooglePlacesAPIExampleDetailViewController.m */; };
+		E4CF49B019AF9304000AAAA4 /* FTGooglePlacesAPIExampleResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CF49AC19AF9304000AAAA4 /* FTGooglePlacesAPIExampleResultsViewController.m */; };
+		E4CF49B119AF9304000AAAA4 /* FTGooglePlacesAPIExamplesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CF49AE19AF9304000AAAA4 /* FTGooglePlacesAPIExamplesListViewController.m */; };
+		E4CF49B519AF93B0000AAAA4 /* powered-by-google-on-white.png in Resources */ = {isa = PBXBuildFile; fileRef = E4CF49B319AF93B0000AAAA4 /* powered-by-google-on-white.png */; };
+		E4CF49B619AF93B0000AAAA4 /* powered-by-google-on-white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4CF49B419AF93B0000AAAA4 /* powered-by-google-on-white@2x.png */; };
+		E4CF49B819AF93FB000AAAA4 /* FTGooglePlacesAPIDictionaryRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CF49B719AF93FB000AAAA4 /* FTGooglePlacesAPIDictionaryRequestTest.m */; };
+		E4CF49BB19AF94E4000AAAA4 /* FTGooglePlacesAPITestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CF49BA19AF94E4000AAAA4 /* FTGooglePlacesAPITestCase.m */; };
+		E4CF49C719AF96BB000AAAA4 /* FTGooglePlacesAPINearbySearchRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CF49BC19AF96BB000AAAA4 /* FTGooglePlacesAPINearbySearchRequestTests.m */; };
+		E4CF49C819AF96BB000AAAA4 /* FTGooglePlacesAPIResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CF49BD19AF96BB000AAAA4 /* FTGooglePlacesAPIResponseTests.m */; };
+		E4CF49C919AF96BB000AAAA4 /* FTGooglePlacesAPISearchResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CF49BE19AF96BB000AAAA4 /* FTGooglePlacesAPISearchResponseTests.m */; };
+		E4CF49CA19AF96BB000AAAA4 /* FTGooglePlacesAPISearchResultItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CF49BF19AF96BB000AAAA4 /* FTGooglePlacesAPISearchResultItemTests.m */; };
+		E4CF49CB19AF96BB000AAAA4 /* FTGooglePlacesAPIServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CF49C019AF96BB000AAAA4 /* FTGooglePlacesAPIServiceTests.m */; };
+		E4CF49CC19AF96BB000AAAA4 /* MockAFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CF49C219AF96BB000AAAA4 /* MockAFHTTPRequestOperationManager.m */; };
+		E4CF49CD19AF96BB000AAAA4 /* MockFTGooglePlacesAPISearchResultItemSubclass.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CF49C419AF96BB000AAAA4 /* MockFTGooglePlacesAPISearchResultItemSubclass.m */; };
+		E4CF49CE19AF96BB000AAAA4 /* MockFTGooglePlacesAPIService.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CF49C619AF96BB000AAAA4 /* MockFTGooglePlacesAPIService.m */; };
+		E4CF49D419AF96DF000AAAA4 /* FTGooglePlacesAPIResponse-test1-Nearby-Search-OK.json in Resources */ = {isa = PBXBuildFile; fileRef = E4CF49D019AF96DF000AAAA4 /* FTGooglePlacesAPIResponse-test1-Nearby-Search-OK.json */; };
+		E4CF49D519AF96DF000AAAA4 /* FTGooglePlacesAPIResponse-test2-NoResults.json in Resources */ = {isa = PBXBuildFile; fileRef = E4CF49D119AF96DF000AAAA4 /* FTGooglePlacesAPIResponse-test2-NoResults.json */; };
+		E4CF49D619AF96DF000AAAA4 /* FTGooglePlacesAPIResponse-test3-InvalidRequest.json in Resources */ = {isa = PBXBuildFile; fileRef = E4CF49D219AF96DF000AAAA4 /* FTGooglePlacesAPIResponse-test3-InvalidRequest.json */; };
+		E4CF49D719AF96DF000AAAA4 /* FTGooglePlacesAPIResponse-test4-RequestDenied.json in Resources */ = {isa = PBXBuildFile; fileRef = E4CF49D319AF96DF000AAAA4 /* FTGooglePlacesAPIResponse-test4-RequestDenied.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E4CF499719AF9252000AAAA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4CF496F19AF9252000AAAA4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4CF497619AF9252000AAAA4;
+			remoteInfo = FTGooglePlacesAPIExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9752B25E193445AD812F50B7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		C13C7070BC924C1FA0A21EA7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4CF497719AF9252000AAAA4 /* FTGooglePlacesAPIExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FTGooglePlacesAPIExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4CF497A19AF9252000AAAA4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E4CF497C19AF9252000AAAA4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E4CF497E19AF9252000AAAA4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E4CF498219AF9252000AAAA4 /* FTGooglePlacesAPIExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FTGooglePlacesAPIExample-Info.plist"; sourceTree = "<group>"; };
+		E4CF498419AF9252000AAAA4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E4CF498619AF9252000AAAA4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E4CF498819AF9252000AAAA4 /* FTGooglePlacesAPIExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FTGooglePlacesAPIExample-Prefix.pch"; sourceTree = "<group>"; };
+		E4CF498919AF9252000AAAA4 /* FTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTAppDelegate.h; sourceTree = "<group>"; };
+		E4CF498A19AF9252000AAAA4 /* FTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FTAppDelegate.m; sourceTree = "<group>"; };
+		E4CF498C19AF9252000AAAA4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E4CF499219AF9252000AAAA4 /* FTGooglePlacesAPIExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FTGooglePlacesAPIExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4CF499319AF9252000AAAA4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		E4CF499B19AF9252000AAAA4 /* FTGooglePlacesAPIExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FTGooglePlacesAPIExampleTests-Info.plist"; sourceTree = "<group>"; };
+		E4CF499D19AF9252000AAAA4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E4CF49A919AF9304000AAAA4 /* FTGooglePlacesAPIExampleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTGooglePlacesAPIExampleDetailViewController.h; sourceTree = "<group>"; };
+		E4CF49AA19AF9304000AAAA4 /* FTGooglePlacesAPIExampleDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGooglePlacesAPIExampleDetailViewController.m; sourceTree = "<group>"; };
+		E4CF49AB19AF9304000AAAA4 /* FTGooglePlacesAPIExampleResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTGooglePlacesAPIExampleResultsViewController.h; sourceTree = "<group>"; };
+		E4CF49AC19AF9304000AAAA4 /* FTGooglePlacesAPIExampleResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGooglePlacesAPIExampleResultsViewController.m; sourceTree = "<group>"; };
+		E4CF49AD19AF9304000AAAA4 /* FTGooglePlacesAPIExamplesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTGooglePlacesAPIExamplesListViewController.h; sourceTree = "<group>"; };
+		E4CF49AE19AF9304000AAAA4 /* FTGooglePlacesAPIExamplesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGooglePlacesAPIExamplesListViewController.m; sourceTree = "<group>"; };
+		E4CF49B319AF93B0000AAAA4 /* powered-by-google-on-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "powered-by-google-on-white.png"; sourceTree = "<group>"; };
+		E4CF49B419AF93B0000AAAA4 /* powered-by-google-on-white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "powered-by-google-on-white@2x.png"; sourceTree = "<group>"; };
+		E4CF49B719AF93FB000AAAA4 /* FTGooglePlacesAPIDictionaryRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGooglePlacesAPIDictionaryRequestTest.m; sourceTree = "<group>"; };
+		E4CF49B919AF94E4000AAAA4 /* FTGooglePlacesAPITestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTGooglePlacesAPITestCase.h; sourceTree = "<group>"; };
+		E4CF49BA19AF94E4000AAAA4 /* FTGooglePlacesAPITestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGooglePlacesAPITestCase.m; sourceTree = "<group>"; };
+		E4CF49BC19AF96BB000AAAA4 /* FTGooglePlacesAPINearbySearchRequestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGooglePlacesAPINearbySearchRequestTests.m; sourceTree = "<group>"; };
+		E4CF49BD19AF96BB000AAAA4 /* FTGooglePlacesAPIResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGooglePlacesAPIResponseTests.m; sourceTree = "<group>"; };
+		E4CF49BE19AF96BB000AAAA4 /* FTGooglePlacesAPISearchResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGooglePlacesAPISearchResponseTests.m; sourceTree = "<group>"; };
+		E4CF49BF19AF96BB000AAAA4 /* FTGooglePlacesAPISearchResultItemTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGooglePlacesAPISearchResultItemTests.m; sourceTree = "<group>"; };
+		E4CF49C019AF96BB000AAAA4 /* FTGooglePlacesAPIServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGooglePlacesAPIServiceTests.m; sourceTree = "<group>"; };
+		E4CF49C119AF96BB000AAAA4 /* MockAFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockAFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		E4CF49C219AF96BB000AAAA4 /* MockAFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockAFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		E4CF49C319AF96BB000AAAA4 /* MockFTGooglePlacesAPISearchResultItemSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockFTGooglePlacesAPISearchResultItemSubclass.h; sourceTree = "<group>"; };
+		E4CF49C419AF96BB000AAAA4 /* MockFTGooglePlacesAPISearchResultItemSubclass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockFTGooglePlacesAPISearchResultItemSubclass.m; sourceTree = "<group>"; };
+		E4CF49C519AF96BB000AAAA4 /* MockFTGooglePlacesAPIService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockFTGooglePlacesAPIService.h; sourceTree = "<group>"; };
+		E4CF49C619AF96BB000AAAA4 /* MockFTGooglePlacesAPIService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockFTGooglePlacesAPIService.m; sourceTree = "<group>"; };
+		E4CF49D019AF96DF000AAAA4 /* FTGooglePlacesAPIResponse-test1-Nearby-Search-OK.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FTGooglePlacesAPIResponse-test1-Nearby-Search-OK.json"; sourceTree = "<group>"; };
+		E4CF49D119AF96DF000AAAA4 /* FTGooglePlacesAPIResponse-test2-NoResults.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FTGooglePlacesAPIResponse-test2-NoResults.json"; sourceTree = "<group>"; };
+		E4CF49D219AF96DF000AAAA4 /* FTGooglePlacesAPIResponse-test3-InvalidRequest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FTGooglePlacesAPIResponse-test3-InvalidRequest.json"; sourceTree = "<group>"; };
+		E4CF49D319AF96DF000AAAA4 /* FTGooglePlacesAPIResponse-test4-RequestDenied.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FTGooglePlacesAPIResponse-test4-RequestDenied.json"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E4CF497419AF9252000AAAA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4CF497D19AF9252000AAAA4 /* CoreGraphics.framework in Frameworks */,
+				E4CF497F19AF9252000AAAA4 /* UIKit.framework in Frameworks */,
+				E4CF497B19AF9252000AAAA4 /* Foundation.framework in Frameworks */,
+				05405005D1B041D3AF42E730 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4CF498F19AF9252000AAAA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4CF499419AF9252000AAAA4 /* XCTest.framework in Frameworks */,
+				E4CF499619AF9252000AAAA4 /* UIKit.framework in Frameworks */,
+				E4CF499519AF9252000AAAA4 /* Foundation.framework in Frameworks */,
+				AD74EC0985AE4D9091362050 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E4CF496E19AF9252000AAAA4 = {
+			isa = PBXGroup;
+			children = (
+				E4CF498019AF9252000AAAA4 /* FTGooglePlacesAPIExample */,
+				E4CF499919AF9252000AAAA4 /* FTGooglePlacesAPIExampleTests */,
+				E4CF497919AF9252000AAAA4 /* Frameworks */,
+				E4CF497819AF9252000AAAA4 /* Products */,
+				9752B25E193445AD812F50B7 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		E4CF497819AF9252000AAAA4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E4CF497719AF9252000AAAA4 /* FTGooglePlacesAPIExample.app */,
+				E4CF499219AF9252000AAAA4 /* FTGooglePlacesAPIExampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E4CF497919AF9252000AAAA4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4CF497A19AF9252000AAAA4 /* Foundation.framework */,
+				E4CF497C19AF9252000AAAA4 /* CoreGraphics.framework */,
+				E4CF497E19AF9252000AAAA4 /* UIKit.framework */,
+				E4CF499319AF9252000AAAA4 /* XCTest.framework */,
+				C13C7070BC924C1FA0A21EA7 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E4CF498019AF9252000AAAA4 /* FTGooglePlacesAPIExample */ = {
+			isa = PBXGroup;
+			children = (
+				E4CF498919AF9252000AAAA4 /* FTAppDelegate.h */,
+				E4CF498A19AF9252000AAAA4 /* FTAppDelegate.m */,
+				E4CF49DF19AF9A4A000AAAA4 /* View controllers */,
+				E4CF498C19AF9252000AAAA4 /* Images.xcassets */,
+				E4CF498119AF9252000AAAA4 /* Supporting Files */,
+			);
+			path = FTGooglePlacesAPIExample;
+			sourceTree = "<group>";
+		};
+		E4CF498119AF9252000AAAA4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E4CF49B219AF93B0000AAAA4 /* Images */,
+				E4CF498219AF9252000AAAA4 /* FTGooglePlacesAPIExample-Info.plist */,
+				E4CF498319AF9252000AAAA4 /* InfoPlist.strings */,
+				E4CF498619AF9252000AAAA4 /* main.m */,
+				E4CF498819AF9252000AAAA4 /* FTGooglePlacesAPIExample-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E4CF499919AF9252000AAAA4 /* FTGooglePlacesAPIExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				E4CF49D819AF971D000AAAA4 /* Basic */,
+				E4CF49DC19AF9762000AAAA4 /* Requests */,
+				E4CF49DD19AF9771000AAAA4 /* Response */,
+				E4CF49D919AF9745000AAAA4 /* Service */,
+				E4CF499A19AF9252000AAAA4 /* Supporting Files */,
+			);
+			path = FTGooglePlacesAPIExampleTests;
+			sourceTree = "<group>";
+		};
+		E4CF499A19AF9252000AAAA4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E4CF49CF19AF96DF000AAAA4 /* TestData */,
+				E4CF499B19AF9252000AAAA4 /* FTGooglePlacesAPIExampleTests-Info.plist */,
+				E4CF499C19AF9252000AAAA4 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E4CF49B219AF93B0000AAAA4 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				E4CF49B319AF93B0000AAAA4 /* powered-by-google-on-white.png */,
+				E4CF49B419AF93B0000AAAA4 /* powered-by-google-on-white@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		E4CF49CF19AF96DF000AAAA4 /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				E4CF49D019AF96DF000AAAA4 /* FTGooglePlacesAPIResponse-test1-Nearby-Search-OK.json */,
+				E4CF49D119AF96DF000AAAA4 /* FTGooglePlacesAPIResponse-test2-NoResults.json */,
+				E4CF49D219AF96DF000AAAA4 /* FTGooglePlacesAPIResponse-test3-InvalidRequest.json */,
+				E4CF49D319AF96DF000AAAA4 /* FTGooglePlacesAPIResponse-test4-RequestDenied.json */,
+			);
+			path = TestData;
+			sourceTree = "<group>";
+		};
+		E4CF49D819AF971D000AAAA4 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				E4CF49B919AF94E4000AAAA4 /* FTGooglePlacesAPITestCase.h */,
+				E4CF49BA19AF94E4000AAAA4 /* FTGooglePlacesAPITestCase.m */,
+			);
+			name = Basic;
+			sourceTree = "<group>";
+		};
+		E4CF49D919AF9745000AAAA4 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E4CF49C019AF96BB000AAAA4 /* FTGooglePlacesAPIServiceTests.m */,
+				E4CF49DB19AF9754000AAAA4 /* Mock */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		E4CF49DB19AF9754000AAAA4 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				E4CF49C119AF96BB000AAAA4 /* MockAFHTTPRequestOperationManager.h */,
+				E4CF49C219AF96BB000AAAA4 /* MockAFHTTPRequestOperationManager.m */,
+				E4CF49C519AF96BB000AAAA4 /* MockFTGooglePlacesAPIService.h */,
+				E4CF49C619AF96BB000AAAA4 /* MockFTGooglePlacesAPIService.m */,
+			);
+			name = Mock;
+			sourceTree = "<group>";
+		};
+		E4CF49DC19AF9762000AAAA4 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				E4CF49B719AF93FB000AAAA4 /* FTGooglePlacesAPIDictionaryRequestTest.m */,
+				E4CF49BC19AF96BB000AAAA4 /* FTGooglePlacesAPINearbySearchRequestTests.m */,
+			);
+			name = Requests;
+			sourceTree = "<group>";
+		};
+		E4CF49DD19AF9771000AAAA4 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				E4CF49BD19AF96BB000AAAA4 /* FTGooglePlacesAPIResponseTests.m */,
+				E4CF49BE19AF96BB000AAAA4 /* FTGooglePlacesAPISearchResponseTests.m */,
+				E4CF49BF19AF96BB000AAAA4 /* FTGooglePlacesAPISearchResultItemTests.m */,
+				E4CF49DE19AF9778000AAAA4 /* Mock */,
+			);
+			name = Response;
+			sourceTree = "<group>";
+		};
+		E4CF49DE19AF9778000AAAA4 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				E4CF49C319AF96BB000AAAA4 /* MockFTGooglePlacesAPISearchResultItemSubclass.h */,
+				E4CF49C419AF96BB000AAAA4 /* MockFTGooglePlacesAPISearchResultItemSubclass.m */,
+			);
+			name = Mock;
+			sourceTree = "<group>";
+		};
+		E4CF49DF19AF9A4A000AAAA4 /* View controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E4CF49E019AF9A53000AAAA4 /* Example list */,
+				E4CF49E219AF9A64000AAAA4 /* Results list */,
+				E4CF49E119AF9A5D000AAAA4 /* Detail */,
+			);
+			name = "View controllers";
+			sourceTree = "<group>";
+		};
+		E4CF49E019AF9A53000AAAA4 /* Example list */ = {
+			isa = PBXGroup;
+			children = (
+				E4CF49AD19AF9304000AAAA4 /* FTGooglePlacesAPIExamplesListViewController.h */,
+				E4CF49AE19AF9304000AAAA4 /* FTGooglePlacesAPIExamplesListViewController.m */,
+			);
+			name = "Example list";
+			sourceTree = "<group>";
+		};
+		E4CF49E119AF9A5D000AAAA4 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				E4CF49A919AF9304000AAAA4 /* FTGooglePlacesAPIExampleDetailViewController.h */,
+				E4CF49AA19AF9304000AAAA4 /* FTGooglePlacesAPIExampleDetailViewController.m */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
+		E4CF49E219AF9A64000AAAA4 /* Results list */ = {
+			isa = PBXGroup;
+			children = (
+				E4CF49AB19AF9304000AAAA4 /* FTGooglePlacesAPIExampleResultsViewController.h */,
+				E4CF49AC19AF9304000AAAA4 /* FTGooglePlacesAPIExampleResultsViewController.m */,
+			);
+			name = "Results list";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E4CF497619AF9252000AAAA4 /* FTGooglePlacesAPIExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4CF49A319AF9252000AAAA4 /* Build configuration list for PBXNativeTarget "FTGooglePlacesAPIExample" */;
+			buildPhases = (
+				EBEA0A82B245498E9FE46AA5 /* Check Pods Manifest.lock */,
+				E4CF497319AF9252000AAAA4 /* Sources */,
+				E4CF497419AF9252000AAAA4 /* Frameworks */,
+				E4CF497519AF9252000AAAA4 /* Resources */,
+				28DAA6BB25F647958AD6DEDD /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FTGooglePlacesAPIExample;
+			productName = FTGooglePlacesAPIExample;
+			productReference = E4CF497719AF9252000AAAA4 /* FTGooglePlacesAPIExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E4CF499119AF9252000AAAA4 /* FTGooglePlacesAPIExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4CF49A619AF9252000AAAA4 /* Build configuration list for PBXNativeTarget "FTGooglePlacesAPIExampleTests" */;
+			buildPhases = (
+				0C2F8DE74182442DBC63A16A /* Check Pods Manifest.lock */,
+				E4CF498E19AF9252000AAAA4 /* Sources */,
+				E4CF498F19AF9252000AAAA4 /* Frameworks */,
+				E4CF499019AF9252000AAAA4 /* Resources */,
+				62858797BBF34EB8A0918967 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E4CF499819AF9252000AAAA4 /* PBXTargetDependency */,
+			);
+			name = FTGooglePlacesAPIExampleTests;
+			productName = FTGooglePlacesAPIExampleTests;
+			productReference = E4CF499219AF9252000AAAA4 /* FTGooglePlacesAPIExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E4CF496F19AF9252000AAAA4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = FT;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Marco Meschini";
+				TargetAttributes = {
+					E4CF499119AF9252000AAAA4 = {
+						TestTargetID = E4CF497619AF9252000AAAA4;
+					};
+				};
+			};
+			buildConfigurationList = E4CF497219AF9252000AAAA4 /* Build configuration list for PBXProject "FTGooglePlacesAPIExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E4CF496E19AF9252000AAAA4;
+			productRefGroup = E4CF497819AF9252000AAAA4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E4CF497619AF9252000AAAA4 /* FTGooglePlacesAPIExample */,
+				E4CF499119AF9252000AAAA4 /* FTGooglePlacesAPIExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E4CF497519AF9252000AAAA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4CF498519AF9252000AAAA4 /* InfoPlist.strings in Resources */,
+				E4CF498D19AF9252000AAAA4 /* Images.xcassets in Resources */,
+				E4CF49B619AF93B0000AAAA4 /* powered-by-google-on-white@2x.png in Resources */,
+				E4CF49B519AF93B0000AAAA4 /* powered-by-google-on-white.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4CF499019AF9252000AAAA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4CF49D619AF96DF000AAAA4 /* FTGooglePlacesAPIResponse-test3-InvalidRequest.json in Resources */,
+				E4CF499E19AF9252000AAAA4 /* InfoPlist.strings in Resources */,
+				E4CF49D519AF96DF000AAAA4 /* FTGooglePlacesAPIResponse-test2-NoResults.json in Resources */,
+				E4CF49D719AF96DF000AAAA4 /* FTGooglePlacesAPIResponse-test4-RequestDenied.json in Resources */,
+				E4CF49D419AF96DF000AAAA4 /* FTGooglePlacesAPIResponse-test1-Nearby-Search-OK.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C2F8DE74182442DBC63A16A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		28DAA6BB25F647958AD6DEDD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		62858797BBF34EB8A0918967 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBEA0A82B245498E9FE46AA5 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E4CF497319AF9252000AAAA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4CF49B119AF9304000AAAA4 /* FTGooglePlacesAPIExamplesListViewController.m in Sources */,
+				E4CF49B019AF9304000AAAA4 /* FTGooglePlacesAPIExampleResultsViewController.m in Sources */,
+				E4CF498B19AF9252000AAAA4 /* FTAppDelegate.m in Sources */,
+				E4CF498719AF9252000AAAA4 /* main.m in Sources */,
+				E4CF49AF19AF9304000AAAA4 /* FTGooglePlacesAPIExampleDetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4CF498E19AF9252000AAAA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4CF49C819AF96BB000AAAA4 /* FTGooglePlacesAPIResponseTests.m in Sources */,
+				E4CF49C719AF96BB000AAAA4 /* FTGooglePlacesAPINearbySearchRequestTests.m in Sources */,
+				E4CF49C919AF96BB000AAAA4 /* FTGooglePlacesAPISearchResponseTests.m in Sources */,
+				E4CF49BB19AF94E4000AAAA4 /* FTGooglePlacesAPITestCase.m in Sources */,
+				E4CF49CD19AF96BB000AAAA4 /* MockFTGooglePlacesAPISearchResultItemSubclass.m in Sources */,
+				E4CF49CC19AF96BB000AAAA4 /* MockAFHTTPRequestOperationManager.m in Sources */,
+				E4CF49B819AF93FB000AAAA4 /* FTGooglePlacesAPIDictionaryRequestTest.m in Sources */,
+				E4CF49CE19AF96BB000AAAA4 /* MockFTGooglePlacesAPIService.m in Sources */,
+				E4CF49CA19AF96BB000AAAA4 /* FTGooglePlacesAPISearchResultItemTests.m in Sources */,
+				E4CF49CB19AF96BB000AAAA4 /* FTGooglePlacesAPIServiceTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E4CF499819AF9252000AAAA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E4CF497619AF9252000AAAA4 /* FTGooglePlacesAPIExample */;
+			targetProxy = E4CF499719AF9252000AAAA4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E4CF498319AF9252000AAAA4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4CF498419AF9252000AAAA4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E4CF499C19AF9252000AAAA4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4CF499D19AF9252000AAAA4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E4CF49A119AF9252000AAAA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E4CF49A219AF9252000AAAA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E4CF49A419AF9252000AAAA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9752B25E193445AD812F50B7 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FTGooglePlacesAPIExample/FTGooglePlacesAPIExample-Prefix.pch";
+				INFOPLIST_FILE = "FTGooglePlacesAPIExample/FTGooglePlacesAPIExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E4CF49A519AF9252000AAAA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9752B25E193445AD812F50B7 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FTGooglePlacesAPIExample/FTGooglePlacesAPIExample-Prefix.pch";
+				INFOPLIST_FILE = "FTGooglePlacesAPIExample/FTGooglePlacesAPIExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		E4CF49A719AF9252000AAAA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9752B25E193445AD812F50B7 /* Pods.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FTGooglePlacesAPIExample.app/FTGooglePlacesAPIExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FTGooglePlacesAPIExample/FTGooglePlacesAPIExample-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "FTGooglePlacesAPIExampleTests/FTGooglePlacesAPIExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		E4CF49A819AF9252000AAAA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9752B25E193445AD812F50B7 /* Pods.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FTGooglePlacesAPIExample.app/FTGooglePlacesAPIExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FTGooglePlacesAPIExample/FTGooglePlacesAPIExample-Prefix.pch";
+				INFOPLIST_FILE = "FTGooglePlacesAPIExampleTests/FTGooglePlacesAPIExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E4CF497219AF9252000AAAA4 /* Build configuration list for PBXProject "FTGooglePlacesAPIExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4CF49A119AF9252000AAAA4 /* Debug */,
+				E4CF49A219AF9252000AAAA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4CF49A319AF9252000AAAA4 /* Build configuration list for PBXNativeTarget "FTGooglePlacesAPIExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4CF49A419AF9252000AAAA4 /* Debug */,
+				E4CF49A519AF9252000AAAA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4CF49A619AF9252000AAAA4 /* Build configuration list for PBXNativeTarget "FTGooglePlacesAPIExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4CF49A719AF9252000AAAA4 /* Debug */,
+				E4CF49A819AF9252000AAAA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E4CF496F19AF9252000AAAA4 /* Project object */;
+}

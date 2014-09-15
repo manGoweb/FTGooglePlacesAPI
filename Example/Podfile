@@ -1,0 +1,13 @@
+# Uncomment this line to define a global platform for your project
+platform :ios, "6.0"
+
+#Before push use:
+pod "FTGooglePlacesAPI"
+
+#For local development use:
+#pod "FTGooglePlacesAPI", :path => "../FTGooglePlacesAPI.podspec"
+
+pod "OCMock"
+
+link_with ['FTGooglePlacesAPIExample', 'FTGooglePlacesAPIExampleTests']
+
