@@ -67,6 +67,7 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
 @property (nonatomic, strong) AFHTTPRequestOperationManager *httpRequestOperationManager;
 
 @property (nonatomic, copy) NSString *apiKey;
+@property (nonatomic, copy) NSArray *referers;
 @property (nonatomic, weak) Class searchResultsItemClass;
 
 /**
@@ -125,6 +126,12 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
     _apiKey = apiKey;
 }
 
+- (void)setReferers:(NSArray *)referers
+{
+    NSAssert([referers count] > 0, @"You must provide at least one Referer");
+    _referers = referers.copy;
+}
+
 #pragma mark Private
 
 - (AFHTTPRequestOperationManager *)httpRequestOperationManager
@@ -134,6 +141,7 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
         NSURL *baseUrl = [NSURL URLWithString:FTGooglePlacesAPIBaseURL];
         _httpRequestOperationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:baseUrl];
         _httpRequestOperationManager.requestSerializer = [AFHTTPRequestSerializer serializer];
+        [_httpRequestOperationManager.requestSerializer setValue:[_referers componentsJoinedByString:@", "] forHTTPHeaderField:@"Referer"];
     }
     
     return _httpRequestOperationManager;
@@ -144,6 +152,11 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
 + (void)provideAPIKey:(NSString *)APIKey
 {
     [[[self class] sharedService] setApiKey:APIKey];
+}
+
++ (void)provideRefererValues:(NSArray *)referers
+{
+    [[[self class] sharedService] setReferers:referers];
 }
 
 + (void)registerSearchResultItemClass:(Class)itemClass

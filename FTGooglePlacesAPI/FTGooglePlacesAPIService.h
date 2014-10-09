@@ -53,6 +53,13 @@ typedef void (^FTGooglePlacesAPIDetailRequestCompletionhandler)(FTGooglePlacesAP
 + (void)provideAPIKey:(NSString *)APIKey;
 
 /**
+ *  Provides accepted HTTP referers for the service. API requests are sent directly to Google from the app
+ *
+ *  @param referers array of the accepted HTTP referers. Copied.
+ */
++ (void)provideRefererValues:(NSArray *)referers;
+
+/**
  *  This optional method can be used to instruct the service to return search
  *  request's response items as an instances of custom item subclass.
  *
