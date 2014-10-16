@@ -86,7 +86,9 @@
         }
         
     }
-    
+  
+    _addressComponents = [dictionary ftgp_nilledObjectForKey:@"address_components"];
+  
     _addressString = [dictionary ftgp_nilledObjectForKey:@"vicinity"];
     
     _formattedAddress = [dictionary ftgp_nilledObjectForKey:@"formatted_address"];

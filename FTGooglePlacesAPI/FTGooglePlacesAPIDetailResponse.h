@@ -87,6 +87,8 @@
 @property (nonatomic, strong, readonly) NSString *iconImageUrl;
 @property (nonatomic, assign, readonly) CGFloat rating;
 
+@property (nonatomic, strong, readonly) NSArray *addressComponents;
+
 /**
  *  Contains a unique token that you can use to retrieve additional information
  *  about this place in a Place Details request. You can store this token and use
