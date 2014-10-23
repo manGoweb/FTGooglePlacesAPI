@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "FTGooglePlacesAPI"
-  s.version      = "1.1"
+  s.version      = "1.2"
   s.summary      = "iOS library for querying Google Places API using simple block-based interface"
 
   s.description  = <<-DESC
@@ -23,6 +23,6 @@ Pod::Spec.new do |s|
                      :tag => s.version.to_s }
   s.source_files = 'FTGooglePlacesAPI/*.{h,m}'
   s.requires_arc = true
-  s.dependency 'AFNetworking', '~> 2.2'
+  s.dependency 'AFNetworking', '~> 2.4.1'
 
 end
