@@ -23,6 +23,6 @@ Pod::Spec.new do |s|
                      :tag => s.version.to_s }
   s.source_files = 'FTGooglePlacesAPI/*.{h,m}'
   s.requires_arc = true
-  s.dependency 'AFNetworking', '~> 2.2'
+  s.dependency 'AFNetworking', '~> 2.x'
 
 end
