@@ -49,6 +49,8 @@
 
 NSString *const FTGooglePlacesAPIBaseURL = @"https://maps.googleapis.com/maps/api/place/";
 
+NSString *const FTGooglePlaceAPIPhotoURL = @"https://maps.googleapis.com/maps/api/place/photo?key=%@&maxwidth=%@&photoreference=%@";
+NSString *const FTGooglePlaceStreetViewAPIURL = @"https://maps.googleapis.com/maps/api/streetview?key=%@&location=%@&size=%@";
 
 static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
 
@@ -149,6 +151,34 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
 + (void)registerSearchResultItemClass:(Class)itemClass
 {
     [[[self class] sharedService] setSearchResultsItemClass:itemClass];
+}
+
++ (NSArray *)photoURLsForPlace:(FTGooglePlacesAPISearchResultItem *)item maxWidth:(NSInteger)maxWidth {
+    NSMutableArray *array = [NSMutableArray arrayWithCapacity:item.photos.count];
+    for (NSDictionary *photo in item.photos) {
+        NSInteger width = MIN(maxWidth, [[photo objectForKey:@"width"] integerValue]);
+        NSString *photoReference = [photo objectForKey:@"photo_reference"];
+        [array addObject:[self photoURLForPhotoReference:photoReference maxWidth:width]];
+    }
+    return array;
+}
+
++ (NSArray *)photoURLsForPlace:(FTGooglePlacesAPISearchResultItem *)item {
+    return [[self class] photoURLsForPlace:item maxWidth:10000];
+}
+
++ (NSString *)photoURLForPhotoReference:(NSString *)reference maxWidth:(NSInteger)maxWidth {
+    return [NSString stringWithFormat:FTGooglePlaceAPIPhotoURL, [self sharedService].apiKey, @(maxWidth), reference];
+}
+
++ (NSString *)streetViewPhotoURLForLocation:(CLLocationCoordinate2D)coordinate {
+    return [self streetViewPhotoURLForLocation:coordinate maxWidth:1000];
+}
+
++ (NSString *)streetViewPhotoURLForLocation:(CLLocationCoordinate2D)coordinate maxWidth:(NSInteger)maxWidth {
+    NSString *locationString = [NSString stringWithFormat:@"%@,%@", @(coordinate.latitude), @(coordinate.longitude)];
+    NSString *sizeString = [NSString stringWithFormat:@"%@x%@", @(maxWidth), @(maxWidth)];
+    return [NSString stringWithFormat:FTGooglePlaceStreetViewAPIURL, [self sharedService].apiKey, locationString, sizeString];
 }
 
 + (void)executeSearchRequest:(id<FTGooglePlacesAPIRequest>)request
