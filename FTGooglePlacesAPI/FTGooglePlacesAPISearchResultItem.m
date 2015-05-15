@@ -134,7 +134,11 @@
         
     }
     
-    _addressString = [dictionary ftgp_nilledObjectForKey:@"vicinity"];
+    if (dictionary[@"vicinity"]) {
+        _addressString = [dictionary ftgp_nilledObjectForKey:@"vicinity"];
+    } else if (dictionary[@"formatted_address"]) {
+        _addressString = [dictionary ftgp_nilledObjectForKey:@"formatted_address"];
+    }
     
     //  Openeed state may or may not be present
     NSNumber *openedState = [dictionary ftgp_nilledValueForKeyPath:@"opening_hours.open_now"];
