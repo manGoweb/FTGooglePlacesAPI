@@ -96,4 +96,9 @@ typedef void (^FTGooglePlacesAPIDetailRequestCompletionhandler)(FTGooglePlacesAP
  */
 + (void)setDebugLoggingEnabled:(BOOL)enabled;
 
+/**
+ *  Cancel all the running Places requests.
+ */
++ (void)cancelAllRequests;
+
 @end
