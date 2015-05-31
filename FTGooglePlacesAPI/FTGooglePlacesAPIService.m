@@ -214,6 +214,11 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
     FTGooglePlacesAPIDebugLoggingEnabled = enabled;
 }
 
++ (void)cancelAllRequests
+{
+    [[FTGooglePlacesAPIService sharedService].httpRequestOperationManager.operationQueue cancelAllOperations];
+}
+
 #pragma mark - Private class methods
 
 + (void)executeRequest:(id<FTGooglePlacesAPIRequest>)request
