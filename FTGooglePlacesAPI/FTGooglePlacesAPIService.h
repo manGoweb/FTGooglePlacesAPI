@@ -29,6 +29,7 @@
 #import <Foundation/Foundation.h>
 
 #import "FTGooglePlacesAPICommon.h"
+#import "FTGooglePlacesAPISearchResultItem.h"
 
 @class FTGooglePlacesAPISearchResponse;
 @class FTGooglePlacesAPIDetailResponse;
@@ -67,6 +68,50 @@ typedef void (^FTGooglePlacesAPIDetailRequestCompletionhandler)(FTGooglePlacesAP
  *  @param responseClass Subclass of the API response class to use
  */
 + (void)registerSearchResultItemClass:(Class)itemClass;
+
+/**
+ *  Return list of photo urls
+ *
+ *  @param item search result item
+ *
+ *  @return array of photo urls
+ */
++ (NSArray *)photoURLsForPlace:(FTGooglePlacesAPISearchResultItem *)item;
+
+/**
+ *  List of photo urls for a given item
+ *
+ *  @param item     search result item
+ *  @param maxWidth max width of photo
+ *
+ *  @return array of photo urls
+ */
++ (NSArray *)photoURLsForPlace:(FTGooglePlacesAPISearchResultItem *)item maxWidth:(NSInteger)maxWidth;
+
+
+/**
+ *  Returns the url for a given photo reference
+ *
+ *  @param reference photo reference
+ *  @param maxWidth  maximiun width
+ *
+ *  @return photo url
+ */
++ (NSString *)photoURLForPhotoReference:(NSString *)reference maxWidth:(NSInteger)maxWidth;
+
+
+/**
+ *  Return photo url for streetview of location
+ *
+ *  @param coordinate location coordinate
+ *  @param maxWidth   max width of photo
+ *
+ *  @return string url of streetview photo
+ */
++ (NSString *)streetViewPhotoURLForLocation:(CLLocationCoordinate2D)coordinate maxWidth:(NSInteger)maxWidth;
+
++ (NSString *)streetViewPhotoURLForLocation:(CLLocationCoordinate2D)coordinate;
+
 
 /**
  *  Asks the service to execute the given Google Places API Places Search request.

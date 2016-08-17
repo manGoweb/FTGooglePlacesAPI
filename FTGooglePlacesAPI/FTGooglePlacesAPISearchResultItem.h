@@ -55,6 +55,7 @@ typedef NS_ENUM(NSUInteger, FTGooglePlacesAPISearchResultItemOpenedState) {
 @property (nonatomic, assign, readonly) CGFloat rating;
 @property (nonatomic, strong, readonly) NSString *reference;
 @property (nonatomic, strong, readonly) NSArray *types;
+@property (nonatomic, strong, readonly) NSArray *photos;
 
 /**
  *  You can access complete response dictionary using this property.

@@ -149,6 +149,7 @@
     _reference = [dictionary ftgp_nilledObjectForKey:@"reference"];
     _types = [dictionary ftgp_nilledObjectForKey:@"types"];
     
+    _photos = [dictionary ftgp_nilledObjectForKey:@"photos"];
     //  Deprecated, left for backwards compatibility
     _itemId = [dictionary ftgp_nilledObjectForKey:@"id"];
 }
