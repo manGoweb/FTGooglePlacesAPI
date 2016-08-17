@@ -28,7 +28,7 @@
 
 #import "FTGooglePlacesAPIService.h"
 
-#import "AFNetworking.h"
+#import <AFNetworking/AFNetworking.h>
 #import "FTGooglePlacesAPISearchResponse.h"
 #import "FTGooglePlacesAPIDetailResponse.h"
 
@@ -41,9 +41,9 @@
  *  @param ... Output string parameters
  */
 #ifdef DEBUG
-    #define FTGPServiceLog(format, ...) if (FTGooglePlacesAPIDebugLoggingEnabled) { NSLog(format, ##__VA_ARGS__); }
+#define FTGPServiceLog(format, ...) if (FTGooglePlacesAPIDebugLoggingEnabled) { NSLog(format, ## __VA_ARGS__); }
 #else
-    #define FTGPServiceLog(format, ...) ((void)0)
+#define FTGPServiceLog(format, ...) ((void)0)
 #endif
 
 
@@ -66,7 +66,7 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
  *  AFNetworking request manager. This manager is lazily intitialized in custom getter.
  *  Default implementation is initialized with base URL of Google Places API
  */
-@property (nonatomic, strong) AFHTTPRequestOperationManager *httpRequestOperationManager;
+@property (nonatomic, strong) AFHTTPSessionManager *httpRequestOperationManager;
 
 @property (nonatomic, copy) NSString *apiKey;
 @property (nonatomic, weak) Class searchResultsItemClass;
@@ -84,7 +84,7 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
  */
 @interface FTGooglePlacesAPIService (Private)
 
-+ (NSError *)ftgp_errorForResponseStatus:(FTGooglePlacesAPIResponseStatus)status;
++ (NSError *)                 ftgp_errorForResponseStatus:(FTGooglePlacesAPIResponseStatus)status;
 
 @end
 
@@ -101,6 +101,7 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
     static FTGooglePlacesAPIService *SharedInstance;
     
     static dispatch_once_t onceToken;
+    
     dispatch_once(&onceToken, ^{
         SharedInstance = [[FTGooglePlacesAPIService alloc] init];
     });
@@ -111,11 +112,13 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
 - (id)init
 {
     self = [super init];
+    
     if (self) {
         _apiKey = nil;
         _searchResultsItemClass = nil;
         FTGooglePlacesAPIDebugLoggingEnabled = NO;
     }
+    
     return self;
 }
 
@@ -129,12 +132,11 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
 
 #pragma mark Private
 
-- (AFHTTPRequestOperationManager *)httpRequestOperationManager
+- (AFHTTPSessionManager *)httpRequestOperationManager
 {
-    if (!_httpRequestOperationManager)
-    {
+    if (!_httpRequestOperationManager) {
         NSURL *baseUrl = [NSURL URLWithString:FTGooglePlacesAPIBaseURL];
-        _httpRequestOperationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:baseUrl];
+        _httpRequestOperationManager = [[AFHTTPSessionManager alloc] initWithBaseURL:baseUrl];
         _httpRequestOperationManager.requestSerializer = [AFHTTPRequestSerializer serializer];
     }
     
@@ -153,90 +155,103 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
     [[[self class] sharedService] setSearchResultsItemClass:itemClass];
 }
 
-+ (NSArray *)photoURLsForPlace:(FTGooglePlacesAPISearchResultItem *)item maxWidth:(NSInteger)maxWidth {
++ (NSArray *)photoURLsForPlace:(FTGooglePlacesAPISearchResultItem *)item maxWidth:(NSInteger)maxWidth
+{
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:item.photos.count];
+    
     for (NSDictionary *photo in item.photos) {
         NSInteger width = MIN(maxWidth, [[photo objectForKey:@"width"] integerValue]);
         NSString *photoReference = [photo objectForKey:@"photo_reference"];
         [array addObject:[self photoURLForPhotoReference:photoReference maxWidth:width]];
     }
+    
     return array;
 }
 
-+ (NSArray *)photoURLsForPlace:(FTGooglePlacesAPISearchResultItem *)item {
++ (NSArray *)photoURLsForPlace:(FTGooglePlacesAPISearchResultItem *)item
+{
     return [[self class] photoURLsForPlace:item maxWidth:10000];
 }
 
-+ (NSString *)photoURLForPhotoReference:(NSString *)reference maxWidth:(NSInteger)maxWidth {
-    return [NSString stringWithFormat:FTGooglePlaceAPIPhotoURL, [self sharedService].apiKey, @(maxWidth), reference];
++ (NSString *)photoURLForPhotoReference:(NSString *)reference maxWidth:(NSInteger)maxWidth
+{
+    NSString *sizeS = maxWidth > 0 ? @(maxWidth).description : @"%@";
+    
+    return [NSString stringWithFormat:FTGooglePlaceAPIPhotoURL, [self sharedService].apiKey, sizeS, reference];
 }
 
-+ (NSString *)streetViewPhotoURLForLocation:(CLLocationCoordinate2D)coordinate {
++ (NSString *)streetViewPhotoURLForLocation:(CLLocationCoordinate2D)coordinate
+{
     return [self streetViewPhotoURLForLocation:coordinate maxWidth:1000];
 }
 
-+ (NSString *)streetViewPhotoURLForLocation:(CLLocationCoordinate2D)coordinate maxWidth:(NSInteger)maxWidth {
++ (NSString *)streetViewPhotoURLForLocation:(CLLocationCoordinate2D)coordinate maxWidth:(NSInteger)maxWidth
+{
     NSString *locationString = [NSString stringWithFormat:@"%@,%@", @(coordinate.latitude), @(coordinate.longitude)];
-    NSString *sizeString = [NSString stringWithFormat:@"%@x%@", @(maxWidth), @(maxWidth)];
+    NSString *sizeString = maxWidth > 0 ? [NSString stringWithFormat:@"%@x%@", @(maxWidth), @(maxWidth)] : @"%1$@x%1$@";
+    
     return [NSString stringWithFormat:FTGooglePlaceStreetViewAPIURL, [self sharedService].apiKey, locationString, sizeString];
 }
 
-+ (void)executeSearchRequest:(id<FTGooglePlacesAPIRequest>)request
++ (void)executeSearchRequest:(id <FTGooglePlacesAPIRequest> )request
        withCompletionHandler:(FTGooglePlacesAPISearchRequestCompletionHandler)completion
 {
-    [[self class] executeRequest:request withCompletionHandler:^(NSDictionary *responseObject, NSError *error) {
-        
-        //  Networing, parsing or other general error
-        if (error) {
-            completion(nil, error);
-            return;
-        }
-        
-        //  Parse response
-        Class resultsItemClass = [[[self class] sharedService] searchResultsItemClass];
-        
-        FTGooglePlacesAPISearchResponse *response = [[FTGooglePlacesAPISearchResponse alloc] initWithDictionary:responseObject request:request resultsItemClass:resultsItemClass];
-        
-        FTGPServiceLog(@"%@ received Search response. Status: %@, number of results: %ld", [self class], [FTGooglePlacesAPISearchResponse localizedNameOfStatus:response.status], (unsigned long)[response.results count]);
-        
-        // Check if everything went OK
-        if (response && response.status == FTGooglePlacesAPIResponseStatusOK) {
-            completion(response, nil);
-        }
-        // If network request was successfull, but Google Places API
-        // responded with error status code
-        else {
-            completion(response, [[self class] ftgp_errorForResponseStatus:response.status]);
-        }
-    }];
+    [[self class] executeRequest:request
+           withCompletionHandler: ^(NSDictionary *responseObject, NSError *error) {
+               //  Networing, parsing or other general error
+               if (error) {
+                   completion(nil, error);
+                   return;
+               }
+               
+               //  Parse response
+               Class resultsItemClass = [[[self class] sharedService] searchResultsItemClass];
+               
+               FTGooglePlacesAPISearchResponse *response = [[FTGooglePlacesAPISearchResponse alloc]  initWithDictionary:responseObject
+                                                                                                                request:request
+                                                                                                       resultsItemClass:resultsItemClass];
+               
+               FTGPServiceLog(@"%@ received Search response. Status: %@, number of results: %ld", [self class], [FTGooglePlacesAPISearchResponse localizedNameOfStatus:response.status], (unsigned long)[response.results count]);
+               
+               // Check if everything went OK
+               if (response && response.status == FTGooglePlacesAPIResponseStatusOK) {
+                   completion(response, nil);
+               }
+               // If network request was successfull, but Google Places API
+               // responded with error status code
+               else {
+                   completion(response, [[self class] ftgp_errorForResponseStatus:response.status]);
+               }
+           }];
 }
 
-+ (void)executeDetailRequest:(id<FTGooglePlacesAPIRequest>)request
++ (void)executeDetailRequest:(id <FTGooglePlacesAPIRequest> )request
        withCompletionHandler:(FTGooglePlacesAPIDetailRequestCompletionhandler)completion
 {
-    [[self class] executeRequest:request withCompletionHandler:^(NSDictionary *responseObject, NSError *error) {
-        
-        //  Networing, parsing or other general error
-        if (error) {
-            completion(nil, error);
-            return;
-        }
-        
-        //  Try to parse response to object
-        FTGooglePlacesAPIDetailResponse *response = [[FTGooglePlacesAPIDetailResponse alloc] initWithDictionary:responseObject request:request];
-        
-        FTGPServiceLog(@"%@ received Detail response. Status: %@", [self class], [FTGooglePlacesAPISearchResponse localizedNameOfStatus:response.status]);
-        
-        // Check if everything went OK
-        if (response && response.status == FTGooglePlacesAPIResponseStatusOK) {
-            completion(response, nil);
-        }
-        // If network request was successfull, but Google Places API
-        // responded with error status code
-        else {
-            completion(response, [[self class] ftgp_errorForResponseStatus:response.status]);
-        }
-    }];
+    [[self class] executeRequest:request
+           withCompletionHandler: ^(NSDictionary *responseObject, NSError *error) {
+               //  Networing, parsing or other general error
+               if (error) {
+                   completion(nil, error);
+                   return;
+               }
+               
+               //  Try to parse response to object
+               FTGooglePlacesAPIDetailResponse *response = [[FTGooglePlacesAPIDetailResponse alloc]  initWithDictionary:responseObject
+                                                                                                                request:request];
+               
+               FTGPServiceLog(@"%@ received Detail response. Status: %@", [self class], [FTGooglePlacesAPISearchResponse localizedNameOfStatus:response.status]);
+               
+               // Check if everything went OK
+               if (response && response.status == FTGooglePlacesAPIResponseStatusOK) {
+                   completion(response, nil);
+               }
+               // If network request was successfull, but Google Places API
+               // responded with error status code
+               else {
+                   completion(response, [[self class] ftgp_errorForResponseStatus:response.status]);
+               }
+           }];
 }
 
 + (void)setDebugLoggingEnabled:(BOOL)enabled
@@ -246,8 +261,8 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
 
 #pragma mark - Private class methods
 
-+ (void)executeRequest:(id<FTGooglePlacesAPIRequest>)request
- withCompletionHandler:(void(^)(NSDictionary *responseObject, NSError *error))completion
++ (void)   executeRequest:(id <FTGooglePlacesAPIRequest> )request
+    withCompletionHandler:(void (^)(NSDictionary *responseObject, NSError *error))completion
 {
     NSAssert(completion, @"You must provide completion block for the Google Places API request execution. Performing request without handling does not make any sense.");
     
@@ -269,21 +284,16 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
     NSString *requestPath = [NSString stringWithFormat:@"%@/json", [request placesAPIRequestMethod]];
     
     //  Perform request using AFNetworking
-    AFHTTPRequestOperationManager *manager = service.httpRequestOperationManager;
+    AFHTTPSessionManager *manager = service.httpRequestOperationManager;
     
     //  Perform request
-    [manager GET:requestPath
-      parameters:params
-         success:^(AFHTTPRequestOperation *operation, id responseObject)
-     {
-         FTGPServiceLog(@"%@ request SUCCESS (Request URL: %@)", [self class], operation.request.URL);
-         completion(responseObject, nil);
-     }
-         failure:^(AFHTTPRequestOperation *operation, NSError *error)
-     {
-         FTGPServiceLog(@"%@ request FAILURE: (Request URL: %@, Error: %@)", [self class], operation.request.URL, error);
-         completion(nil, error);
-     }];
+    [manager GET:requestPath parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        FTGPServiceLog(@"%@ request SUCCESS (Request URL: %@)", [self class], task.originalRequest.URL);
+        completion(responseObject, nil);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        FTGPServiceLog(@"%@ request FAILURE: (Request URL: %@, Error: %@)", [self class], task.originalRequest.URL, error);
+        completion(nil, error);
+    }];
 }
 
 @end
@@ -295,9 +305,9 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
 + (NSError *)ftgp_errorForResponseStatus:(FTGooglePlacesAPIResponseStatus)status
 {
     NSDictionary *userInfo = @{
-        NSLocalizedFailureReasonErrorKey: NSLocalizedString(@"Google Places API request failed", nil),
-        NSLocalizedDescriptionKey: [FTGooglePlacesAPIResponse localizedDescriptionForStatus:status]
-    };
+                               NSLocalizedFailureReasonErrorKey: NSLocalizedString(@"Google Places API request failed", nil),
+                               NSLocalizedDescriptionKey: [FTGooglePlacesAPIResponse localizedDescriptionForStatus:status]
+                               };
     
     return [NSError errorWithDomain:FTGooglePlacesAPIErrorDomain code:status userInfo:userInfo];
 }
